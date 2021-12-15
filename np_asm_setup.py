@@ -25,17 +25,17 @@
     on numpy.distutils for more information.
 """
 
-
 def configuration(parent_package="", top_path=None):
     from numpy.distutils.misc_util import Configuration
     from numpy.distutils.misc_util import get_info
+    from numpy.distutils.log import set_verbosity
 
     # necessary for the half-float d-type.
     info = get_info("npymath")
 
     config = Configuration("np_asm_directory", parent_package, top_path)
     config.add_extension("np_asm", ["np_asm.c"], extra_info=info)
-
+    set_verbosity(5, force=True)
     return config
 
 
