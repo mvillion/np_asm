@@ -1,5 +1,6 @@
+#!/usr/bin/python3
 """
-    setup.py file for logit.c
+    setup.py file for np_asm.c
     Note that since this is a numpy extension
     we use numpy.distutils instead of
     distutils from the python standard library.
@@ -9,7 +10,7 @@
     will build the extension library in the current file.
 
     Calling
-    $python setup.py build
+    $python3 setup.py build
     will build a file that looks like ./build/lib*, where
     lib* is a file that begins with lib. The library will
     be in this file and end with a C library extension,
@@ -24,6 +25,7 @@
     at docs.python.org  and the documentation
     on numpy.distutils for more information.
 """
+
 
 def configuration(parent_package="", top_path=None):
     from numpy.distutils.misc_util import Configuration
