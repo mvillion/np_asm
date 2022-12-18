@@ -105,13 +105,14 @@ for inst_name, n_input in instf_list:
     npy_intp in1_step = steps[0]/size_ratio;
     npy_intp in2_step = steps[1]/size_ratio;
     npy_intp out_step = steps[2]/size_ratio;
-    for (npy_intp i = 0; i < n/size_ratio; i++)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
     {
+        i--;
         // BEGIN main ufunc computation
         _mm_storeu_ps(out, _mm_%s(""" % (inst_name, inst_name)
     if n_input == 1:
-        fun_str += """
-            _mm_loadu_ps(in1)));"""
+        fun_str += """_mm_loadu_ps(in1)));"""
     else:
         fun_str += """
             _mm_loadu_ps(in1), _mm_loadu_ps(in2)));"""
