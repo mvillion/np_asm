@@ -47,16 +47,16 @@ PyMODINIT_FUNC PyInit_np_asm(void)
     {
         op = PyUFunc_FromFuncAndData(
             funf[i], NULL, typef, 1, n_in_f[i], 1, PyUFunc_None,
-            inst1f_str[i], doc_str, 0);
-        PyDict_SetItemString(d, inst1f_str[i], op);
+            instf_str[i], doc_str, 0);
+        PyDict_SetItemString(d, instf_str[i], op);
         Py_DECREF(op);
     }
-    for (int i = 0; i < N_INST2I; i++)
+    for (int i = 0; i < N_INSTI; i++)
     {
         op = PyUFunc_FromFuncAndData(
-            fun2i[i], NULL, type2i, 4, 2, 1, PyUFunc_None,
-            inst2i_str[i], doc_str, 0);
-        PyDict_SetItemString(d, inst2i_str[i], op);
+            fun2i[i], NULL, typei, 4, 2, 1, PyUFunc_None,
+            insti_str[i], doc_str, 0);
+        PyDict_SetItemString(d, insti_str[i], op);
         Py_DECREF(op);
     }
     return m;

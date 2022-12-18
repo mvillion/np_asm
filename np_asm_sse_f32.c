@@ -55,23 +55,9 @@
 
 #define N_INSTF (55-4)
 
-// etype(movemask_ps) // returns int
-//    etype(comieq_ss)
-//    etype(comilt_ss)
-//    etype(comile_ss)
-//    etype(comigt_ss)
-//    etype(comige_ss)
-//    etype(comineq_ss)
-//    etype(ucomieq_ss)
-//    etype(ucomilt_ss)
-//    etype(ucomile_ss)
-//    etype(ucomigt_ss)
-//    etype(ucomige_ss)
-//    etype(ucomineq_ss)
-
-// inst1f_str is the list of instruction names
+// instf_str is the list of instruction names
 #define etype(x, macro_cond) #x,
-static const char *inst1f_str[N_INSTF] = {INSTF_LIST};
+static const char *instf_str[N_INSTF] = {INSTF_LIST};
 #undef etype
 
 // n_in_f is the number of inputs for each instruction
