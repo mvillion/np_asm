@@ -11,7 +11,7 @@ static PyMethodDef np_asm_method[] = {
     {NULL, NULL, 0, NULL}
 };
 
-#include "np_asm_sse_f32.c"
+#include "np_asm_sse_f32_auto.c"
 #include "np_asm_sse_int.c"
 
 //______________________________________________________________________________
