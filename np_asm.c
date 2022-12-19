@@ -12,7 +12,7 @@ static PyMethodDef np_asm_method[] = {
 };
 
 #include "np_asm_sse_f32_auto.c"
-#include "np_asm_sse_int.c"
+#include "np_asm_sse_int_auto.c"
 
 //______________________________________________________________________________
 static struct PyModuleDef moduledef = {
@@ -46,16 +46,16 @@ PyMODINIT_FUNC PyInit_np_asm(void)
     for (int i = 0; i < N_INSTF; i++)
     {
         op = PyUFunc_FromFuncAndData(
-            funf[i], NULL, typef, 1, n_in_f[i], 1, PyUFunc_None,
-            instf_str[i], doc_str, 0);
+            funf[i], NULL, typef, 1, n_in_f[i], 1, PyUFunc_None, instf_str[i],
+            doc_str, 0);
         PyDict_SetItemString(d, instf_str[i], op);
         Py_DECREF(op);
     }
     for (int i = 0; i < N_INSTI; i++)
     {
         op = PyUFunc_FromFuncAndData(
-            fun2i[i], NULL, typei, 4, 2, 1, PyUFunc_None,
-            insti_str[i], doc_str, 0);
+            funi[i], NULL, typei, 4, n_in_i[i], 1, PyUFunc_None, insti_str[i],
+            doc_str, 0);
         PyDict_SetItemString(d, insti_str[i], op);
         Py_DECREF(op);
     }

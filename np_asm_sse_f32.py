@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ______________________________________________________________________________
 # float operation with 1 or 2 input(s)
-instf_list = [
+inst_list = [
     ("add_ps", 2),
     ("add_ss", 2),
     ("div_ps", 2),
@@ -56,7 +56,7 @@ instf_list = [
     ("unpacklo_ps", 2),
 ]
 
-n_instf = len(instf_list)
+n_inst = len(inst_list)
 
 fid = open("np_asm_sse_f32_auto.c", "w")
 
@@ -67,10 +67,10 @@ fid.write(
 
 static const char *instf_str[N_INSTF] =
 {
-""" % n_instf)
+""" % n_inst)
 fid.writelines([
     '''    "%s",
-''' % k[0] for k in instf_list])
+''' % k[0] for k in inst_list])
 fid.write(
     """};
 """)
@@ -83,7 +83,7 @@ static const char n_in_f[N_INSTF] =
 """)
 fid.writelines([
     """    %d,
-""" % k[1] for k in instf_list])
+""" % k[1] for k in inst_list])
 fid.write(
     """};
 """)
@@ -93,7 +93,9 @@ fid.write(
 // create a function np_<op> for each instruction <op>
 """)
 
-for inst_name, n_input in instf_list:
+# note: use __mm_store_ps and __mm_load_ps
+# use __mm_storeu_ps and __mm_loadu_ps if alignment is an issue
+for inst_name, n_input in inst_list:
     fun_str = """static void np_%s(
     char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
 {
@@ -102,25 +104,23 @@ for inst_name, n_input in instf_list:
     float *in2 = (float *)args[1];
     float *out = (float *)args[2];
     int size_ratio = sizeof(__m128)/sizeof(float);
-    npy_intp in1_step = steps[0]/size_ratio;
-    npy_intp in2_step = steps[1]/size_ratio;
-    npy_intp out_step = steps[2]/size_ratio;
+    // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
     while (i > 0)
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_storeu_ps(out, _mm_%s(""" % (inst_name, inst_name)
+        _mm_store_ps(out, _mm_%s(""" % (inst_name, inst_name)
     if n_input == 1:
-        fun_str += """_mm_loadu_ps(in1)));"""
+        fun_str += """_mm_load_ps(in1)));"""
     else:
         fun_str += """
-            _mm_loadu_ps(in1), _mm_loadu_ps(in2)));"""
+            _mm_load_ps(in1), _mm_load_ps(in2)));"""
     fun_str += """
         // END main ufunc computation
-        in1 += in1_step*size_ratio;
-        in2 += in2_step*size_ratio;
-        out += out_step*size_ratio;
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
     }
 }
 
@@ -135,7 +135,7 @@ PyUFuncGenericFunction funf[N_INSTF][1] =
 """)
 fid.writelines([
     """    {&np_%s},
-""" % k[0] for k in instf_list])
+""" % k[0] for k in inst_list])
 fid.write(
     """};
 
