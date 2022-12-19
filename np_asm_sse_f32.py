@@ -66,37 +66,37 @@ fid.write(
 #define N_INSTF %d
 
 static const char *instf_str[N_INSTF] =
-{
-""" % n_inst)
+{""" % n_inst)
 fid.writelines([
-    '''    "%s",
-''' % k[0] for k in inst_list])
+    '''
+    "%s", ''' % k[0] for k in inst_list])
 fid.write(
-    """};
-""")
+    """
+};""")
 
 fid.write(
     """
+
 // n_in_f is the number of inputs for each instruction
 static const char n_in_f[N_INSTF] =
-{
-""")
+{""")
 fid.writelines([
-    """    %d,
-""" % k[1] for k in inst_list])
+    """
+    %d,""" % k[1] for k in inst_list])
 fid.write(
-    """};
-""")
+    """
+};""")
 
 fid.write(
     """
-// create a function np_<op> for each instruction <op>
-""")
 
-# note: use __mm_store_ps and __mm_load_ps
-# use __mm_storeu_ps and __mm_loadu_ps if alignment is an issue
+// create a function np_<op> for each instruction <op>""")
+
+# note: use _mm_store_ps and _mm_load_ps
+# use _mm_storeu_ps and _mm_loadu_ps if alignment is an issue
 for inst_name, n_input in inst_list:
-    fun_str = """static void np_%s(
+    fun_str = """
+static void np_%s(
     char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
 {
     npy_intp n = dimensions[0];
@@ -123,7 +123,6 @@ for inst_name, n_input in inst_list:
         out += size_ratio;
     }
 }
-
 """
     fid.write(fun_str)
 
@@ -131,13 +130,13 @@ fid.write(
     """
 // funf is the list of all npy_<op> functions
 PyUFuncGenericFunction funf[N_INSTF][1] =
-{
-""")
+{""")
 fid.writelines([
-    """    {&np_%s},
-""" % k[0] for k in inst_list])
+    """
+    {&np_%s},""" % k[0] for k in inst_list])
 fid.write(
-    """};
+    """
+};
 
 static char typef[3] = {NPY_FLOAT, NPY_FLOAT, NPY_FLOAT};
 """)
