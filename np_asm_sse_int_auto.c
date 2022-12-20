@@ -4,6 +4,7 @@
 
 static const char *insti_str[N_INSTI] =
 {
+    "move_epi64", 
     "packs_epi16", 
     "packs_epi32", 
     "packus_epi16", 
@@ -64,76 +65,96 @@ static const char *insti_str[N_INSTI] =
     "avg_epu8", 
     "avg_epu16", 
     "sad_epu8", 
-    "move_epi64", 
 };
 
 // n_in_i is the number of inputs for each instruction
 static const char n_in_i[N_INSTI] =
 {
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
 };
 
 // create a function np_<op> for each instruction <op>
+static void np_move_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_move_epi64(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
 static void np_packs_epi16(
     char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
 {
@@ -1454,30 +1475,10 @@ static void np_sad_epu8(
     }
 }
 
-static void np_move_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
-{
-    npy_intp n = dimensions[0];
-    __m128i *in1 = (__m128i *)args[0];
-    __m128i *in2 = (__m128i *)args[1];
-    __m128i *out = (__m128i *)args[2];
-    int size_ratio = sizeof(__m128i)/steps[0];
-    npy_intp i = n/size_ratio;
-    while (i > 0)
-    {
-        i--;
-        // BEGIN main ufunc computation
-        _mm_store_si128(out, _mm_move_epi64(_mm_load_si128(in1)));
-        // END main ufunc computation
-        in1 += 1;
-        in2 += 1;
-        out += 1;
-    }
-}
-
 // funf is the list of all npy_<op> functions
 PyUFuncGenericFunction funi[N_INSTI][4] =
 {
+    {&np_move_epi64, &np_move_epi64, &np_move_epi64, &np_move_epi64},
     {&np_packs_epi16, &np_packs_epi16, &np_packs_epi16, &np_packs_epi16},
     {&np_packs_epi32, &np_packs_epi32, &np_packs_epi32, &np_packs_epi32},
     {&np_packus_epi16, &np_packus_epi16, &np_packus_epi16, &np_packus_epi16},
@@ -1538,7 +1539,6 @@ PyUFuncGenericFunction funi[N_INSTI][4] =
     {&np_avg_epu8, &np_avg_epu8, &np_avg_epu8, &np_avg_epu8},
     {&np_avg_epu16, &np_avg_epu16, &np_avg_epu16, &np_avg_epu16},
     {&np_sad_epu8, &np_sad_epu8, &np_sad_epu8, &np_sad_epu8},
-    {&np_move_epi64, &np_move_epi64, &np_move_epi64, &np_move_epi64},
 };
 
 static char typei[3*4] =

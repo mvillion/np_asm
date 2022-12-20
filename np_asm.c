@@ -1,11 +1,13 @@
 #include "Python.h"
-#include "emmintrin.h"
 #include "math.h"
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #include "numpy/ndarraytypes.h"
 #include "numpy/ufuncobject.h"
 #include "numpy/halffloat.h"
+
 #include "xmmintrin.h"
+#include "emmintrin.h"
+#include "pmmintrin.h"
 
 static PyMethodDef np_asm_method[] = {
     {NULL, NULL, 0, NULL}
@@ -13,6 +15,7 @@ static PyMethodDef np_asm_method[] = {
 
 #include "np_asm_sse_f32_auto.c"
 #include "np_asm_sse_int_auto.c"
+#include "np_asm_sse_f64_auto.c"
 
 //______________________________________________________________________________
 static struct PyModuleDef moduledef = {
@@ -57,6 +60,14 @@ PyMODINIT_FUNC PyInit_np_asm(void)
             funi[i], NULL, typei, 4, n_in_i[i], 1, PyUFunc_None, insti_str[i],
             doc_str, 0);
         PyDict_SetItemString(d, insti_str[i], op);
+        Py_DECREF(op);
+    }
+    for (int i = 0; i < N_INSTD; i++)
+    {
+        op = PyUFunc_FromFuncAndData(
+            fund[i], NULL, typed, 1, n_in_d[i], 1, PyUFunc_None, instd_str[i],
+            doc_str, 0);
+        PyDict_SetItemString(d, instd_str[i], op);
         Py_DECREF(op);
     }
     return m;

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # ______________________________________________________________________________
-# float operation with 1 or 2 input(s)
+# float operations with 1 or 2 input(s)
 inst_list = [
+    ("move_epi64", 1),  # SSE2
     ("packs_epi16", 2),
     ("packs_epi32", 2),
     ("packus_epi16", 2),
@@ -63,7 +64,6 @@ inst_list = [
     ("avg_epu8", 2),
     ("avg_epu16", 2),
     ("sad_epu8", 2),
-    ("move_epi64", 1),
 ]
 
 n_inst = len(inst_list)

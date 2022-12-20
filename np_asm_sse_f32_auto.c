@@ -1,6 +1,6 @@
 // FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
 // instf_str is the list of instruction names
-#define N_INSTF 51
+#define N_INSTF 56
 
 static const char *instf_str[N_INSTF] =
 {
@@ -55,6 +55,11 @@ static const char *instf_str[N_INSTF] =
     "move_ss", 
     "unpackhi_ps", 
     "unpacklo_ps", 
+    "addsub_ps", 
+    "hadd_ps", 
+    "hsub_ps", 
+    "movehdup_ps", 
+    "moveldup_ps", 
 };
 
 // n_in_f is the number of inputs for each instruction
@@ -111,6 +116,11 @@ static const char n_in_f[N_INSTF] =
     2,
     2,
     2,
+    2,
+    2,
+    2,
+    1,
+    1,
 };
 
 // create a function np_<op> for each instruction <op>
@@ -1281,6 +1291,119 @@ static void np_unpacklo_ps(
     }
 }
 
+static void np_addsub_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *in2 = (float *)args[1];
+    float *out = (float *)args[2];
+    int size_ratio = sizeof(__m128)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_ps(out, _mm_addsub_ps(
+            _mm_load_ps(in1), _mm_load_ps(in2)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np_hadd_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *in2 = (float *)args[1];
+    float *out = (float *)args[2];
+    int size_ratio = sizeof(__m128)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_ps(out, _mm_hadd_ps(
+            _mm_load_ps(in1), _mm_load_ps(in2)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np_hsub_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *in2 = (float *)args[1];
+    float *out = (float *)args[2];
+    int size_ratio = sizeof(__m128)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_ps(out, _mm_hsub_ps(
+            _mm_load_ps(in1), _mm_load_ps(in2)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np_movehdup_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *in2 = (float *)args[1];
+    float *out = (float *)args[2];
+    int size_ratio = sizeof(__m128)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_ps(out, _mm_movehdup_ps(_mm_load_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np_moveldup_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *in2 = (float *)args[1];
+    float *out = (float *)args[2];
+    int size_ratio = sizeof(__m128)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_ps(out, _mm_moveldup_ps(_mm_load_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
+    }
+}
+
 // funf is the list of all npy_<op> functions
 PyUFuncGenericFunction funf[N_INSTF][1] =
 {
@@ -1335,6 +1458,11 @@ PyUFuncGenericFunction funf[N_INSTF][1] =
     {&np_move_ss},
     {&np_unpackhi_ps},
     {&np_unpacklo_ps},
+    {&np_addsub_ps},
+    {&np_hadd_ps},
+    {&np_hsub_ps},
+    {&np_movehdup_ps},
+    {&np_moveldup_ps},
 };
 
 static char typef[3] = {NPY_FLOAT, NPY_FLOAT, NPY_FLOAT};

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # ______________________________________________________________________________
-# float operation with 1 or 2 input(s)
+# float operations with 1 or 2 input(s)
 inst_list = [
-    ("add_ps", 2),
+    ("add_ps", 2),  # SSE
     ("add_ss", 2),
     ("div_ps", 2),
     ("div_ss", 2),
@@ -54,6 +54,11 @@ inst_list = [
     ("move_ss", 2),
     ("unpackhi_ps", 2),
     ("unpacklo_ps", 2),
+    ("addsub_ps", 2),  # SSE3
+    ("hadd_ps", 2),
+    ("hsub_ps", 2),
+    ("movehdup_ps", 1),
+    ("moveldup_ps", 1),
 ]
 
 n_inst = len(inst_list)
