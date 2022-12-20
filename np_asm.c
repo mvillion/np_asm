@@ -8,6 +8,7 @@
 #include "xmmintrin.h"
 #include "emmintrin.h"
 #include "pmmintrin.h"
+#include "smmintrin.h"
 
 static PyMethodDef np_asm_method[] = {
     {NULL, NULL, 0, NULL}
