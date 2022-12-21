@@ -107,46 +107,41 @@ inst_list = [
     ("cmpgt_epi64", 2),
 ]
 
-n_inst = len(inst_list)
 
-fid = open("np_asm_sse_int_auto.c", "w")
+def gen_c(file_name="np_asm_sse_int_auto.c"):
+    n_inst = len(inst_list)
 
-fid.write(
-    """// FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
+    fid = open(file_name, "w")
+
+    fid.write("""// FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
 // insti_str is the list of instruction names
 #define N_INSTI %d
 
 static const char *insti_str[N_INSTI] =
 {""" % n_inst)
-fid.writelines([
-    '''
+    fid.writelines(['''
     "_mm_%s", ''' % k[0] for k in inst_list])
-fid.write(
-    """
+    fid.write("""
 };""")
 
-fid.write(
-    """
+    fid.write("""
 
 // n_in_i is the number of inputs for each instruction
 static const char n_in_i[N_INSTI] =
 {""")
-fid.writelines([
-    """
+    fid.writelines(["""
     %d,""" % k[1] for k in inst_list])
-fid.write(
-    """
+    fid.write("""
 };""")
 
-fid.write(
-    """
+    fid.write("""
 
 // create a function np_<op> for each instruction <op>""")
 
-# note: use _mm_store_si128 and _mm_load_si128
-# use _mm_storeu_si128 and _mm_loadu_si128 if alignment is an issue
-for inst_name, n_input in inst_list:
-    fun_str = """
+    # note: use _mm_store_si128 and _mm_load_si128
+    # use _mm_storeu_si128 and _mm_loadu_si128 if alignment is an issue
+    for inst_name, n_input in inst_list:
+        fun_str = """
 static void np_%s(
     char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
 {
@@ -161,12 +156,12 @@ static void np_%s(
         i--;
         // BEGIN main ufunc computation
         _mm_store_si128(out, _mm_%s(""" % (inst_name, inst_name)
-    if n_input == 1:
-        fun_str += """_mm_load_si128(in1)));"""
-    else:
-        fun_str += """
+        if n_input == 1:
+            fun_str += """_mm_load_si128(in1)));"""
+        else:
+            fun_str += """
             _mm_load_si128(in1), _mm_load_si128(in2)));"""
-    fun_str += """
+        fun_str += """
         // END main ufunc computation
         in1 += 1;
         in2 += 1;
@@ -174,18 +169,15 @@ static void np_%s(
     }
 }
 """
-    fid.write(fun_str)
+        fid.write(fun_str)
 
-fid.write(
-    """
+    fid.write("""
 // funf is the list of all npy_<op> functions
 PyUFuncGenericFunction funi[N_INSTI][4] =
 {""")
-fid.writelines([
-    """
+    fid.writelines(["""
     {&np_%s, &np_%s, &np_%s, &np_%s},""" % ((k[0],)*4) for k in inst_list])
-fid.write(
-    """
+    fid.write("""
 };
 
 static char typei[3*4] =
@@ -196,4 +188,8 @@ static char typei[3*4] =
     NPY_INT64, NPY_INT64, NPY_INT64,
 };
 """)
-fid.close()
+    fid.close()
+
+
+if __name__ == "__main__":
+    gen_c()
