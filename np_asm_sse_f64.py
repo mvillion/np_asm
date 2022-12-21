@@ -1,57 +1,59 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import numpy as np
+
 # ______________________________________________________________________________
 # double operations with 1 or 2 input(s)
 inst_list = [
-    ("move_sd", 2),  # SSE2
-    ("add_pd", 2),
-    ("add_sd", 2),
-    ("sub_pd", 2),
-    ("sub_sd", 2),
-    ("mul_pd", 2),
-    ("mul_sd", 2),
-    ("div_pd", 2),
-    ("div_sd", 2),
-    ("sqrt_pd", 1),
-    ("sqrt_sd", 2),
-    ("min_pd", 2),
-    ("min_sd", 2),
-    ("max_pd", 2),
-    ("max_sd", 2),
-    ("and_pd", 2),
-    ("andnot_pd", 2),
-    ("or_pd", 2),
-    ("xor_pd", 2),
-    ("cmpeq_pd", 2),
-    ("cmplt_pd", 2),
-    ("cmple_pd", 2),
-    ("cmpgt_pd", 2),
-    ("cmpge_pd", 2),
-    ("cmpneq_pd", 2),
-    ("cmpnlt_pd", 2),
-    ("cmpnle_pd", 2),
-    ("cmpngt_pd", 2),
-    ("cmpnge_pd", 2),
-    ("cmpord_pd", 2),
-    ("cmpunord_pd", 2),
-    ("cmpeq_sd", 2),
-    ("cmplt_sd", 2),
-    ("cmple_sd", 2),
-    ("cmpgt_sd", 2),
-    ("cmpge_sd", 2),
-    ("cmpneq_sd", 2),
-    ("cmpnlt_sd", 2),
-    ("cmpnle_sd", 2),
-    ("cmpngt_sd", 2),
-    ("cmpnge_sd", 2),
-    ("cmpord_sd", 2),
-    ("cmpunord_sd", 2),
-    ("unpackhi_pd", 2),
-    ("unpacklo_pd", 2),
-    ("addsub_pd", 2),  # SSE3
-    ("hadd_pd", 2),
-    ("hsub_pd", 2),
-    ("movedup_pd", 1),
+    ("move_sd", 2, None),  # SSE2
+    ("add_pd", 2, np.add),
+    ("add_sd", 2, None),
+    ("sub_pd", 2, np.subtract),
+    ("sub_sd", 2, None),
+    ("mul_pd", 2, np.multiply),
+    ("mul_sd", 2, None),
+    ("div_pd", 2, np.divide),
+    ("div_sd", 2, None),
+    ("sqrt_pd", 1, np.sqrt),
+    ("sqrt_sd", 2, None),
+    ("min_pd", 2, None),
+    ("min_sd", 2, None),
+    ("max_pd", 2, None),
+    ("max_sd", 2, None),
+    ("and_pd", 2, None),
+    ("andnot_pd", 2, None),
+    ("or_pd", 2, None),
+    ("xor_pd", 2, None),
+    ("cmpeq_pd", 2, lambda x, y: np.equal(x, y).astype(np.float64)),
+    ("cmplt_pd", 2, None),
+    ("cmple_pd", 2, None),
+    ("cmpgt_pd", 2, None),
+    ("cmpge_pd", 2, None),
+    ("cmpneq_pd", 2, None),
+    ("cmpnlt_pd", 2, None),
+    ("cmpnle_pd", 2, None),
+    ("cmpngt_pd", 2, None),
+    ("cmpnge_pd", 2, None),
+    ("cmpord_pd", 2, None),
+    ("cmpunord_pd", 2, None),
+    ("cmpeq_sd", 2, None),
+    ("cmplt_sd", 2, None),
+    ("cmple_sd", 2, None),
+    ("cmpgt_sd", 2, None),
+    ("cmpge_sd", 2, None),
+    ("cmpneq_sd", 2, None),
+    ("cmpnlt_sd", 2, None),
+    ("cmpnle_sd", 2, None),
+    ("cmpngt_sd", 2, None),
+    ("cmpnge_sd", 2, None),
+    ("cmpord_sd", 2, None),
+    ("cmpunord_sd", 2, None),
+    ("unpackhi_pd", 2, None),
+    ("unpacklo_pd", 2, None),
+    ("addsub_pd", 2, None),  # SSE3
+    ("hadd_pd", 2, None),
+    ("hsub_pd", 2, None),
+    ("movedup_pd", 1, None),
 ]
 
 
@@ -87,7 +89,7 @@ static const char n_in_d[N_INSTD] =
 
     # note: use _mm_store_pd and _mm_load_pd
     # use _mm_storeu_pd and _mm_loadu_pd if alignment is an issue
-    for inst_name, n_input in inst_list:
+    for inst_name, n_input, _ in inst_list:
         if n_input == 1:
             fun_str = """
 static void np_%s(
