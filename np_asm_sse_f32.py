@@ -1,64 +1,66 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import numpy as np
+
 # ______________________________________________________________________________
 # float operations with 1 or 2 input(s)
 inst_list = [
-    ("add_ps", 2),  # SSE
-    ("add_ss", 2),
-    ("div_ps", 2),
-    ("div_ss", 2),
-    ("max_ps", 2),
-    ("max_ss", 2),
-    ("min_ps", 2),
-    ("min_ss", 2),
-    ("mul_ps", 2),
-    ("mul_ss", 2),
-    ("rcp_ps", 1),
-    ("rcp_ss", 1),
-    ("rsqrt_ps", 1),
-    ("rsqrt_ss", 1),
-    ("sqrt_ps", 1),
-    ("sqrt_ss", 1),
-    ("sub_ps", 2),
-    ("sub_ss", 2),
-    ("cmpeq_ps", 2),
-    ("cmpeq_ss", 2),
-    ("cmpge_ps", 2),
-    ("cmpge_ss", 2),
-    ("cmpgt_ps", 2),
-    ("cmpgt_ss", 2),
-    ("cmple_ps", 2),
-    ("cmple_ss", 2),
-    ("cmplt_ps", 2),
-    ("cmplt_ss", 2),
-    ("cmpord_ps", 2),
-    ("cmpord_ss", 2),
-    ("cmpunord_ps", 2),
-    ("cmpunord_ss", 2),
-    ("cmpneq_ps", 2),
-    ("cmpneq_ss", 2),
-    ("cmpnge_ps", 2),
-    ("cmpnge_ss", 2),
-    ("cmpngt_ps", 2),
-    ("cmpngt_ss", 2),
-    ("cmpnle_ps", 2),
-    ("cmpnle_ss", 2),
-    ("cmpnlt_ps", 2),
-    ("cmpnlt_ss", 2),
-    ("andnot_ps", 2),
-    ("and_ps", 2),
-    ("or_ps", 2),
-    ("xor_ps", 2),
-    ("movehl_ps", 2),
-    ("movelh_ps", 2),
-    ("move_ss", 2),
-    ("unpackhi_ps", 2),
-    ("unpacklo_ps", 2),
-    ("addsub_ps", 2),  # SSE3
-    ("hadd_ps", 2),
-    ("hsub_ps", 2),
-    ("movehdup_ps", 1),
-    ("moveldup_ps", 1),
+    ("add_ps", 2, np.add),  # SSE
+    ("add_ss", 2, None),
+    ("div_ps", 2, np.divide),
+    ("div_ss", 2, None),
+    ("max_ps", 2, None),
+    ("max_ss", 2, None),
+    ("min_ps", 2, None),
+    ("min_ss", 2, None),
+    ("mul_ps", 2, np.multiply),
+    ("mul_ss", 2, None),
+    ("rcp_ps", 1, np.reciprocal),
+    ("rcp_ss", 1, None),
+    ("rsqrt_ps", 1, None),
+    ("rsqrt_ss", 1, None),
+    ("sqrt_ps", 1, np.sqrt),
+    ("sqrt_ss", 1, None),
+    ("sub_ps", 2, np.subtract),
+    ("sub_ss", 2, None),
+    ("cmpeq_ps", 2, lambda x, y: np.equal(x, y).astype(np.float32)),
+    ("cmpeq_ss", 2, None),
+    ("cmpge_ps", 2, lambda x, y: np.greater_equal(x, y).astype(np.float32)),
+    ("cmpge_ss", 2, None),
+    ("cmpgt_ps", 2, lambda x, y: np.greater(x, y).astype(np.float32)),
+    ("cmpgt_ss", 2, None),
+    ("cmple_ps", 2, lambda x, y: np.less_equal(x, y).astype(np.float32)),
+    ("cmple_ss", 2, None),
+    ("cmplt_ps", 2, lambda x, y: np.less(x, y).astype(np.float32)),
+    ("cmplt_ss", 2, None),
+    ("cmpord_ps", 2, None),
+    ("cmpord_ss", 2, None),
+    ("cmpunord_ps", 2, None),
+    ("cmpunord_ss", 2, None),
+    ("cmpneq_ps", 2, lambda x, y: np.not_equal(x, y).astype(np.float32)),
+    ("cmpneq_ss", 2, None),
+    ("cmpnge_ps", 2, None),
+    ("cmpnge_ss", 2, None),
+    ("cmpngt_ps", 2, None),
+    ("cmpngt_ss", 2, None),
+    ("cmpnle_ps", 2, None),
+    ("cmpnle_ss", 2, None),
+    ("cmpnlt_ps", 2, None),
+    ("cmpnlt_ss", 2, None),
+    ("andnot_ps", 2, None),
+    ("and_ps", 2, None),
+    ("or_ps", 2, None),
+    ("xor_ps", 2, None),
+    ("movehl_ps", 2, None),
+    ("movelh_ps", 2, None),
+    ("move_ss", 2, None),
+    ("unpackhi_ps", 2, None),
+    ("unpacklo_ps", 2, None),
+    ("addsub_ps", 2, None),  # SSE3
+    ("hadd_ps", 2, None),
+    ("hsub_ps", 2, None),
+    ("movehdup_ps", 1, None),
+    ("moveldup_ps", 1, None),
 ]
 
 
@@ -94,8 +96,31 @@ static const char n_in_f[N_INSTF] =
 
     # note: use _mm_store_ps and _mm_load_ps
     # use _mm_storeu_ps and _mm_loadu_ps if alignment is an issue
-    for inst_name, n_input in inst_list:
-        fun_str = """
+    for inst_name, n_input, _ in inst_list:
+        if n_input == 1:
+            fun_str = """
+static void np_%s(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *out = (float *)args[1];
+    int size_ratio = sizeof(__m128)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_ps(out, _mm_%s(_mm_load_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        out += size_ratio;
+    }
+}
+""" % (inst_name, inst_name)
+        else:
+            fun_str = """
 static void np_%s(
     char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
 {
@@ -110,20 +135,14 @@ static void np_%s(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_%s(""" % (inst_name, inst_name)
-        if n_input == 1:
-            fun_str += """_mm_load_ps(in1)));"""
-        else:
-            fun_str += """
-            _mm_load_ps(in1), _mm_load_ps(in2)));"""
-        fun_str += """
+        _mm_store_ps(out, _mm_%s(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
         out += size_ratio;
     }
 }
-"""
+""" % (inst_name, inst_name)
         fid.write(fun_str)
 
     fid.write("""

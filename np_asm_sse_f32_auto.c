@@ -138,8 +138,7 @@ static void np_add_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_add_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_add_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -161,8 +160,7 @@ static void np_add_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_add_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_add_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -184,8 +182,7 @@ static void np_div_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_div_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_div_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -207,8 +204,7 @@ static void np_div_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_div_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_div_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -230,8 +226,7 @@ static void np_max_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_max_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_max_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -253,8 +248,7 @@ static void np_max_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_max_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_max_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -276,8 +270,7 @@ static void np_min_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_min_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_min_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -299,8 +292,7 @@ static void np_min_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_min_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_min_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -322,8 +314,7 @@ static void np_mul_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_mul_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_mul_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -345,8 +336,7 @@ static void np_mul_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_mul_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_mul_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -359,8 +349,7 @@ static void np_rcp_ps(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -371,7 +360,6 @@ static void np_rcp_ps(
         _mm_store_ps(out, _mm_rcp_ps(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
@@ -381,8 +369,7 @@ static void np_rcp_ss(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -393,7 +380,6 @@ static void np_rcp_ss(
         _mm_store_ps(out, _mm_rcp_ss(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
@@ -403,8 +389,7 @@ static void np_rsqrt_ps(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -415,7 +400,6 @@ static void np_rsqrt_ps(
         _mm_store_ps(out, _mm_rsqrt_ps(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
@@ -425,8 +409,7 @@ static void np_rsqrt_ss(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -437,7 +420,6 @@ static void np_rsqrt_ss(
         _mm_store_ps(out, _mm_rsqrt_ss(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
@@ -447,8 +429,7 @@ static void np_sqrt_ps(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -459,7 +440,6 @@ static void np_sqrt_ps(
         _mm_store_ps(out, _mm_sqrt_ps(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
@@ -469,8 +449,7 @@ static void np_sqrt_ss(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -481,7 +460,6 @@ static void np_sqrt_ss(
         _mm_store_ps(out, _mm_sqrt_ss(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
@@ -500,8 +478,7 @@ static void np_sub_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_sub_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_sub_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -523,8 +500,7 @@ static void np_sub_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_sub_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_sub_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -546,8 +522,7 @@ static void np_cmpeq_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpeq_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpeq_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -569,8 +544,7 @@ static void np_cmpeq_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpeq_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpeq_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -592,8 +566,7 @@ static void np_cmpge_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpge_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpge_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -615,8 +588,7 @@ static void np_cmpge_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpge_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpge_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -638,8 +610,7 @@ static void np_cmpgt_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpgt_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpgt_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -661,8 +632,7 @@ static void np_cmpgt_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpgt_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpgt_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -684,8 +654,7 @@ static void np_cmple_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmple_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmple_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -707,8 +676,7 @@ static void np_cmple_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmple_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmple_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -730,8 +698,7 @@ static void np_cmplt_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmplt_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmplt_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -753,8 +720,7 @@ static void np_cmplt_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmplt_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmplt_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -776,8 +742,7 @@ static void np_cmpord_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpord_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpord_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -799,8 +764,7 @@ static void np_cmpord_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpord_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpord_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -822,8 +786,7 @@ static void np_cmpunord_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpunord_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpunord_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -845,8 +808,7 @@ static void np_cmpunord_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpunord_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpunord_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -868,8 +830,7 @@ static void np_cmpneq_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpneq_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpneq_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -891,8 +852,7 @@ static void np_cmpneq_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpneq_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpneq_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -914,8 +874,7 @@ static void np_cmpnge_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpnge_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpnge_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -937,8 +896,7 @@ static void np_cmpnge_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpnge_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpnge_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -960,8 +918,7 @@ static void np_cmpngt_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpngt_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpngt_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -983,8 +940,7 @@ static void np_cmpngt_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpngt_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpngt_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1006,8 +962,7 @@ static void np_cmpnle_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpnle_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpnle_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1029,8 +984,7 @@ static void np_cmpnle_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpnle_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpnle_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1052,8 +1006,7 @@ static void np_cmpnlt_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpnlt_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpnlt_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1075,8 +1028,7 @@ static void np_cmpnlt_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_cmpnlt_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_cmpnlt_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1098,8 +1050,7 @@ static void np_andnot_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_andnot_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_andnot_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1121,8 +1072,7 @@ static void np_and_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_and_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_and_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1144,8 +1094,7 @@ static void np_or_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_or_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_or_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1167,8 +1116,7 @@ static void np_xor_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_xor_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_xor_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1190,8 +1138,7 @@ static void np_movehl_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_movehl_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_movehl_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1213,8 +1160,7 @@ static void np_movelh_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_movelh_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_movelh_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1236,8 +1182,7 @@ static void np_move_ss(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_move_ss(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_move_ss(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1259,8 +1204,7 @@ static void np_unpackhi_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_unpackhi_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_unpackhi_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1282,8 +1226,7 @@ static void np_unpacklo_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_unpacklo_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_unpacklo_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1305,8 +1248,7 @@ static void np_addsub_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_addsub_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_addsub_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1328,8 +1270,7 @@ static void np_hadd_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_hadd_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_hadd_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1351,8 +1292,7 @@ static void np_hsub_ps(
     {
         i--;
         // BEGIN main ufunc computation
-        _mm_store_ps(out, _mm_hsub_ps(
-            _mm_load_ps(in1), _mm_load_ps(in2)));
+        _mm_store_ps(out, _mm_hsub_ps(_mm_load_ps(in1), _mm_load_ps(in2)));
         // END main ufunc computation
         in1 += size_ratio;
         in2 += size_ratio;
@@ -1365,8 +1305,7 @@ static void np_movehdup_ps(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -1377,7 +1316,6 @@ static void np_movehdup_ps(
         _mm_store_ps(out, _mm_movehdup_ps(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
@@ -1387,8 +1325,7 @@ static void np_moveldup_ps(
 {
     npy_intp n = dimensions[0];
     float *in1 = (float *)args[0];
-    float *in2 = (float *)args[1];
-    float *out = (float *)args[2];
+    float *out = (float *)args[1];
     int size_ratio = sizeof(__m128)/sizeof(float);
     // steps[k] == sizeof(float)
     npy_intp i = n/size_ratio;
@@ -1399,7 +1336,6 @@ static void np_moveldup_ps(
         _mm_store_ps(out, _mm_moveldup_ps(_mm_load_ps(in1)));
         // END main ufunc computation
         in1 += size_ratio;
-        in2 += size_ratio;
         out += size_ratio;
     }
 }
