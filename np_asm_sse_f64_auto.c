@@ -4,13 +4,13 @@
 
 static const char *instd_str[N_INSTD] =
 {
-    "move_sd", 
-    "unpackhi_pd", 
-    "unpacklo_pd", 
-    "addsub_pd", 
-    "hadd_pd", 
-    "hsub_pd", 
-    "movedup_pd", 
+    "_mm_move_sd", 
+    "_mm_unpackhi_pd", 
+    "_mm_unpacklo_pd", 
+    "_mm_addsub_pd", 
+    "_mm_hadd_pd", 
+    "_mm_hsub_pd", 
+    "_mm_movedup_pd", 
 };
 
 // n_in_d is the number of inputs for each instruction

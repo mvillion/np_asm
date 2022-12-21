@@ -120,7 +120,7 @@ static const char *insti_str[N_INSTI] =
 {""" % n_inst)
 fid.writelines([
     '''
-    "%s", ''' % k[0] for k in inst_list])
+    "_mm_%s", ''' % k[0] for k in inst_list])
 fid.write(
     """
 };""")

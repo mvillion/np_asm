@@ -1,70 +1,111 @@
 // FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
 // insti_str is the list of instruction names
-#define N_INSTI 61
+#define N_INSTI 102
 
 static const char *insti_str[N_INSTI] =
 {
-    "move_epi64", 
-    "packs_epi16", 
-    "packs_epi32", 
-    "packus_epi16", 
-    "unpackhi_epi8", 
-    "unpackhi_epi16", 
-    "unpackhi_epi32", 
-    "unpackhi_epi64", 
-    "unpacklo_epi8", 
-    "unpacklo_epi16", 
-    "unpacklo_epi32", 
-    "unpacklo_epi64", 
-    "add_epi8", 
-    "add_epi16", 
-    "add_epi32", 
-    "add_epi64", 
-    "adds_epi8", 
-    "adds_epi16", 
-    "adds_epu8", 
-    "adds_epu16", 
-    "sub_epi8", 
-    "sub_epi16", 
-    "sub_epi32", 
-    "sub_epi64", 
-    "subs_epi8", 
-    "subs_epi16", 
-    "subs_epu8", 
-    "subs_epu16", 
-    "madd_epi16", 
-    "mulhi_epi16", 
-    "mullo_epi16", 
-    "mul_epu32", 
-    "sll_epi16", 
-    "sll_epi32", 
-    "sll_epi64", 
-    "sra_epi16", 
-    "sra_epi32", 
-    "srl_epi16", 
-    "srl_epi32", 
-    "srl_epi64", 
-    "and_si128", 
-    "andnot_si128", 
-    "or_si128", 
-    "xor_si128", 
-    "cmpeq_epi8", 
-    "cmpeq_epi16", 
-    "cmpeq_epi32", 
-    "cmplt_epi8", 
-    "cmplt_epi16", 
-    "cmplt_epi32", 
-    "cmpgt_epi8", 
-    "cmpgt_epi16", 
-    "cmpgt_epi32", 
-    "max_epi16", 
-    "max_epu8", 
-    "min_epi16", 
-    "min_epu8", 
-    "mulhi_epu16", 
-    "avg_epu8", 
-    "avg_epu16", 
-    "sad_epu8", 
+    "_mm_move_epi64", 
+    "_mm_packs_epi16", 
+    "_mm_packs_epi32", 
+    "_mm_packus_epi16", 
+    "_mm_unpackhi_epi8", 
+    "_mm_unpackhi_epi16", 
+    "_mm_unpackhi_epi32", 
+    "_mm_unpackhi_epi64", 
+    "_mm_unpacklo_epi8", 
+    "_mm_unpacklo_epi16", 
+    "_mm_unpacklo_epi32", 
+    "_mm_unpacklo_epi64", 
+    "_mm_add_epi8", 
+    "_mm_add_epi16", 
+    "_mm_add_epi32", 
+    "_mm_add_epi64", 
+    "_mm_adds_epi8", 
+    "_mm_adds_epi16", 
+    "_mm_adds_epu8", 
+    "_mm_adds_epu16", 
+    "_mm_sub_epi8", 
+    "_mm_sub_epi16", 
+    "_mm_sub_epi32", 
+    "_mm_sub_epi64", 
+    "_mm_subs_epi8", 
+    "_mm_subs_epi16", 
+    "_mm_subs_epu8", 
+    "_mm_subs_epu16", 
+    "_mm_madd_epi16", 
+    "_mm_mulhi_epi16", 
+    "_mm_mullo_epi16", 
+    "_mm_mul_epu32", 
+    "_mm_sll_epi16", 
+    "_mm_sll_epi32", 
+    "_mm_sll_epi64", 
+    "_mm_sra_epi16", 
+    "_mm_sra_epi32", 
+    "_mm_srl_epi16", 
+    "_mm_srl_epi32", 
+    "_mm_srl_epi64", 
+    "_mm_and_si128", 
+    "_mm_andnot_si128", 
+    "_mm_or_si128", 
+    "_mm_xor_si128", 
+    "_mm_cmpeq_epi8", 
+    "_mm_cmpeq_epi16", 
+    "_mm_cmpeq_epi32", 
+    "_mm_cmplt_epi8", 
+    "_mm_cmplt_epi16", 
+    "_mm_cmplt_epi32", 
+    "_mm_cmpgt_epi8", 
+    "_mm_cmpgt_epi16", 
+    "_mm_cmpgt_epi32", 
+    "_mm_max_epi16", 
+    "_mm_max_epu8", 
+    "_mm_min_epi16", 
+    "_mm_min_epu8", 
+    "_mm_mulhi_epu16", 
+    "_mm_avg_epu8", 
+    "_mm_avg_epu16", 
+    "_mm_sad_epu8", 
+    "_mm_hadd_epi16", 
+    "_mm_hadd_epi32", 
+    "_mm_hadds_epi16", 
+    "_mm_hsub_epi16", 
+    "_mm_hsub_epi32", 
+    "_mm_hsubs_epi16", 
+    "_mm_maddubs_epi16", 
+    "_mm_mulhrs_epi16", 
+    "_mm_shuffle_epi8", 
+    "_mm_sign_epi8", 
+    "_mm_sign_epi16", 
+    "_mm_sign_epi32", 
+    "_mm_abs_epi8", 
+    "_mm_abs_epi16", 
+    "_mm_abs_epi32", 
+    "_mm_cmpeq_epi64", 
+    "_mm_min_epi8", 
+    "_mm_max_epi8", 
+    "_mm_min_epu16", 
+    "_mm_max_epu16", 
+    "_mm_min_epi32", 
+    "_mm_max_epi32", 
+    "_mm_min_epu32", 
+    "_mm_max_epu32", 
+    "_mm_mullo_epi32", 
+    "_mm_mul_epi32", 
+    "_mm_minpos_epu16", 
+    "_mm_cvtepi8_epi32", 
+    "_mm_cvtepi16_epi32", 
+    "_mm_cvtepi8_epi64", 
+    "_mm_cvtepi32_epi64", 
+    "_mm_cvtepi16_epi64", 
+    "_mm_cvtepi8_epi16", 
+    "_mm_cvtepu8_epi32", 
+    "_mm_cvtepu16_epi32", 
+    "_mm_cvtepu8_epi64", 
+    "_mm_cvtepu32_epi64", 
+    "_mm_cvtepu16_epi64", 
+    "_mm_cvtepu8_epi16", 
+    "_mm_packus_epi32", 
+    "_mm_cmpgt_epi64", 
 };
 
 // n_in_i is the number of inputs for each instruction
@@ -129,6 +170,47 @@ static const char n_in_i[N_INSTI] =
     2,
     2,
     2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     2,
     2,
 };
@@ -1475,6 +1557,892 @@ static void np_sad_epu8(
     }
 }
 
+static void np_hadd_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_hadd_epi16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_hadd_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_hadd_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_hadds_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_hadds_epi16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_hsub_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_hsub_epi16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_hsub_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_hsub_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_hsubs_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_hsubs_epi16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_maddubs_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_maddubs_epi16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_mulhrs_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_mulhrs_epi16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_shuffle_epi8(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_shuffle_epi8(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_sign_epi8(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_sign_epi8(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_sign_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_sign_epi16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_sign_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_sign_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_abs_epi8(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_abs_epi8(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_abs_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_abs_epi16(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_abs_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_abs_epi32(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cmpeq_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cmpeq_epi64(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_min_epi8(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_min_epi8(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_max_epi8(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_max_epi8(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_min_epu16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_min_epu16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_max_epu16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_max_epu16(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_min_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_min_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_max_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_max_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_min_epu32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_min_epu32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_max_epu32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_max_epu32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_mullo_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_mullo_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_mul_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_mul_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_minpos_epu16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_minpos_epu16(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepi8_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepi8_epi32(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepi16_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepi16_epi32(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepi8_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepi8_epi64(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepi32_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepi32_epi64(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepi16_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepi16_epi64(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepi8_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepi8_epi16(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepu8_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepu8_epi32(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepu16_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepu16_epi32(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepu8_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepu8_epi64(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepu32_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepu32_epi64(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepu16_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepu16_epi64(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cvtepu8_epi16(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cvtepu8_epi16(_mm_load_si128(in1)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_packus_epi32(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_packus_epi32(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
+static void np_cmpgt_epi64(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    __m128i *in1 = (__m128i *)args[0];
+    __m128i *in2 = (__m128i *)args[1];
+    __m128i *out = (__m128i *)args[2];
+    int size_ratio = sizeof(__m128i)/steps[0];
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm_store_si128(out, _mm_cmpgt_epi64(
+            _mm_load_si128(in1), _mm_load_si128(in2)));
+        // END main ufunc computation
+        in1 += 1;
+        in2 += 1;
+        out += 1;
+    }
+}
+
 // funf is the list of all npy_<op> functions
 PyUFuncGenericFunction funi[N_INSTI][4] =
 {
@@ -1539,6 +2507,47 @@ PyUFuncGenericFunction funi[N_INSTI][4] =
     {&np_avg_epu8, &np_avg_epu8, &np_avg_epu8, &np_avg_epu8},
     {&np_avg_epu16, &np_avg_epu16, &np_avg_epu16, &np_avg_epu16},
     {&np_sad_epu8, &np_sad_epu8, &np_sad_epu8, &np_sad_epu8},
+    {&np_hadd_epi16, &np_hadd_epi16, &np_hadd_epi16, &np_hadd_epi16},
+    {&np_hadd_epi32, &np_hadd_epi32, &np_hadd_epi32, &np_hadd_epi32},
+    {&np_hadds_epi16, &np_hadds_epi16, &np_hadds_epi16, &np_hadds_epi16},
+    {&np_hsub_epi16, &np_hsub_epi16, &np_hsub_epi16, &np_hsub_epi16},
+    {&np_hsub_epi32, &np_hsub_epi32, &np_hsub_epi32, &np_hsub_epi32},
+    {&np_hsubs_epi16, &np_hsubs_epi16, &np_hsubs_epi16, &np_hsubs_epi16},
+    {&np_maddubs_epi16, &np_maddubs_epi16, &np_maddubs_epi16, &np_maddubs_epi16},
+    {&np_mulhrs_epi16, &np_mulhrs_epi16, &np_mulhrs_epi16, &np_mulhrs_epi16},
+    {&np_shuffle_epi8, &np_shuffle_epi8, &np_shuffle_epi8, &np_shuffle_epi8},
+    {&np_sign_epi8, &np_sign_epi8, &np_sign_epi8, &np_sign_epi8},
+    {&np_sign_epi16, &np_sign_epi16, &np_sign_epi16, &np_sign_epi16},
+    {&np_sign_epi32, &np_sign_epi32, &np_sign_epi32, &np_sign_epi32},
+    {&np_abs_epi8, &np_abs_epi8, &np_abs_epi8, &np_abs_epi8},
+    {&np_abs_epi16, &np_abs_epi16, &np_abs_epi16, &np_abs_epi16},
+    {&np_abs_epi32, &np_abs_epi32, &np_abs_epi32, &np_abs_epi32},
+    {&np_cmpeq_epi64, &np_cmpeq_epi64, &np_cmpeq_epi64, &np_cmpeq_epi64},
+    {&np_min_epi8, &np_min_epi8, &np_min_epi8, &np_min_epi8},
+    {&np_max_epi8, &np_max_epi8, &np_max_epi8, &np_max_epi8},
+    {&np_min_epu16, &np_min_epu16, &np_min_epu16, &np_min_epu16},
+    {&np_max_epu16, &np_max_epu16, &np_max_epu16, &np_max_epu16},
+    {&np_min_epi32, &np_min_epi32, &np_min_epi32, &np_min_epi32},
+    {&np_max_epi32, &np_max_epi32, &np_max_epi32, &np_max_epi32},
+    {&np_min_epu32, &np_min_epu32, &np_min_epu32, &np_min_epu32},
+    {&np_max_epu32, &np_max_epu32, &np_max_epu32, &np_max_epu32},
+    {&np_mullo_epi32, &np_mullo_epi32, &np_mullo_epi32, &np_mullo_epi32},
+    {&np_mul_epi32, &np_mul_epi32, &np_mul_epi32, &np_mul_epi32},
+    {&np_minpos_epu16, &np_minpos_epu16, &np_minpos_epu16, &np_minpos_epu16},
+    {&np_cvtepi8_epi32, &np_cvtepi8_epi32, &np_cvtepi8_epi32, &np_cvtepi8_epi32},
+    {&np_cvtepi16_epi32, &np_cvtepi16_epi32, &np_cvtepi16_epi32, &np_cvtepi16_epi32},
+    {&np_cvtepi8_epi64, &np_cvtepi8_epi64, &np_cvtepi8_epi64, &np_cvtepi8_epi64},
+    {&np_cvtepi32_epi64, &np_cvtepi32_epi64, &np_cvtepi32_epi64, &np_cvtepi32_epi64},
+    {&np_cvtepi16_epi64, &np_cvtepi16_epi64, &np_cvtepi16_epi64, &np_cvtepi16_epi64},
+    {&np_cvtepi8_epi16, &np_cvtepi8_epi16, &np_cvtepi8_epi16, &np_cvtepi8_epi16},
+    {&np_cvtepu8_epi32, &np_cvtepu8_epi32, &np_cvtepu8_epi32, &np_cvtepu8_epi32},
+    {&np_cvtepu16_epi32, &np_cvtepu16_epi32, &np_cvtepu16_epi32, &np_cvtepu16_epi32},
+    {&np_cvtepu8_epi64, &np_cvtepu8_epi64, &np_cvtepu8_epi64, &np_cvtepu8_epi64},
+    {&np_cvtepu32_epi64, &np_cvtepu32_epi64, &np_cvtepu32_epi64, &np_cvtepu32_epi64},
+    {&np_cvtepu16_epi64, &np_cvtepu16_epi64, &np_cvtepu16_epi64, &np_cvtepu16_epi64},
+    {&np_cvtepu8_epi16, &np_cvtepu8_epi16, &np_cvtepu8_epi16, &np_cvtepu8_epi16},
+    {&np_packus_epi32, &np_packus_epi32, &np_packus_epi32, &np_packus_epi32},
+    {&np_cmpgt_epi64, &np_cmpgt_epi64, &np_cmpgt_epi64, &np_cmpgt_epi64},
 };
 
 static char typei[3*4] =
