@@ -9,6 +9,7 @@
 #include "emmintrin.h"
 #include "pmmintrin.h"
 #include "smmintrin.h"
+#include "immintrin.h"
 
 static PyMethodDef np_asm_method[] = {
     {NULL, NULL, 0, NULL}
@@ -17,6 +18,8 @@ static PyMethodDef np_asm_method[] = {
 #include "np_asm_sse_f32_auto.c"
 #include "np_asm_sse_int_auto.c"
 #include "np_asm_sse_f64_auto.c"
+#include "np_asm_avx_f32_auto.c"
+#include "np_asm_avx_f64_auto.c"
 
 //______________________________________________________________________________
 static struct PyModuleDef moduledef = {
@@ -71,5 +74,23 @@ PyMODINIT_FUNC PyInit_np_asm(void)
         PyDict_SetItemString(d, instd_str[i], op);
         Py_DECREF(op);
     }
+
+    for (int i = 0; i < N_INSTF256; i++)
+    {
+        op = PyUFunc_FromFuncAndData(
+            funf256[i], NULL, typef, 1, n_in_f256[i], 1, PyUFunc_None,
+            instf256_str[i], doc_str, 0);
+        PyDict_SetItemString(d, instf256_str[i], op);
+        Py_DECREF(op);
+    }
+    for (int i = 0; i < N_INSTD256; i++)
+    {
+        op = PyUFunc_FromFuncAndData(
+            fund256[i], NULL, typed, 1, n_in_d256[i], 1, PyUFunc_None,
+            instd256_str[i], doc_str, 0);
+        PyDict_SetItemString(d, instd256_str[i], op);
+        Py_DECREF(op);
+    }
+
     return m;
 }
