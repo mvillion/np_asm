@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 
+from np_asm_sse_f32 import unpackhi_ps
+from np_asm_sse_f32 import unpacklo_ps
+
 # ______________________________________________________________________________
 # float operations with 1 or 2 input(s)
 inst_list = [
@@ -12,12 +15,19 @@ inst_list = [
     ("div_ps", 2, np.divide),
     ("hadd_ps", 2, None),
     ("hsub_ps", 2, None),
-    ("max_ps", 2, None),
-    ("min_ps", 2, None),
+    ("max_ps", 2, np.maximum),
+    ("min_ps", 2, np.minimum),
     ("mul_ps", 2, np.multiply),
     ("or_ps", 2, None),
     ("sub_ps", 2, np.subtract),
     ("xor_ps", 2, None),
+    ("movehdup_ps", 1, None),
+    ("moveldup_ps", 1, None),
+    ("rcp_ps", 1, np.reciprocal),
+    ("rsqrt_ps", 1, lambda x: np.reciprocal(np.sqrt(x))),
+    ("sqrt_ps", 1, np.sqrt),
+    ("unpackhi_ps", 2, unpackhi_ps),
+    ("unpacklo_ps", 2, unpacklo_ps),
 ]
 
 

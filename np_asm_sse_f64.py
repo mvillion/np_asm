@@ -2,6 +2,17 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 
+
+def unpackhi_pd(x, y):
+    return np.column_stack((
+        x.reshape(-1, 2)[:, 1], y.reshape(-1, 2)[:, 1])).reshape(x.shape)
+
+
+def unpacklo_pd(x, y):
+    return np.column_stack((
+        x.reshape(-1, 2)[:, 0], y.reshape(-1, 2)[:, 0])).reshape(x.shape)
+
+
 # ______________________________________________________________________________
 # double operations with 1 or 2 input(s)
 inst_list = [
@@ -16,9 +27,9 @@ inst_list = [
     ("div_sd", 2, None),
     ("sqrt_pd", 1, np.sqrt),
     ("sqrt_sd", 2, None),
-    ("min_pd", 2, None),
+    ("min_pd", 2, np.minimum),
     ("min_sd", 2, None),
-    ("max_pd", 2, None),
+    ("max_pd", 2, np.maximum),
     ("max_sd", 2, None),
     ("and_pd", 2, None),
     ("andnot_pd", 2, None),
@@ -48,8 +59,8 @@ inst_list = [
     ("cmpnge_sd", 2, None),
     ("cmpord_sd", 2, None),
     ("cmpunord_sd", 2, None),
-    ("unpackhi_pd", 2, None),
-    ("unpacklo_pd", 2, None),
+    ("unpackhi_pd", 2, unpackhi_pd),
+    ("unpacklo_pd", 2, unpacklo_pd),
     ("addsub_pd", 2, None),  # SSE3
     ("hadd_pd", 2, None),
     ("hsub_pd", 2, None),

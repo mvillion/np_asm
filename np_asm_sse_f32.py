@@ -2,6 +2,19 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 
+
+def unpackhi_ps(x, y):
+    return np.column_stack((
+        x.reshape(-1, 2, 2)[:, 1, :].reshape(-1),
+        y.reshape(-1, 2, 2)[:, 1, :].reshape(-1))).reshape(x.shape)
+
+
+def unpacklo_ps(x, y):
+    return np.column_stack((
+        x.reshape(-1, 2, 2)[:, 0, :].reshape(-1),
+        y.reshape(-1, 2, 2)[:, 0, :].reshape(-1))).reshape(x.shape)
+
+
 # ______________________________________________________________________________
 # float operations with 1 or 2 input(s)
 inst_list = [
@@ -9,15 +22,15 @@ inst_list = [
     ("add_ss", 2, None),
     ("div_ps", 2, np.divide),
     ("div_ss", 2, None),
-    ("max_ps", 2, None),
+    ("max_ps", 2, np.maximum),
     ("max_ss", 2, None),
-    ("min_ps", 2, None),
+    ("min_ps", 2, np.minimum),
     ("min_ss", 2, None),
     ("mul_ps", 2, np.multiply),
     ("mul_ss", 2, None),
     ("rcp_ps", 1, np.reciprocal),
     ("rcp_ss", 1, None),
-    ("rsqrt_ps", 1, None),
+    ("rsqrt_ps", 1, lambda x: 1/np.sqrt(x)),
     ("rsqrt_ss", 1, None),
     ("sqrt_ps", 1, np.sqrt),
     ("sqrt_ss", 1, None),
@@ -54,8 +67,8 @@ inst_list = [
     ("movehl_ps", 2, None),
     ("movelh_ps", 2, None),
     ("move_ss", 2, None),
-    ("unpackhi_ps", 2, None),
-    ("unpacklo_ps", 2, None),
+    ("unpackhi_ps", 2, unpackhi_ps),
+    ("unpacklo_ps", 2, unpacklo_ps),
     ("addsub_ps", 2, None),  # SSE3
     ("hadd_ps", 2, None),
     ("hsub_ps", 2, None),

@@ -1,6 +1,6 @@
 // FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
 // instf256_str is the list of instruction names
-#define N_INSTF256 13
+#define N_INSTF256 20
 
 static const char *instf256_str[N_INSTF256] =
 {
@@ -17,6 +17,13 @@ static const char *instf256_str[N_INSTF256] =
     "_mm256_or_ps", 
     "_mm256_sub_ps", 
     "_mm256_xor_ps", 
+    "_mm256_movehdup_ps", 
+    "_mm256_moveldup_ps", 
+    "_mm256_rcp_ps", 
+    "_mm256_rsqrt_ps", 
+    "_mm256_sqrt_ps", 
+    "_mm256_unpackhi_ps", 
+    "_mm256_unpacklo_ps", 
 };
 
 // n_in_f256 is the number of inputs for each instruction
@@ -33,6 +40,13 @@ static const char n_in_f256[N_INSTF256] =
     2,
     2,
     2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
     2,
     2,
 };
@@ -337,6 +351,152 @@ static void np256_xor_ps(
     }
 }
 
+static void np256_movehdup_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *out = (float *)args[1];
+    int size_ratio = sizeof(__m256)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm256_storeu_ps(out, _mm256_movehdup_ps(_mm256_loadu_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np256_moveldup_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *out = (float *)args[1];
+    int size_ratio = sizeof(__m256)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm256_storeu_ps(out, _mm256_moveldup_ps(_mm256_loadu_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np256_rcp_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *out = (float *)args[1];
+    int size_ratio = sizeof(__m256)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm256_storeu_ps(out, _mm256_rcp_ps(_mm256_loadu_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np256_rsqrt_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *out = (float *)args[1];
+    int size_ratio = sizeof(__m256)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm256_storeu_ps(out, _mm256_rsqrt_ps(_mm256_loadu_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np256_sqrt_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *out = (float *)args[1];
+    int size_ratio = sizeof(__m256)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm256_storeu_ps(out, _mm256_sqrt_ps(_mm256_loadu_ps(in1)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np256_unpackhi_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *in2 = (float *)args[1];
+    float *out = (float *)args[2];
+    int size_ratio = sizeof(__m256)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm256_storeu_ps(
+            out, _mm256_unpackhi_ps(_mm256_loadu_ps(in1), _mm256_loadu_ps(in2)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
+    }
+}
+
+static void np256_unpacklo_ps(
+    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+{
+    npy_intp n = dimensions[0];
+    float *in1 = (float *)args[0];
+    float *in2 = (float *)args[1];
+    float *out = (float *)args[2];
+    int size_ratio = sizeof(__m256)/sizeof(float);
+    // steps[k] == sizeof(float)
+    npy_intp i = n/size_ratio;
+    while (i > 0)
+    {
+        i--;
+        // BEGIN main ufunc computation
+        _mm256_storeu_ps(
+            out, _mm256_unpacklo_ps(_mm256_loadu_ps(in1), _mm256_loadu_ps(in2)));
+        // END main ufunc computation
+        in1 += size_ratio;
+        in2 += size_ratio;
+        out += size_ratio;
+    }
+}
+
 // funf256 is the list of all npy_<op> functions
 PyUFuncGenericFunction funf256[N_INSTF256][1] =
 {
@@ -353,6 +513,13 @@ PyUFuncGenericFunction funf256[N_INSTF256][1] =
     {&np256_or_ps},
     {&np256_sub_ps},
     {&np256_xor_ps},
+    {&np256_movehdup_ps},
+    {&np256_moveldup_ps},
+    {&np256_rcp_ps},
+    {&np256_rsqrt_ps},
+    {&np256_sqrt_ps},
+    {&np256_unpackhi_ps},
+    {&np256_unpacklo_ps},
 };
 
 // static char typef[3] = {NPY_FLOAT, NPY_FLOAT, NPY_FLOAT};

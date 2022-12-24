@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 
+from np_asm_sse_f64 import unpackhi_pd
+from np_asm_sse_f64 import unpacklo_pd
+
 # ______________________________________________________________________________
 # double operations with 1 or 2 input(s)
 inst_list = [
@@ -12,12 +15,16 @@ inst_list = [
     ("div_pd", 2, np.divide),
     ("hadd_pd", 2, None),
     ("hsub_pd", 2, None),
-    ("max_pd", 2, None),
-    ("min_pd", 2, None),
+    ("max_pd", 2, np.maximum),
+    ("min_pd", 2, np.minimum),
     ("mul_pd", 2, np.multiply),
     ("or_pd", 2, None),
     ("sub_pd", 2, np.subtract),
     ("xor_pd", 2, None),
+    ("movedup_pd", 1, None),
+    ("sqrt_pd", 1, np.sqrt),
+    ("unpackhi_pd", 2, unpackhi_pd),
+    ("unpacklo_pd", 2, unpacklo_pd),
 ]
 
 
