@@ -15,6 +15,12 @@ def unpacklo_ps(x, y):
         y.reshape(-1, 2, 2)[:, 0, :].reshape(-1))).reshape(x.shape)
 
 
+def sign2float(x):
+    x = x.astype(np.uint32)
+    x *= 0xffff_ffff
+    return x.view(np.float32)
+
+
 # ______________________________________________________________________________
 # float operations with 1 or 2 input(s)
 inst_list = [
@@ -36,15 +42,15 @@ inst_list = [
     ("sqrt_ss", 1, None),
     ("sub_ps", 2, np.subtract),
     ("sub_ss", 2, None),
-    ("cmpeq_ps", 2, lambda x, y: np.equal(x, y).astype(np.float32)),
+    ("cmpeq_ps", 2, lambda x, y: sign2float(np.equal(x, y))),
     ("cmpeq_ss", 2, None),
-    ("cmpge_ps", 2, lambda x, y: np.greater_equal(x, y).astype(np.float32)),
+    ("cmpge_ps", 2, lambda x, y: sign2float(np.greater_equal(x, y))),
     ("cmpge_ss", 2, None),
-    ("cmpgt_ps", 2, lambda x, y: np.greater(x, y).astype(np.float32)),
+    ("cmpgt_ps", 2, lambda x, y: sign2float(np.greater(x, y))),
     ("cmpgt_ss", 2, None),
-    ("cmple_ps", 2, lambda x, y: np.less_equal(x, y).astype(np.float32)),
+    ("cmple_ps", 2, lambda x, y: sign2float(np.less_equal(x, y))),
     ("cmple_ss", 2, None),
-    ("cmplt_ps", 2, lambda x, y: np.less(x, y).astype(np.float32)),
+    ("cmplt_ps", 2, lambda x, y: sign2float(np.less(x, y))),
     ("cmplt_ss", 2, None),
     ("cmpord_ps", 2, None),
     ("cmpord_ss", 2, None),

@@ -26,8 +26,8 @@ if __name__ == "__main__":
 
             for inst_name, n_input, ref_fun in inst_list:
                 inst = prefix+inst_name
-                if inst == "_mm256_unpackhi_ps":
-                    print("coucou")
+                # if inst == "_mm_cmpge_ps":
+                #     print("coucou")
                 if ref_fun is None:
                     continue
                 fun = getattr(np_asm, inst)
@@ -38,7 +38,11 @@ if __name__ == "__main__":
                     out = fun(data1, data2)
                     out_ref = ref_fun(data1, data2)
 
-                print("%s: diff is %f" % (inst, (out-out_ref).std().mean()))
+                is_equal = np.array_equal(out, out_ref, equal_nan=True)
+                if is_equal:
+                    print("%s: ok" % inst)
+                else:
+                    print("%s: diff is %f" % (inst, (out-out_ref).std().mean()))
 
     # __________________________________________________________________________
     data = np.arange(12*16, dtype=np.int8).reshape(12, 16)

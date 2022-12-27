@@ -13,6 +13,12 @@ def unpacklo_pd(x, y):
         x.reshape(-1, 2)[:, 0], y.reshape(-1, 2)[:, 0])).reshape(x.shape)
 
 
+def sign2float(x):
+    x = x.astype(np.uint64)
+    x *= 0xffff_ffff_ffff_ffff
+    return x.view(np.float64)
+
+
 # ______________________________________________________________________________
 # double operations with 1 or 2 input(s)
 inst_list = [
@@ -35,12 +41,12 @@ inst_list = [
     ("andnot_pd", 2, None),
     ("or_pd", 2, None),
     ("xor_pd", 2, None),
-    ("cmpeq_pd", 2, lambda x, y: np.equal(x, y).astype(np.float64)),
-    ("cmplt_pd", 2, None),
-    ("cmple_pd", 2, None),
-    ("cmpgt_pd", 2, None),
-    ("cmpge_pd", 2, None),
-    ("cmpneq_pd", 2, None),
+    ("cmpeq_pd", 2, lambda x, y: sign2float(np.equal(x, y))),
+    ("cmplt_pd", 2, lambda x, y: sign2float(np.less(x, y))),
+    ("cmple_pd", 2, lambda x, y: sign2float(np.less_equal(x, y))),
+    ("cmpgt_pd", 2, lambda x, y: sign2float(np.greater(x, y))),
+    ("cmpge_pd", 2, lambda x, y: sign2float(np.greater_equal(x, y))),
+    ("cmpneq_pd", 2, lambda x, y: sign2float(np.not_equal(x, y))),
     ("cmpnlt_pd", 2, None),
     ("cmpnle_pd", 2, None),
     ("cmpngt_pd", 2, None),
