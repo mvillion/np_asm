@@ -1,111 +1,624 @@
 // FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
 #define N_INSTI 102
 
+// _np are not really used as they are meant to be inlined
+// They do exist to create symbols
+
+static __m128i inline _np_mm_move_epi64(__m128i in1)
+{
+    return _mm_move_epi64(in1);
+}
+
+static __m128i inline _np_mm_packs_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_packs_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_packs_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_packs_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_packus_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_packus_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_unpackhi_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_unpackhi_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_unpackhi_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_unpackhi_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_unpackhi_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_unpackhi_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_unpackhi_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_unpackhi_epi64(in1, in2);
+}
+
+static __m128i inline _np_mm_unpacklo_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_unpacklo_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_unpacklo_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_unpacklo_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_unpacklo_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_unpacklo_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_unpacklo_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_unpacklo_epi64(in1, in2);
+}
+
+static __m128i inline _np_mm_add_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_add_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_add_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_add_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_add_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_add_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_add_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_add_epi64(in1, in2);
+}
+
+static __m128i inline _np_mm_adds_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_adds_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_adds_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_adds_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_adds_epu8(__m128i in1, __m128i in2)
+{
+    return _mm_adds_epu8(in1, in2);
+}
+
+static __m128i inline _np_mm_adds_epu16(__m128i in1, __m128i in2)
+{
+    return _mm_adds_epu16(in1, in2);
+}
+
+static __m128i inline _np_mm_sub_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_sub_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_sub_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_sub_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_sub_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_sub_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_sub_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_sub_epi64(in1, in2);
+}
+
+static __m128i inline _np_mm_subs_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_subs_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_subs_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_subs_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_subs_epu8(__m128i in1, __m128i in2)
+{
+    return _mm_subs_epu8(in1, in2);
+}
+
+static __m128i inline _np_mm_subs_epu16(__m128i in1, __m128i in2)
+{
+    return _mm_subs_epu16(in1, in2);
+}
+
+static __m128i inline _np_mm_madd_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_madd_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_mulhi_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_mulhi_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_mullo_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_mullo_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_mul_epu32(__m128i in1, __m128i in2)
+{
+    return _mm_mul_epu32(in1, in2);
+}
+
+static __m128i inline _np_mm_sll_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_sll_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_sll_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_sll_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_sll_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_sll_epi64(in1, in2);
+}
+
+static __m128i inline _np_mm_sra_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_sra_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_sra_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_sra_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_srl_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_srl_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_srl_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_srl_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_srl_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_srl_epi64(in1, in2);
+}
+
+static __m128i inline _np_mm_and_si128(__m128i in1, __m128i in2)
+{
+    return _mm_and_si128(in1, in2);
+}
+
+static __m128i inline _np_mm_andnot_si128(__m128i in1, __m128i in2)
+{
+    return _mm_andnot_si128(in1, in2);
+}
+
+static __m128i inline _np_mm_or_si128(__m128i in1, __m128i in2)
+{
+    return _mm_or_si128(in1, in2);
+}
+
+static __m128i inline _np_mm_xor_si128(__m128i in1, __m128i in2)
+{
+    return _mm_xor_si128(in1, in2);
+}
+
+static __m128i inline _np_mm_cmpeq_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_cmpeq_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_cmpeq_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_cmpeq_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_cmpeq_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_cmpeq_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_cmplt_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_cmplt_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_cmplt_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_cmplt_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_cmplt_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_cmplt_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_cmpgt_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_cmpgt_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_cmpgt_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_cmpgt_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_cmpgt_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_cmpgt_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_max_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_max_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_max_epu8(__m128i in1, __m128i in2)
+{
+    return _mm_max_epu8(in1, in2);
+}
+
+static __m128i inline _np_mm_min_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_min_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_min_epu8(__m128i in1, __m128i in2)
+{
+    return _mm_min_epu8(in1, in2);
+}
+
+static __m128i inline _np_mm_mulhi_epu16(__m128i in1, __m128i in2)
+{
+    return _mm_mulhi_epu16(in1, in2);
+}
+
+static __m128i inline _np_mm_avg_epu8(__m128i in1, __m128i in2)
+{
+    return _mm_avg_epu8(in1, in2);
+}
+
+static __m128i inline _np_mm_avg_epu16(__m128i in1, __m128i in2)
+{
+    return _mm_avg_epu16(in1, in2);
+}
+
+static __m128i inline _np_mm_sad_epu8(__m128i in1, __m128i in2)
+{
+    return _mm_sad_epu8(in1, in2);
+}
+
+static __m128i inline _np_mm_hadd_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_hadd_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_hadd_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_hadd_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_hadds_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_hadds_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_hsub_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_hsub_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_hsub_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_hsub_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_hsubs_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_hsubs_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_maddubs_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_maddubs_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_mulhrs_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_mulhrs_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_shuffle_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_shuffle_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_sign_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_sign_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_sign_epi16(__m128i in1, __m128i in2)
+{
+    return _mm_sign_epi16(in1, in2);
+}
+
+static __m128i inline _np_mm_sign_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_sign_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_abs_epi8(__m128i in1)
+{
+    return _mm_abs_epi8(in1);
+}
+
+static __m128i inline _np_mm_abs_epi16(__m128i in1)
+{
+    return _mm_abs_epi16(in1);
+}
+
+static __m128i inline _np_mm_abs_epi32(__m128i in1)
+{
+    return _mm_abs_epi32(in1);
+}
+
+static __m128i inline _np_mm_cmpeq_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_cmpeq_epi64(in1, in2);
+}
+
+static __m128i inline _np_mm_min_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_min_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_max_epi8(__m128i in1, __m128i in2)
+{
+    return _mm_max_epi8(in1, in2);
+}
+
+static __m128i inline _np_mm_min_epu16(__m128i in1, __m128i in2)
+{
+    return _mm_min_epu16(in1, in2);
+}
+
+static __m128i inline _np_mm_max_epu16(__m128i in1, __m128i in2)
+{
+    return _mm_max_epu16(in1, in2);
+}
+
+static __m128i inline _np_mm_min_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_min_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_max_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_max_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_min_epu32(__m128i in1, __m128i in2)
+{
+    return _mm_min_epu32(in1, in2);
+}
+
+static __m128i inline _np_mm_max_epu32(__m128i in1, __m128i in2)
+{
+    return _mm_max_epu32(in1, in2);
+}
+
+static __m128i inline _np_mm_mullo_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_mullo_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_mul_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_mul_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_minpos_epu16(__m128i in1)
+{
+    return _mm_minpos_epu16(in1);
+}
+
+static __m128i inline _np_mm_cvtepi8_epi32(__m128i in1)
+{
+    return _mm_cvtepi8_epi32(in1);
+}
+
+static __m128i inline _np_mm_cvtepi16_epi32(__m128i in1)
+{
+    return _mm_cvtepi16_epi32(in1);
+}
+
+static __m128i inline _np_mm_cvtepi8_epi64(__m128i in1)
+{
+    return _mm_cvtepi8_epi64(in1);
+}
+
+static __m128i inline _np_mm_cvtepi32_epi64(__m128i in1)
+{
+    return _mm_cvtepi32_epi64(in1);
+}
+
+static __m128i inline _np_mm_cvtepi16_epi64(__m128i in1)
+{
+    return _mm_cvtepi16_epi64(in1);
+}
+
+static __m128i inline _np_mm_cvtepi8_epi16(__m128i in1)
+{
+    return _mm_cvtepi8_epi16(in1);
+}
+
+static __m128i inline _np_mm_cvtepu8_epi32(__m128i in1)
+{
+    return _mm_cvtepu8_epi32(in1);
+}
+
+static __m128i inline _np_mm_cvtepu16_epi32(__m128i in1)
+{
+    return _mm_cvtepu16_epi32(in1);
+}
+
+static __m128i inline _np_mm_cvtepu8_epi64(__m128i in1)
+{
+    return _mm_cvtepu8_epi64(in1);
+}
+
+static __m128i inline _np_mm_cvtepu32_epi64(__m128i in1)
+{
+    return _mm_cvtepu32_epi64(in1);
+}
+
+static __m128i inline _np_mm_cvtepu16_epi64(__m128i in1)
+{
+    return _mm_cvtepu16_epi64(in1);
+}
+
+static __m128i inline _np_mm_cvtepu8_epi16(__m128i in1)
+{
+    return _mm_cvtepu8_epi16(in1);
+}
+
+static __m128i inline _np_mm_packus_epi32(__m128i in1, __m128i in2)
+{
+    return _mm_packus_epi32(in1, in2);
+}
+
+static __m128i inline _np_mm_cmpgt_epi64(__m128i in1, __m128i in2)
+{
+    return _mm_cmpgt_epi64(in1, in2);
+}
+
 // sse_fun is the list of instruction w/ names and number of parameters
 static const sse_fun_t sse_fun[N_INSTI] =
 {
-    {.n_in=1, .name="_mm_move_epi64", .sse1=_mm_move_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=move_epi64"},
-    {.n_in=2, .name="_mm_packs_epi16", .sse2=_mm_packs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=packs_epi16"},
-    {.n_in=2, .name="_mm_packs_epi32", .sse2=_mm_packs_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=packs_epi32"},
-    {.n_in=2, .name="_mm_packus_epi16", .sse2=_mm_packus_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=packus_epi16"},
-    {.n_in=2, .name="_mm_unpackhi_epi8", .sse2=_mm_unpackhi_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpackhi_epi8"},
-    {.n_in=2, .name="_mm_unpackhi_epi16", .sse2=_mm_unpackhi_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpackhi_epi16"},
-    {.n_in=2, .name="_mm_unpackhi_epi32", .sse2=_mm_unpackhi_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpackhi_epi32"},
-    {.n_in=2, .name="_mm_unpackhi_epi64", .sse2=_mm_unpackhi_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpackhi_epi64"},
-    {.n_in=2, .name="_mm_unpacklo_epi8", .sse2=_mm_unpacklo_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpacklo_epi8"},
-    {.n_in=2, .name="_mm_unpacklo_epi16", .sse2=_mm_unpacklo_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpacklo_epi16"},
-    {.n_in=2, .name="_mm_unpacklo_epi32", .sse2=_mm_unpacklo_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpacklo_epi32"},
-    {.n_in=2, .name="_mm_unpacklo_epi64", .sse2=_mm_unpacklo_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=unpacklo_epi64"},
-    {.n_in=2, .name="_mm_add_epi8", .sse2=_mm_add_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=add_epi8"},
-    {.n_in=2, .name="_mm_add_epi16", .sse2=_mm_add_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=add_epi16"},
-    {.n_in=2, .name="_mm_add_epi32", .sse2=_mm_add_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=add_epi32"},
-    {.n_in=2, .name="_mm_add_epi64", .sse2=_mm_add_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=add_epi64"},
-    {.n_in=2, .name="_mm_adds_epi8", .sse2=_mm_adds_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=adds_epi8"},
-    {.n_in=2, .name="_mm_adds_epi16", .sse2=_mm_adds_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=adds_epi16"},
-    {.n_in=2, .name="_mm_adds_epu8", .sse2=_mm_adds_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=adds_epu8"},
-    {.n_in=2, .name="_mm_adds_epu16", .sse2=_mm_adds_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=adds_epu16"},
-    {.n_in=2, .name="_mm_sub_epi8", .sse2=_mm_sub_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sub_epi8"},
-    {.n_in=2, .name="_mm_sub_epi16", .sse2=_mm_sub_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sub_epi16"},
-    {.n_in=2, .name="_mm_sub_epi32", .sse2=_mm_sub_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sub_epi32"},
-    {.n_in=2, .name="_mm_sub_epi64", .sse2=_mm_sub_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sub_epi64"},
-    {.n_in=2, .name="_mm_subs_epi8", .sse2=_mm_subs_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=subs_epi8"},
-    {.n_in=2, .name="_mm_subs_epi16", .sse2=_mm_subs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=subs_epi16"},
-    {.n_in=2, .name="_mm_subs_epu8", .sse2=_mm_subs_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=subs_epu8"},
-    {.n_in=2, .name="_mm_subs_epu16", .sse2=_mm_subs_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=subs_epu16"},
-    {.n_in=2, .name="_mm_madd_epi16", .sse2=_mm_madd_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=madd_epi16"},
-    {.n_in=2, .name="_mm_mulhi_epi16", .sse2=_mm_mulhi_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=mulhi_epi16"},
-    {.n_in=2, .name="_mm_mullo_epi16", .sse2=_mm_mullo_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=mullo_epi16"},
-    {.n_in=2, .name="_mm_mul_epu32", .sse2=_mm_mul_epu32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=mul_epu32"},
-    {.n_in=2, .name="_mm_sll_epi16", .sse2=_mm_sll_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sll_epi16"},
-    {.n_in=2, .name="_mm_sll_epi32", .sse2=_mm_sll_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sll_epi32"},
-    {.n_in=2, .name="_mm_sll_epi64", .sse2=_mm_sll_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sll_epi64"},
-    {.n_in=2, .name="_mm_sra_epi16", .sse2=_mm_sra_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sra_epi16"},
-    {.n_in=2, .name="_mm_sra_epi32", .sse2=_mm_sra_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sra_epi32"},
-    {.n_in=2, .name="_mm_srl_epi16", .sse2=_mm_srl_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=srl_epi16"},
-    {.n_in=2, .name="_mm_srl_epi32", .sse2=_mm_srl_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=srl_epi32"},
-    {.n_in=2, .name="_mm_srl_epi64", .sse2=_mm_srl_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=srl_epi64"},
-    {.n_in=2, .name="_mm_and_si128", .sse2=_mm_and_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=and_si128"},
-    {.n_in=2, .name="_mm_andnot_si128", .sse2=_mm_andnot_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=andnot_si128"},
-    {.n_in=2, .name="_mm_or_si128", .sse2=_mm_or_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=or_si128"},
-    {.n_in=2, .name="_mm_xor_si128", .sse2=_mm_xor_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=xor_si128"},
-    {.n_in=2, .name="_mm_cmpeq_epi8", .sse2=_mm_cmpeq_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpeq_epi8"},
-    {.n_in=2, .name="_mm_cmpeq_epi16", .sse2=_mm_cmpeq_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpeq_epi16"},
-    {.n_in=2, .name="_mm_cmpeq_epi32", .sse2=_mm_cmpeq_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpeq_epi32"},
-    {.n_in=2, .name="_mm_cmplt_epi8", .sse2=_mm_cmplt_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmplt_epi8"},
-    {.n_in=2, .name="_mm_cmplt_epi16", .sse2=_mm_cmplt_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmplt_epi16"},
-    {.n_in=2, .name="_mm_cmplt_epi32", .sse2=_mm_cmplt_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmplt_epi32"},
-    {.n_in=2, .name="_mm_cmpgt_epi8", .sse2=_mm_cmpgt_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpgt_epi8"},
-    {.n_in=2, .name="_mm_cmpgt_epi16", .sse2=_mm_cmpgt_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpgt_epi16"},
-    {.n_in=2, .name="_mm_cmpgt_epi32", .sse2=_mm_cmpgt_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpgt_epi32"},
-    {.n_in=2, .name="_mm_max_epi16", .sse2=_mm_max_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=max_epi16"},
-    {.n_in=2, .name="_mm_max_epu8", .sse2=_mm_max_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=max_epu8"},
-    {.n_in=2, .name="_mm_min_epi16", .sse2=_mm_min_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=min_epi16"},
-    {.n_in=2, .name="_mm_min_epu8", .sse2=_mm_min_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=min_epu8"},
-    {.n_in=2, .name="_mm_mulhi_epu16", .sse2=_mm_mulhi_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=mulhi_epu16"},
-    {.n_in=2, .name="_mm_avg_epu8", .sse2=_mm_avg_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=avg_epu8"},
-    {.n_in=2, .name="_mm_avg_epu16", .sse2=_mm_avg_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=avg_epu16"},
-    {.n_in=2, .name="_mm_sad_epu8", .sse2=_mm_sad_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sad_epu8"},
-    {.n_in=2, .name="_mm_hadd_epi16", .sse2=_mm_hadd_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=hadd_epi16"},
-    {.n_in=2, .name="_mm_hadd_epi32", .sse2=_mm_hadd_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=hadd_epi32"},
-    {.n_in=2, .name="_mm_hadds_epi16", .sse2=_mm_hadds_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=hadds_epi16"},
-    {.n_in=2, .name="_mm_hsub_epi16", .sse2=_mm_hsub_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=hsub_epi16"},
-    {.n_in=2, .name="_mm_hsub_epi32", .sse2=_mm_hsub_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=hsub_epi32"},
-    {.n_in=2, .name="_mm_hsubs_epi16", .sse2=_mm_hsubs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=hsubs_epi16"},
-    {.n_in=2, .name="_mm_maddubs_epi16", .sse2=_mm_maddubs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=maddubs_epi16"},
-    {.n_in=2, .name="_mm_mulhrs_epi16", .sse2=_mm_mulhrs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=mulhrs_epi16"},
-    {.n_in=2, .name="_mm_shuffle_epi8", .sse2=_mm_shuffle_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=shuffle_epi8"},
-    {.n_in=2, .name="_mm_sign_epi8", .sse2=_mm_sign_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sign_epi8"},
-    {.n_in=2, .name="_mm_sign_epi16", .sse2=_mm_sign_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sign_epi16"},
-    {.n_in=2, .name="_mm_sign_epi32", .sse2=_mm_sign_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=sign_epi32"},
-    {.n_in=1, .name="_mm_abs_epi8", .sse1=_mm_abs_epi8, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=abs_epi8"},
-    {.n_in=1, .name="_mm_abs_epi16", .sse1=_mm_abs_epi16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=abs_epi16"},
-    {.n_in=1, .name="_mm_abs_epi32", .sse1=_mm_abs_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=abs_epi32"},
-    {.n_in=2, .name="_mm_cmpeq_epi64", .sse2=_mm_cmpeq_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpeq_epi64"},
-    {.n_in=2, .name="_mm_min_epi8", .sse2=_mm_min_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=min_epi8"},
-    {.n_in=2, .name="_mm_max_epi8", .sse2=_mm_max_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=max_epi8"},
-    {.n_in=2, .name="_mm_min_epu16", .sse2=_mm_min_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=min_epu16"},
-    {.n_in=2, .name="_mm_max_epu16", .sse2=_mm_max_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=max_epu16"},
-    {.n_in=2, .name="_mm_min_epi32", .sse2=_mm_min_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=min_epi32"},
-    {.n_in=2, .name="_mm_max_epi32", .sse2=_mm_max_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=max_epi32"},
-    {.n_in=2, .name="_mm_min_epu32", .sse2=_mm_min_epu32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=min_epu32"},
-    {.n_in=2, .name="_mm_max_epu32", .sse2=_mm_max_epu32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=max_epu32"},
-    {.n_in=2, .name="_mm_mullo_epi32", .sse2=_mm_mullo_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=mullo_epi32"},
-    {.n_in=2, .name="_mm_mul_epi32", .sse2=_mm_mul_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=mul_epi32"},
-    {.n_in=1, .name="_mm_minpos_epu16", .sse1=_mm_minpos_epu16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=minpos_epu16"},
-    {.n_in=1, .name="_mm_cvtepi8_epi32", .sse1=_mm_cvtepi8_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepi8_epi32"},
-    {.n_in=1, .name="_mm_cvtepi16_epi32", .sse1=_mm_cvtepi16_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepi16_epi32"},
-    {.n_in=1, .name="_mm_cvtepi8_epi64", .sse1=_mm_cvtepi8_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepi8_epi64"},
-    {.n_in=1, .name="_mm_cvtepi32_epi64", .sse1=_mm_cvtepi32_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepi32_epi64"},
-    {.n_in=1, .name="_mm_cvtepi16_epi64", .sse1=_mm_cvtepi16_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepi16_epi64"},
-    {.n_in=1, .name="_mm_cvtepi8_epi16", .sse1=_mm_cvtepi8_epi16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepi8_epi16"},
-    {.n_in=1, .name="_mm_cvtepu8_epi32", .sse1=_mm_cvtepu8_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepu8_epi32"},
-    {.n_in=1, .name="_mm_cvtepu16_epi32", .sse1=_mm_cvtepu16_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepu16_epi32"},
-    {.n_in=1, .name="_mm_cvtepu8_epi64", .sse1=_mm_cvtepu8_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepu8_epi64"},
-    {.n_in=1, .name="_mm_cvtepu32_epi64", .sse1=_mm_cvtepu32_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepu32_epi64"},
-    {.n_in=1, .name="_mm_cvtepu16_epi64", .sse1=_mm_cvtepu16_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepu16_epi64"},
-    {.n_in=1, .name="_mm_cvtepu8_epi16", .sse1=_mm_cvtepu8_epi16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cvtepu8_epi16"},
-    {.n_in=2, .name="_mm_packus_epi32", .sse2=_mm_packus_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=packus_epi32"},
-    {.n_in=2, .name="_mm_cmpgt_epi64", .sse2=_mm_cmpgt_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=cmpgt_epi64"},
+    {.n_in=1, .name="_mm_move_epi64", .sse1=_np_mm_move_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_move_epi64"},
+    {.n_in=2, .name="_mm_packs_epi16", .sse2=_np_mm_packs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_packs_epi16"},
+    {.n_in=2, .name="_mm_packs_epi32", .sse2=_np_mm_packs_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_packs_epi32"},
+    {.n_in=2, .name="_mm_packus_epi16", .sse2=_np_mm_packus_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_packus_epi16"},
+    {.n_in=2, .name="_mm_unpackhi_epi8", .sse2=_np_mm_unpackhi_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpackhi_epi8"},
+    {.n_in=2, .name="_mm_unpackhi_epi16", .sse2=_np_mm_unpackhi_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpackhi_epi16"},
+    {.n_in=2, .name="_mm_unpackhi_epi32", .sse2=_np_mm_unpackhi_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpackhi_epi32"},
+    {.n_in=2, .name="_mm_unpackhi_epi64", .sse2=_np_mm_unpackhi_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpackhi_epi64"},
+    {.n_in=2, .name="_mm_unpacklo_epi8", .sse2=_np_mm_unpacklo_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpacklo_epi8"},
+    {.n_in=2, .name="_mm_unpacklo_epi16", .sse2=_np_mm_unpacklo_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpacklo_epi16"},
+    {.n_in=2, .name="_mm_unpacklo_epi32", .sse2=_np_mm_unpacklo_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpacklo_epi32"},
+    {.n_in=2, .name="_mm_unpacklo_epi64", .sse2=_np_mm_unpacklo_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpacklo_epi64"},
+    {.n_in=2, .name="_mm_add_epi8", .sse2=_np_mm_add_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_add_epi8"},
+    {.n_in=2, .name="_mm_add_epi16", .sse2=_np_mm_add_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_add_epi16"},
+    {.n_in=2, .name="_mm_add_epi32", .sse2=_np_mm_add_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_add_epi32"},
+    {.n_in=2, .name="_mm_add_epi64", .sse2=_np_mm_add_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_add_epi64"},
+    {.n_in=2, .name="_mm_adds_epi8", .sse2=_np_mm_adds_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_adds_epi8"},
+    {.n_in=2, .name="_mm_adds_epi16", .sse2=_np_mm_adds_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_adds_epi16"},
+    {.n_in=2, .name="_mm_adds_epu8", .sse2=_np_mm_adds_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_adds_epu8"},
+    {.n_in=2, .name="_mm_adds_epu16", .sse2=_np_mm_adds_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_adds_epu16"},
+    {.n_in=2, .name="_mm_sub_epi8", .sse2=_np_mm_sub_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sub_epi8"},
+    {.n_in=2, .name="_mm_sub_epi16", .sse2=_np_mm_sub_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sub_epi16"},
+    {.n_in=2, .name="_mm_sub_epi32", .sse2=_np_mm_sub_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sub_epi32"},
+    {.n_in=2, .name="_mm_sub_epi64", .sse2=_np_mm_sub_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sub_epi64"},
+    {.n_in=2, .name="_mm_subs_epi8", .sse2=_np_mm_subs_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_subs_epi8"},
+    {.n_in=2, .name="_mm_subs_epi16", .sse2=_np_mm_subs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_subs_epi16"},
+    {.n_in=2, .name="_mm_subs_epu8", .sse2=_np_mm_subs_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_subs_epu8"},
+    {.n_in=2, .name="_mm_subs_epu16", .sse2=_np_mm_subs_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_subs_epu16"},
+    {.n_in=2, .name="_mm_madd_epi16", .sse2=_np_mm_madd_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_madd_epi16"},
+    {.n_in=2, .name="_mm_mulhi_epi16", .sse2=_np_mm_mulhi_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mulhi_epi16"},
+    {.n_in=2, .name="_mm_mullo_epi16", .sse2=_np_mm_mullo_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mullo_epi16"},
+    {.n_in=2, .name="_mm_mul_epu32", .sse2=_np_mm_mul_epu32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mul_epu32"},
+    {.n_in=2, .name="_mm_sll_epi16", .sse2=_np_mm_sll_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sll_epi16"},
+    {.n_in=2, .name="_mm_sll_epi32", .sse2=_np_mm_sll_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sll_epi32"},
+    {.n_in=2, .name="_mm_sll_epi64", .sse2=_np_mm_sll_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sll_epi64"},
+    {.n_in=2, .name="_mm_sra_epi16", .sse2=_np_mm_sra_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sra_epi16"},
+    {.n_in=2, .name="_mm_sra_epi32", .sse2=_np_mm_sra_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sra_epi32"},
+    {.n_in=2, .name="_mm_srl_epi16", .sse2=_np_mm_srl_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_srl_epi16"},
+    {.n_in=2, .name="_mm_srl_epi32", .sse2=_np_mm_srl_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_srl_epi32"},
+    {.n_in=2, .name="_mm_srl_epi64", .sse2=_np_mm_srl_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_srl_epi64"},
+    {.n_in=2, .name="_mm_and_si128", .sse2=_np_mm_and_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_and_si128"},
+    {.n_in=2, .name="_mm_andnot_si128", .sse2=_np_mm_andnot_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_andnot_si128"},
+    {.n_in=2, .name="_mm_or_si128", .sse2=_np_mm_or_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_or_si128"},
+    {.n_in=2, .name="_mm_xor_si128", .sse2=_np_mm_xor_si128, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_xor_si128"},
+    {.n_in=2, .name="_mm_cmpeq_epi8", .sse2=_np_mm_cmpeq_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpeq_epi8"},
+    {.n_in=2, .name="_mm_cmpeq_epi16", .sse2=_np_mm_cmpeq_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpeq_epi16"},
+    {.n_in=2, .name="_mm_cmpeq_epi32", .sse2=_np_mm_cmpeq_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpeq_epi32"},
+    {.n_in=2, .name="_mm_cmplt_epi8", .sse2=_np_mm_cmplt_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmplt_epi8"},
+    {.n_in=2, .name="_mm_cmplt_epi16", .sse2=_np_mm_cmplt_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmplt_epi16"},
+    {.n_in=2, .name="_mm_cmplt_epi32", .sse2=_np_mm_cmplt_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmplt_epi32"},
+    {.n_in=2, .name="_mm_cmpgt_epi8", .sse2=_np_mm_cmpgt_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpgt_epi8"},
+    {.n_in=2, .name="_mm_cmpgt_epi16", .sse2=_np_mm_cmpgt_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpgt_epi16"},
+    {.n_in=2, .name="_mm_cmpgt_epi32", .sse2=_np_mm_cmpgt_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpgt_epi32"},
+    {.n_in=2, .name="_mm_max_epi16", .sse2=_np_mm_max_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_epi16"},
+    {.n_in=2, .name="_mm_max_epu8", .sse2=_np_mm_max_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_epu8"},
+    {.n_in=2, .name="_mm_min_epi16", .sse2=_np_mm_min_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_epi16"},
+    {.n_in=2, .name="_mm_min_epu8", .sse2=_np_mm_min_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_epu8"},
+    {.n_in=2, .name="_mm_mulhi_epu16", .sse2=_np_mm_mulhi_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mulhi_epu16"},
+    {.n_in=2, .name="_mm_avg_epu8", .sse2=_np_mm_avg_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_avg_epu8"},
+    {.n_in=2, .name="_mm_avg_epu16", .sse2=_np_mm_avg_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_avg_epu16"},
+    {.n_in=2, .name="_mm_sad_epu8", .sse2=_np_mm_sad_epu8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sad_epu8"},
+    {.n_in=2, .name="_mm_hadd_epi16", .sse2=_np_mm_hadd_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hadd_epi16"},
+    {.n_in=2, .name="_mm_hadd_epi32", .sse2=_np_mm_hadd_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hadd_epi32"},
+    {.n_in=2, .name="_mm_hadds_epi16", .sse2=_np_mm_hadds_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hadds_epi16"},
+    {.n_in=2, .name="_mm_hsub_epi16", .sse2=_np_mm_hsub_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hsub_epi16"},
+    {.n_in=2, .name="_mm_hsub_epi32", .sse2=_np_mm_hsub_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hsub_epi32"},
+    {.n_in=2, .name="_mm_hsubs_epi16", .sse2=_np_mm_hsubs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hsubs_epi16"},
+    {.n_in=2, .name="_mm_maddubs_epi16", .sse2=_np_mm_maddubs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_maddubs_epi16"},
+    {.n_in=2, .name="_mm_mulhrs_epi16", .sse2=_np_mm_mulhrs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mulhrs_epi16"},
+    {.n_in=2, .name="_mm_shuffle_epi8", .sse2=_np_mm_shuffle_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_shuffle_epi8"},
+    {.n_in=2, .name="_mm_sign_epi8", .sse2=_np_mm_sign_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sign_epi8"},
+    {.n_in=2, .name="_mm_sign_epi16", .sse2=_np_mm_sign_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sign_epi16"},
+    {.n_in=2, .name="_mm_sign_epi32", .sse2=_np_mm_sign_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sign_epi32"},
+    {.n_in=1, .name="_mm_abs_epi8", .sse1=_np_mm_abs_epi8, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_abs_epi8"},
+    {.n_in=1, .name="_mm_abs_epi16", .sse1=_np_mm_abs_epi16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_abs_epi16"},
+    {.n_in=1, .name="_mm_abs_epi32", .sse1=_np_mm_abs_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_abs_epi32"},
+    {.n_in=2, .name="_mm_cmpeq_epi64", .sse2=_np_mm_cmpeq_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpeq_epi64"},
+    {.n_in=2, .name="_mm_min_epi8", .sse2=_np_mm_min_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_epi8"},
+    {.n_in=2, .name="_mm_max_epi8", .sse2=_np_mm_max_epi8, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_epi8"},
+    {.n_in=2, .name="_mm_min_epu16", .sse2=_np_mm_min_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_epu16"},
+    {.n_in=2, .name="_mm_max_epu16", .sse2=_np_mm_max_epu16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_epu16"},
+    {.n_in=2, .name="_mm_min_epi32", .sse2=_np_mm_min_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_epi32"},
+    {.n_in=2, .name="_mm_max_epi32", .sse2=_np_mm_max_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_epi32"},
+    {.n_in=2, .name="_mm_min_epu32", .sse2=_np_mm_min_epu32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_epu32"},
+    {.n_in=2, .name="_mm_max_epu32", .sse2=_np_mm_max_epu32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_epu32"},
+    {.n_in=2, .name="_mm_mullo_epi32", .sse2=_np_mm_mullo_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mullo_epi32"},
+    {.n_in=2, .name="_mm_mul_epi32", .sse2=_np_mm_mul_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mul_epi32"},
+    {.n_in=1, .name="_mm_minpos_epu16", .sse1=_np_mm_minpos_epu16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_minpos_epu16"},
+    {.n_in=1, .name="_mm_cvtepi8_epi32", .sse1=_np_mm_cvtepi8_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepi8_epi32"},
+    {.n_in=1, .name="_mm_cvtepi16_epi32", .sse1=_np_mm_cvtepi16_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepi16_epi32"},
+    {.n_in=1, .name="_mm_cvtepi8_epi64", .sse1=_np_mm_cvtepi8_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepi8_epi64"},
+    {.n_in=1, .name="_mm_cvtepi32_epi64", .sse1=_np_mm_cvtepi32_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepi32_epi64"},
+    {.n_in=1, .name="_mm_cvtepi16_epi64", .sse1=_np_mm_cvtepi16_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepi16_epi64"},
+    {.n_in=1, .name="_mm_cvtepi8_epi16", .sse1=_np_mm_cvtepi8_epi16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepi8_epi16"},
+    {.n_in=1, .name="_mm_cvtepu8_epi32", .sse1=_np_mm_cvtepu8_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepu8_epi32"},
+    {.n_in=1, .name="_mm_cvtepu16_epi32", .sse1=_np_mm_cvtepu16_epi32, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepu16_epi32"},
+    {.n_in=1, .name="_mm_cvtepu8_epi64", .sse1=_np_mm_cvtepu8_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepu8_epi64"},
+    {.n_in=1, .name="_mm_cvtepu32_epi64", .sse1=_np_mm_cvtepu32_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepu32_epi64"},
+    {.n_in=1, .name="_mm_cvtepu16_epi64", .sse1=_np_mm_cvtepu16_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepu16_epi64"},
+    {.n_in=1, .name="_mm_cvtepu8_epi16", .sse1=_np_mm_cvtepu8_epi16, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cvtepu8_epi16"},
+    {.n_in=2, .name="_mm_packus_epi32", .sse2=_np_mm_packus_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_packus_epi32"},
+    {.n_in=2, .name="_mm_cmpgt_epi64", .sse2=_np_mm_cmpgt_epi64, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpgt_epi64"},
 };
 
 // create a function np_<op> for each instruction <op>

@@ -115,17 +115,49 @@ def gen_c(file_name="np_asm_sse_int_auto.c"):
 
     fid.write("""// FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
 #define N_INSTI %d
+""" % n_inst)
+    fid.write("""
+// _np are not really used as they are meant to be inlined
+// They do exist to create symbols
+""")
 
+    # note: use _mm_store_si128 and _mm_load_si128
+    # use _mm_storeu_si128 and _mm_loadu_si128 if alignment is an issue
+    for name, n_in in inst_list:
+        if n_in == 0:
+            fid.write("""
+static __m128i inline _np_mm_%s(void)
+{
+    return _mm_%s();
+}
+""" % (name, name))
+        if n_in == 1:
+            fid.write("""
+static __m128i inline _np_mm_%s(__m128i in1)
+{
+    return _mm_%s(in1);
+}
+""" % (name, name))
+        else:  # if n_in == 2:
+            fid.write("""
+static __m128i inline _np_mm_%s(__m128i in1, __m128i in2)
+{
+    return _mm_%s(in1, in2);
+}
+""" % (name, name))
+
+    fid.write("""
 // sse_fun is the list of instruction w/ names and number of parameters
 static const sse_fun_t sse_fun[N_INSTI] =
-{""" % n_inst)
+{""")
+
     for k in inst_list:
         url = "https://www.intel.com/content/www/us/en/docs/intrinsics-guide"
         doc_str = """Function with %d arg
-Intel documentation: %s/index.html#text=%s""" % (k[1], url, k[0])
+Intel documentation: %s/index.html#text=_mm_%s""" % (k[1], url, k[0])
         tup = (k[1], k[0], k[1], k[0], doc_str.replace("\n", "\\n"))
         fid.write('''
-    {.n_in=%d, .name="_mm_%s", .sse%d=_mm_%s, .doc="%s"},''' % tup)
+    {.n_in=%d, .name="_mm_%s", .sse%d=_np_mm_%s, .doc="%s"},''' % tup)
     fid.write("""
 };""")
 
