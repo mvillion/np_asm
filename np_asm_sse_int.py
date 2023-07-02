@@ -114,23 +114,18 @@ def gen_c(file_name="np_asm_sse_int_auto.c"):
     fid = open(file_name, "w")
 
     fid.write("""// FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
-// insti_str is the list of instruction names
 #define N_INSTI %d
 
-static const char *insti_str[N_INSTI] =
+// sse_fun is the list of instruction w/ names and number of parameters
+static const sse_fun_t sse_fun[N_INSTI] =
 {""" % n_inst)
-    fid.writelines(['''
-    "_mm_%s", ''' % k[0] for k in inst_list])
-    fid.write("""
-};""")
-
-    fid.write("""
-
-// n_in_i is the number of inputs for each instruction
-static const char n_in_i[N_INSTI] =
-{""")
-    fid.writelines(["""
-    %d,""" % k[1] for k in inst_list])
+    for k in inst_list:
+        url = "https://www.intel.com/content/www/us/en/docs/intrinsics-guide"
+        doc_str = """Function with %d arg
+Intel documentation: %s/index.html#text=%s""" % (k[1], url, k[0])
+        tup = (k[1], k[0], k[1], k[0], doc_str.replace("\n", "\\n"))
+        fid.write('''
+    {.n_in=%d, .name="_mm_%s", .sse%d=_mm_%s, .doc="%s"},''' % tup)
     fid.write("""
 };""")
 
@@ -140,39 +135,17 @@ static const char n_in_i[N_INSTI] =
 
     # note: use _mm_store_si128 and _mm_load_si128
     # use _mm_storeu_si128 and _mm_loadu_si128 if alignment is an issue
-    for inst_name, n_input in inst_list:
-        fun_str = """
+    for k, v in enumerate(inst_list):
+        fid.write("""
 static void np_%s(
     char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
 {
-    npy_intp n = dimensions[0];
-    __m128i *in1 = (__m128i *)args[0];
-    __m128i *in2 = (__m128i *)args[1];
-    __m128i *out = (__m128i *)args[2];
-    int size_ratio = sizeof(__m128i)/steps[0];
-    npy_intp i = n/size_ratio;
-    while (i > 0)
-    {
-        i--;
-        // BEGIN main ufunc computation
-        _mm_store_si128(out, _mm_%s(""" % (inst_name, inst_name)
-        if n_input == 1:
-            fun_str += """_mm_load_si128(in1)));"""
-        else:
-            fun_str += """
-            _mm_load_si128(in1), _mm_load_si128(in2)));"""
-        fun_str += """
-        // END main ufunc computation
-        in1 += 1;
-        in2 += 1;
-        out += 1;
-    }
+    np_sse(args, dimensions, steps, sse_fun+%d);
 }
-"""
-        fid.write(fun_str)
+""" % (v[0], k))
 
     fid.write("""
-// funf is the list of all npy_<op> functions
+// funi is the list of all npy_<op> functions
 PyUFuncGenericFunction funi[N_INSTI][4] =
 {""")
     fid.writelines(["""

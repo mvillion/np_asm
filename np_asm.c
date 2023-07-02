@@ -15,6 +15,8 @@ static PyMethodDef np_asm_method[] = {
     {NULL, NULL, 0, NULL}
 };
 
+#include "np_asm_sse_int_inc.c"
+#include "np_asm_sse_i32_f32_auto.c"
 #include "np_asm_sse_f32_auto.c"
 #include "np_asm_sse_int_auto.c"
 #include "np_asm_sse_f64_auto.c"
@@ -50,6 +52,14 @@ PyMODINIT_FUNC PyInit_np_asm(void)
 
     d = PyModule_GetDict(m);
 
+    for (int i = 0; i < N_INST_I32_F32; i++)
+    {
+        op = PyUFunc_FromFuncAndData(
+            fun_i32_f32[i], NULL, type_i32_f32, 1, n_in_i32_f32[i], 1,
+            PyUFunc_None, inst_i32_f32_str[i], doc_str, 0);
+        PyDict_SetItemString(d, inst_i32_f32_str[i], op);
+        Py_DECREF(op);
+    }
     for (int i = 0; i < N_INSTF; i++)
     {
         op = PyUFunc_FromFuncAndData(
@@ -60,10 +70,11 @@ PyMODINIT_FUNC PyInit_np_asm(void)
     }
     for (int i = 0; i < N_INSTI; i++)
     {
+        const sse_fun_t *fun = sse_fun+i;
         op = PyUFunc_FromFuncAndData(
-            funi[i], NULL, typei, 4, n_in_i[i], 1, PyUFunc_None, insti_str[i],
-            doc_str, 0);
-        PyDict_SetItemString(d, insti_str[i], op);
+            funi[i], NULL, typei, 4, fun->n_in, 1, PyUFunc_None, fun->name,
+            fun->doc, 0);
+        PyDict_SetItemString(d, fun->name, op);
         Py_DECREF(op);
     }
     for (int i = 0; i < N_INSTD; i++)
