@@ -522,4 +522,4 @@ PyUFuncGenericFunction funf256[N_INSTF256][1] =
     {&np256_unpacklo_ps},
 };
 
-// static char typef[3] = {NPY_FLOAT, NPY_FLOAT, NPY_FLOAT};
+static char typef[3] = {NPY_FLOAT, NPY_FLOAT, NPY_FLOAT};
