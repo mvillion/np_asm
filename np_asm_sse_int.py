@@ -168,29 +168,24 @@ Intel documentation: %s/index.html#text=_mm_%s""" % (k[1], url, k[0])
     # note: use _mm_store_si128 and _mm_load_si128
     # use _mm_storeu_si128 and _mm_loadu_si128 if alignment is an issue
     for k, v in enumerate(inst_list):
+        name, n_in = v
+        np_fun = ["like", "m128i", "m128i_m128i"][n_in]
         fid.write("""
-static void np_%s(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_%s(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+%d);
+    return np_sse_%s(self, arg, sse_fun[%d].sse%d);
 }
-""" % (v[0], k))
+""" % (name, np_fun, k, n_in))
 
     fid.write("""
-// funi is the list of all npy_<op> functions
-PyUFuncGenericFunction funi[N_INSTI][4] =
-{""")
-    fid.writelines(["""
-    {&np_%s, &np_%s, &np_%s, &np_%s},""" % ((k[0],)*4) for k in inst_list])
-    fid.write("""
-};
-
-static char typei[3*4] =
+static PyMethodDef np_sse_methods[] =
 {
-    NPY_INT8, NPY_INT8, NPY_INT8,
-    NPY_INT16, NPY_INT16, NPY_INT16,
-    NPY_INT32, NPY_INT32, NPY_INT32,
-    NPY_INT64, NPY_INT64, NPY_INT64,
+""")
+    for k, v in enumerate(inst_list):
+        fid.write("""    {"_mm_%s", np_mm_%s, METH_VARARGS, sse_fun[%d].doc},
+""" % (v[0], v[0], k))
+
+    fid.write("""    {NULL, NULL, 0, NULL} // sentinel
 };
 """)
     fid.close()

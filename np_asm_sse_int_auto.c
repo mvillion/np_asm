@@ -622,729 +622,619 @@ static const sse_fun_t sse_fun[N_INSTI] =
 };
 
 // create a function np_<op> for each instruction <op>
-static void np_move_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_move_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+0);
+    return np_sse_m128i(self, arg, sse_fun[0].sse1);
 }
 
-static void np_packs_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_packs_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[1].sse2);
 }
 
-static void np_packs_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_packs_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+2);
+    return np_sse_m128i_m128i(self, arg, sse_fun[2].sse2);
 }
 
-static void np_packus_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_packus_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+3);
+    return np_sse_m128i_m128i(self, arg, sse_fun[3].sse2);
 }
 
-static void np_unpackhi_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpackhi_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+4);
+    return np_sse_m128i_m128i(self, arg, sse_fun[4].sse2);
 }
 
-static void np_unpackhi_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpackhi_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+5);
+    return np_sse_m128i_m128i(self, arg, sse_fun[5].sse2);
 }
 
-static void np_unpackhi_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpackhi_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+6);
+    return np_sse_m128i_m128i(self, arg, sse_fun[6].sse2);
 }
 
-static void np_unpackhi_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpackhi_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+7);
+    return np_sse_m128i_m128i(self, arg, sse_fun[7].sse2);
 }
 
-static void np_unpacklo_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpacklo_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+8);
+    return np_sse_m128i_m128i(self, arg, sse_fun[8].sse2);
 }
 
-static void np_unpacklo_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpacklo_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+9);
+    return np_sse_m128i_m128i(self, arg, sse_fun[9].sse2);
 }
 
-static void np_unpacklo_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpacklo_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+10);
+    return np_sse_m128i_m128i(self, arg, sse_fun[10].sse2);
 }
 
-static void np_unpacklo_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_unpacklo_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+11);
+    return np_sse_m128i_m128i(self, arg, sse_fun[11].sse2);
 }
 
-static void np_add_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_add_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+12);
+    return np_sse_m128i_m128i(self, arg, sse_fun[12].sse2);
 }
 
-static void np_add_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_add_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+13);
+    return np_sse_m128i_m128i(self, arg, sse_fun[13].sse2);
 }
 
-static void np_add_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_add_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+14);
+    return np_sse_m128i_m128i(self, arg, sse_fun[14].sse2);
 }
 
-static void np_add_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_add_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+15);
+    return np_sse_m128i_m128i(self, arg, sse_fun[15].sse2);
 }
 
-static void np_adds_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_adds_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+16);
+    return np_sse_m128i_m128i(self, arg, sse_fun[16].sse2);
 }
 
-static void np_adds_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_adds_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+17);
+    return np_sse_m128i_m128i(self, arg, sse_fun[17].sse2);
 }
 
-static void np_adds_epu8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_adds_epu8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+18);
+    return np_sse_m128i_m128i(self, arg, sse_fun[18].sse2);
 }
 
-static void np_adds_epu16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_adds_epu16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+19);
+    return np_sse_m128i_m128i(self, arg, sse_fun[19].sse2);
 }
 
-static void np_sub_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sub_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+20);
+    return np_sse_m128i_m128i(self, arg, sse_fun[20].sse2);
 }
 
-static void np_sub_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sub_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+21);
+    return np_sse_m128i_m128i(self, arg, sse_fun[21].sse2);
 }
 
-static void np_sub_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sub_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+22);
+    return np_sse_m128i_m128i(self, arg, sse_fun[22].sse2);
 }
 
-static void np_sub_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sub_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+23);
+    return np_sse_m128i_m128i(self, arg, sse_fun[23].sse2);
 }
 
-static void np_subs_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_subs_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+24);
+    return np_sse_m128i_m128i(self, arg, sse_fun[24].sse2);
 }
 
-static void np_subs_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_subs_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+25);
+    return np_sse_m128i_m128i(self, arg, sse_fun[25].sse2);
 }
 
-static void np_subs_epu8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_subs_epu8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+26);
+    return np_sse_m128i_m128i(self, arg, sse_fun[26].sse2);
 }
 
-static void np_subs_epu16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_subs_epu16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+27);
+    return np_sse_m128i_m128i(self, arg, sse_fun[27].sse2);
 }
 
-static void np_madd_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_madd_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+28);
+    return np_sse_m128i_m128i(self, arg, sse_fun[28].sse2);
 }
 
-static void np_mulhi_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_mulhi_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+29);
+    return np_sse_m128i_m128i(self, arg, sse_fun[29].sse2);
 }
 
-static void np_mullo_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_mullo_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+30);
+    return np_sse_m128i_m128i(self, arg, sse_fun[30].sse2);
 }
 
-static void np_mul_epu32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_mul_epu32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+31);
+    return np_sse_m128i_m128i(self, arg, sse_fun[31].sse2);
 }
 
-static void np_sll_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sll_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+32);
+    return np_sse_m128i_m128i(self, arg, sse_fun[32].sse2);
 }
 
-static void np_sll_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sll_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+33);
+    return np_sse_m128i_m128i(self, arg, sse_fun[33].sse2);
 }
 
-static void np_sll_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sll_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+34);
+    return np_sse_m128i_m128i(self, arg, sse_fun[34].sse2);
 }
 
-static void np_sra_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sra_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+35);
+    return np_sse_m128i_m128i(self, arg, sse_fun[35].sse2);
 }
 
-static void np_sra_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sra_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+36);
+    return np_sse_m128i_m128i(self, arg, sse_fun[36].sse2);
 }
 
-static void np_srl_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_srl_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+37);
+    return np_sse_m128i_m128i(self, arg, sse_fun[37].sse2);
 }
 
-static void np_srl_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_srl_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+38);
+    return np_sse_m128i_m128i(self, arg, sse_fun[38].sse2);
 }
 
-static void np_srl_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_srl_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+39);
+    return np_sse_m128i_m128i(self, arg, sse_fun[39].sse2);
 }
 
-static void np_and_si128(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_and_si128(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+40);
+    return np_sse_m128i_m128i(self, arg, sse_fun[40].sse2);
 }
 
-static void np_andnot_si128(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_andnot_si128(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+41);
+    return np_sse_m128i_m128i(self, arg, sse_fun[41].sse2);
 }
 
-static void np_or_si128(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_or_si128(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+42);
+    return np_sse_m128i_m128i(self, arg, sse_fun[42].sse2);
 }
 
-static void np_xor_si128(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_xor_si128(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+43);
+    return np_sse_m128i_m128i(self, arg, sse_fun[43].sse2);
 }
 
-static void np_cmpeq_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpeq_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+44);
+    return np_sse_m128i_m128i(self, arg, sse_fun[44].sse2);
 }
 
-static void np_cmpeq_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpeq_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+45);
+    return np_sse_m128i_m128i(self, arg, sse_fun[45].sse2);
 }
 
-static void np_cmpeq_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpeq_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+46);
+    return np_sse_m128i_m128i(self, arg, sse_fun[46].sse2);
 }
 
-static void np_cmplt_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmplt_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+47);
+    return np_sse_m128i_m128i(self, arg, sse_fun[47].sse2);
 }
 
-static void np_cmplt_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmplt_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+48);
+    return np_sse_m128i_m128i(self, arg, sse_fun[48].sse2);
 }
 
-static void np_cmplt_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmplt_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+49);
+    return np_sse_m128i_m128i(self, arg, sse_fun[49].sse2);
 }
 
-static void np_cmpgt_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpgt_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+50);
+    return np_sse_m128i_m128i(self, arg, sse_fun[50].sse2);
 }
 
-static void np_cmpgt_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpgt_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+51);
+    return np_sse_m128i_m128i(self, arg, sse_fun[51].sse2);
 }
 
-static void np_cmpgt_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpgt_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+52);
+    return np_sse_m128i_m128i(self, arg, sse_fun[52].sse2);
 }
 
-static void np_max_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_max_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+53);
+    return np_sse_m128i_m128i(self, arg, sse_fun[53].sse2);
 }
 
-static void np_max_epu8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_max_epu8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+54);
+    return np_sse_m128i_m128i(self, arg, sse_fun[54].sse2);
 }
 
-static void np_min_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_min_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+55);
+    return np_sse_m128i_m128i(self, arg, sse_fun[55].sse2);
 }
 
-static void np_min_epu8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_min_epu8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+56);
+    return np_sse_m128i_m128i(self, arg, sse_fun[56].sse2);
 }
 
-static void np_mulhi_epu16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_mulhi_epu16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+57);
+    return np_sse_m128i_m128i(self, arg, sse_fun[57].sse2);
 }
 
-static void np_avg_epu8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_avg_epu8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+58);
+    return np_sse_m128i_m128i(self, arg, sse_fun[58].sse2);
 }
 
-static void np_avg_epu16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_avg_epu16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+59);
+    return np_sse_m128i_m128i(self, arg, sse_fun[59].sse2);
 }
 
-static void np_sad_epu8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sad_epu8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+60);
+    return np_sse_m128i_m128i(self, arg, sse_fun[60].sse2);
 }
 
-static void np_hadd_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_hadd_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+61);
+    return np_sse_m128i_m128i(self, arg, sse_fun[61].sse2);
 }
 
-static void np_hadd_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_hadd_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+62);
+    return np_sse_m128i_m128i(self, arg, sse_fun[62].sse2);
 }
 
-static void np_hadds_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_hadds_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+63);
+    return np_sse_m128i_m128i(self, arg, sse_fun[63].sse2);
 }
 
-static void np_hsub_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_hsub_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+64);
+    return np_sse_m128i_m128i(self, arg, sse_fun[64].sse2);
 }
 
-static void np_hsub_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_hsub_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+65);
+    return np_sse_m128i_m128i(self, arg, sse_fun[65].sse2);
 }
 
-static void np_hsubs_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_hsubs_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+66);
+    return np_sse_m128i_m128i(self, arg, sse_fun[66].sse2);
 }
 
-static void np_maddubs_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_maddubs_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+67);
+    return np_sse_m128i_m128i(self, arg, sse_fun[67].sse2);
 }
 
-static void np_mulhrs_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_mulhrs_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+68);
+    return np_sse_m128i_m128i(self, arg, sse_fun[68].sse2);
 }
 
-static void np_shuffle_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_shuffle_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+69);
+    return np_sse_m128i_m128i(self, arg, sse_fun[69].sse2);
 }
 
-static void np_sign_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sign_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+70);
+    return np_sse_m128i_m128i(self, arg, sse_fun[70].sse2);
 }
 
-static void np_sign_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sign_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+71);
+    return np_sse_m128i_m128i(self, arg, sse_fun[71].sse2);
 }
 
-static void np_sign_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_sign_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+72);
+    return np_sse_m128i_m128i(self, arg, sse_fun[72].sse2);
 }
 
-static void np_abs_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_abs_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+73);
+    return np_sse_m128i(self, arg, sse_fun[73].sse1);
 }
 
-static void np_abs_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_abs_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+74);
+    return np_sse_m128i(self, arg, sse_fun[74].sse1);
 }
 
-static void np_abs_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_abs_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+75);
+    return np_sse_m128i(self, arg, sse_fun[75].sse1);
 }
 
-static void np_cmpeq_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpeq_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+76);
+    return np_sse_m128i_m128i(self, arg, sse_fun[76].sse2);
 }
 
-static void np_min_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_min_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+77);
+    return np_sse_m128i_m128i(self, arg, sse_fun[77].sse2);
 }
 
-static void np_max_epi8(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_max_epi8(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+78);
+    return np_sse_m128i_m128i(self, arg, sse_fun[78].sse2);
 }
 
-static void np_min_epu16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_min_epu16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+79);
+    return np_sse_m128i_m128i(self, arg, sse_fun[79].sse2);
 }
 
-static void np_max_epu16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_max_epu16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+80);
+    return np_sse_m128i_m128i(self, arg, sse_fun[80].sse2);
 }
 
-static void np_min_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_min_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+81);
+    return np_sse_m128i_m128i(self, arg, sse_fun[81].sse2);
 }
 
-static void np_max_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_max_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+82);
+    return np_sse_m128i_m128i(self, arg, sse_fun[82].sse2);
 }
 
-static void np_min_epu32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_min_epu32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+83);
+    return np_sse_m128i_m128i(self, arg, sse_fun[83].sse2);
 }
 
-static void np_max_epu32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_max_epu32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+84);
+    return np_sse_m128i_m128i(self, arg, sse_fun[84].sse2);
 }
 
-static void np_mullo_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_mullo_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+85);
+    return np_sse_m128i_m128i(self, arg, sse_fun[85].sse2);
 }
 
-static void np_mul_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_mul_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+86);
+    return np_sse_m128i_m128i(self, arg, sse_fun[86].sse2);
 }
 
-static void np_minpos_epu16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_minpos_epu16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+87);
+    return np_sse_m128i(self, arg, sse_fun[87].sse1);
 }
 
-static void np_cvtepi8_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepi8_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+88);
+    return np_sse_m128i(self, arg, sse_fun[88].sse1);
 }
 
-static void np_cvtepi16_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepi16_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+89);
+    return np_sse_m128i(self, arg, sse_fun[89].sse1);
 }
 
-static void np_cvtepi8_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepi8_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+90);
+    return np_sse_m128i(self, arg, sse_fun[90].sse1);
 }
 
-static void np_cvtepi32_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepi32_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+91);
+    return np_sse_m128i(self, arg, sse_fun[91].sse1);
 }
 
-static void np_cvtepi16_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepi16_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+92);
+    return np_sse_m128i(self, arg, sse_fun[92].sse1);
 }
 
-static void np_cvtepi8_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepi8_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+93);
+    return np_sse_m128i(self, arg, sse_fun[93].sse1);
 }
 
-static void np_cvtepu8_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepu8_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+94);
+    return np_sse_m128i(self, arg, sse_fun[94].sse1);
 }
 
-static void np_cvtepu16_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepu16_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+95);
+    return np_sse_m128i(self, arg, sse_fun[95].sse1);
 }
 
-static void np_cvtepu8_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepu8_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+96);
+    return np_sse_m128i(self, arg, sse_fun[96].sse1);
 }
 
-static void np_cvtepu32_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepu32_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+97);
+    return np_sse_m128i(self, arg, sse_fun[97].sse1);
 }
 
-static void np_cvtepu16_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepu16_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+98);
+    return np_sse_m128i(self, arg, sse_fun[98].sse1);
 }
 
-static void np_cvtepu8_epi16(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cvtepu8_epi16(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+99);
+    return np_sse_m128i(self, arg, sse_fun[99].sse1);
 }
 
-static void np_packus_epi32(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_packus_epi32(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+100);
+    return np_sse_m128i_m128i(self, arg, sse_fun[100].sse2);
 }
 
-static void np_cmpgt_epi64(
-    char **args, const npy_intp *dimensions, const npy_intp *steps, void *data)
+static PyObject *np_mm_cmpgt_epi64(PyObject* self, PyObject* arg)
 {
-    np_sse(args, dimensions, steps, sse_fun+101);
+    return np_sse_m128i_m128i(self, arg, sse_fun[101].sse2);
 }
 
-// funi is the list of all npy_<op> functions
-PyUFuncGenericFunction funi[N_INSTI][4] =
+static PyMethodDef np_sse_methods[] =
 {
-    {&np_move_epi64, &np_move_epi64, &np_move_epi64, &np_move_epi64},
-    {&np_packs_epi16, &np_packs_epi16, &np_packs_epi16, &np_packs_epi16},
-    {&np_packs_epi32, &np_packs_epi32, &np_packs_epi32, &np_packs_epi32},
-    {&np_packus_epi16, &np_packus_epi16, &np_packus_epi16, &np_packus_epi16},
-    {&np_unpackhi_epi8, &np_unpackhi_epi8, &np_unpackhi_epi8, &np_unpackhi_epi8},
-    {&np_unpackhi_epi16, &np_unpackhi_epi16, &np_unpackhi_epi16, &np_unpackhi_epi16},
-    {&np_unpackhi_epi32, &np_unpackhi_epi32, &np_unpackhi_epi32, &np_unpackhi_epi32},
-    {&np_unpackhi_epi64, &np_unpackhi_epi64, &np_unpackhi_epi64, &np_unpackhi_epi64},
-    {&np_unpacklo_epi8, &np_unpacklo_epi8, &np_unpacklo_epi8, &np_unpacklo_epi8},
-    {&np_unpacklo_epi16, &np_unpacklo_epi16, &np_unpacklo_epi16, &np_unpacklo_epi16},
-    {&np_unpacklo_epi32, &np_unpacklo_epi32, &np_unpacklo_epi32, &np_unpacklo_epi32},
-    {&np_unpacklo_epi64, &np_unpacklo_epi64, &np_unpacklo_epi64, &np_unpacklo_epi64},
-    {&np_add_epi8, &np_add_epi8, &np_add_epi8, &np_add_epi8},
-    {&np_add_epi16, &np_add_epi16, &np_add_epi16, &np_add_epi16},
-    {&np_add_epi32, &np_add_epi32, &np_add_epi32, &np_add_epi32},
-    {&np_add_epi64, &np_add_epi64, &np_add_epi64, &np_add_epi64},
-    {&np_adds_epi8, &np_adds_epi8, &np_adds_epi8, &np_adds_epi8},
-    {&np_adds_epi16, &np_adds_epi16, &np_adds_epi16, &np_adds_epi16},
-    {&np_adds_epu8, &np_adds_epu8, &np_adds_epu8, &np_adds_epu8},
-    {&np_adds_epu16, &np_adds_epu16, &np_adds_epu16, &np_adds_epu16},
-    {&np_sub_epi8, &np_sub_epi8, &np_sub_epi8, &np_sub_epi8},
-    {&np_sub_epi16, &np_sub_epi16, &np_sub_epi16, &np_sub_epi16},
-    {&np_sub_epi32, &np_sub_epi32, &np_sub_epi32, &np_sub_epi32},
-    {&np_sub_epi64, &np_sub_epi64, &np_sub_epi64, &np_sub_epi64},
-    {&np_subs_epi8, &np_subs_epi8, &np_subs_epi8, &np_subs_epi8},
-    {&np_subs_epi16, &np_subs_epi16, &np_subs_epi16, &np_subs_epi16},
-    {&np_subs_epu8, &np_subs_epu8, &np_subs_epu8, &np_subs_epu8},
-    {&np_subs_epu16, &np_subs_epu16, &np_subs_epu16, &np_subs_epu16},
-    {&np_madd_epi16, &np_madd_epi16, &np_madd_epi16, &np_madd_epi16},
-    {&np_mulhi_epi16, &np_mulhi_epi16, &np_mulhi_epi16, &np_mulhi_epi16},
-    {&np_mullo_epi16, &np_mullo_epi16, &np_mullo_epi16, &np_mullo_epi16},
-    {&np_mul_epu32, &np_mul_epu32, &np_mul_epu32, &np_mul_epu32},
-    {&np_sll_epi16, &np_sll_epi16, &np_sll_epi16, &np_sll_epi16},
-    {&np_sll_epi32, &np_sll_epi32, &np_sll_epi32, &np_sll_epi32},
-    {&np_sll_epi64, &np_sll_epi64, &np_sll_epi64, &np_sll_epi64},
-    {&np_sra_epi16, &np_sra_epi16, &np_sra_epi16, &np_sra_epi16},
-    {&np_sra_epi32, &np_sra_epi32, &np_sra_epi32, &np_sra_epi32},
-    {&np_srl_epi16, &np_srl_epi16, &np_srl_epi16, &np_srl_epi16},
-    {&np_srl_epi32, &np_srl_epi32, &np_srl_epi32, &np_srl_epi32},
-    {&np_srl_epi64, &np_srl_epi64, &np_srl_epi64, &np_srl_epi64},
-    {&np_and_si128, &np_and_si128, &np_and_si128, &np_and_si128},
-    {&np_andnot_si128, &np_andnot_si128, &np_andnot_si128, &np_andnot_si128},
-    {&np_or_si128, &np_or_si128, &np_or_si128, &np_or_si128},
-    {&np_xor_si128, &np_xor_si128, &np_xor_si128, &np_xor_si128},
-    {&np_cmpeq_epi8, &np_cmpeq_epi8, &np_cmpeq_epi8, &np_cmpeq_epi8},
-    {&np_cmpeq_epi16, &np_cmpeq_epi16, &np_cmpeq_epi16, &np_cmpeq_epi16},
-    {&np_cmpeq_epi32, &np_cmpeq_epi32, &np_cmpeq_epi32, &np_cmpeq_epi32},
-    {&np_cmplt_epi8, &np_cmplt_epi8, &np_cmplt_epi8, &np_cmplt_epi8},
-    {&np_cmplt_epi16, &np_cmplt_epi16, &np_cmplt_epi16, &np_cmplt_epi16},
-    {&np_cmplt_epi32, &np_cmplt_epi32, &np_cmplt_epi32, &np_cmplt_epi32},
-    {&np_cmpgt_epi8, &np_cmpgt_epi8, &np_cmpgt_epi8, &np_cmpgt_epi8},
-    {&np_cmpgt_epi16, &np_cmpgt_epi16, &np_cmpgt_epi16, &np_cmpgt_epi16},
-    {&np_cmpgt_epi32, &np_cmpgt_epi32, &np_cmpgt_epi32, &np_cmpgt_epi32},
-    {&np_max_epi16, &np_max_epi16, &np_max_epi16, &np_max_epi16},
-    {&np_max_epu8, &np_max_epu8, &np_max_epu8, &np_max_epu8},
-    {&np_min_epi16, &np_min_epi16, &np_min_epi16, &np_min_epi16},
-    {&np_min_epu8, &np_min_epu8, &np_min_epu8, &np_min_epu8},
-    {&np_mulhi_epu16, &np_mulhi_epu16, &np_mulhi_epu16, &np_mulhi_epu16},
-    {&np_avg_epu8, &np_avg_epu8, &np_avg_epu8, &np_avg_epu8},
-    {&np_avg_epu16, &np_avg_epu16, &np_avg_epu16, &np_avg_epu16},
-    {&np_sad_epu8, &np_sad_epu8, &np_sad_epu8, &np_sad_epu8},
-    {&np_hadd_epi16, &np_hadd_epi16, &np_hadd_epi16, &np_hadd_epi16},
-    {&np_hadd_epi32, &np_hadd_epi32, &np_hadd_epi32, &np_hadd_epi32},
-    {&np_hadds_epi16, &np_hadds_epi16, &np_hadds_epi16, &np_hadds_epi16},
-    {&np_hsub_epi16, &np_hsub_epi16, &np_hsub_epi16, &np_hsub_epi16},
-    {&np_hsub_epi32, &np_hsub_epi32, &np_hsub_epi32, &np_hsub_epi32},
-    {&np_hsubs_epi16, &np_hsubs_epi16, &np_hsubs_epi16, &np_hsubs_epi16},
-    {&np_maddubs_epi16, &np_maddubs_epi16, &np_maddubs_epi16, &np_maddubs_epi16},
-    {&np_mulhrs_epi16, &np_mulhrs_epi16, &np_mulhrs_epi16, &np_mulhrs_epi16},
-    {&np_shuffle_epi8, &np_shuffle_epi8, &np_shuffle_epi8, &np_shuffle_epi8},
-    {&np_sign_epi8, &np_sign_epi8, &np_sign_epi8, &np_sign_epi8},
-    {&np_sign_epi16, &np_sign_epi16, &np_sign_epi16, &np_sign_epi16},
-    {&np_sign_epi32, &np_sign_epi32, &np_sign_epi32, &np_sign_epi32},
-    {&np_abs_epi8, &np_abs_epi8, &np_abs_epi8, &np_abs_epi8},
-    {&np_abs_epi16, &np_abs_epi16, &np_abs_epi16, &np_abs_epi16},
-    {&np_abs_epi32, &np_abs_epi32, &np_abs_epi32, &np_abs_epi32},
-    {&np_cmpeq_epi64, &np_cmpeq_epi64, &np_cmpeq_epi64, &np_cmpeq_epi64},
-    {&np_min_epi8, &np_min_epi8, &np_min_epi8, &np_min_epi8},
-    {&np_max_epi8, &np_max_epi8, &np_max_epi8, &np_max_epi8},
-    {&np_min_epu16, &np_min_epu16, &np_min_epu16, &np_min_epu16},
-    {&np_max_epu16, &np_max_epu16, &np_max_epu16, &np_max_epu16},
-    {&np_min_epi32, &np_min_epi32, &np_min_epi32, &np_min_epi32},
-    {&np_max_epi32, &np_max_epi32, &np_max_epi32, &np_max_epi32},
-    {&np_min_epu32, &np_min_epu32, &np_min_epu32, &np_min_epu32},
-    {&np_max_epu32, &np_max_epu32, &np_max_epu32, &np_max_epu32},
-    {&np_mullo_epi32, &np_mullo_epi32, &np_mullo_epi32, &np_mullo_epi32},
-    {&np_mul_epi32, &np_mul_epi32, &np_mul_epi32, &np_mul_epi32},
-    {&np_minpos_epu16, &np_minpos_epu16, &np_minpos_epu16, &np_minpos_epu16},
-    {&np_cvtepi8_epi32, &np_cvtepi8_epi32, &np_cvtepi8_epi32, &np_cvtepi8_epi32},
-    {&np_cvtepi16_epi32, &np_cvtepi16_epi32, &np_cvtepi16_epi32, &np_cvtepi16_epi32},
-    {&np_cvtepi8_epi64, &np_cvtepi8_epi64, &np_cvtepi8_epi64, &np_cvtepi8_epi64},
-    {&np_cvtepi32_epi64, &np_cvtepi32_epi64, &np_cvtepi32_epi64, &np_cvtepi32_epi64},
-    {&np_cvtepi16_epi64, &np_cvtepi16_epi64, &np_cvtepi16_epi64, &np_cvtepi16_epi64},
-    {&np_cvtepi8_epi16, &np_cvtepi8_epi16, &np_cvtepi8_epi16, &np_cvtepi8_epi16},
-    {&np_cvtepu8_epi32, &np_cvtepu8_epi32, &np_cvtepu8_epi32, &np_cvtepu8_epi32},
-    {&np_cvtepu16_epi32, &np_cvtepu16_epi32, &np_cvtepu16_epi32, &np_cvtepu16_epi32},
-    {&np_cvtepu8_epi64, &np_cvtepu8_epi64, &np_cvtepu8_epi64, &np_cvtepu8_epi64},
-    {&np_cvtepu32_epi64, &np_cvtepu32_epi64, &np_cvtepu32_epi64, &np_cvtepu32_epi64},
-    {&np_cvtepu16_epi64, &np_cvtepu16_epi64, &np_cvtepu16_epi64, &np_cvtepu16_epi64},
-    {&np_cvtepu8_epi16, &np_cvtepu8_epi16, &np_cvtepu8_epi16, &np_cvtepu8_epi16},
-    {&np_packus_epi32, &np_packus_epi32, &np_packus_epi32, &np_packus_epi32},
-    {&np_cmpgt_epi64, &np_cmpgt_epi64, &np_cmpgt_epi64, &np_cmpgt_epi64},
-};
-
-static char typei[3*4] =
-{
-    NPY_INT8, NPY_INT8, NPY_INT8,
-    NPY_INT16, NPY_INT16, NPY_INT16,
-    NPY_INT32, NPY_INT32, NPY_INT32,
-    NPY_INT64, NPY_INT64, NPY_INT64,
+    {"_mm_move_epi64", np_mm_move_epi64, METH_VARARGS, sse_fun[0].doc},
+    {"_mm_packs_epi16", np_mm_packs_epi16, METH_VARARGS, sse_fun[1].doc},
+    {"_mm_packs_epi32", np_mm_packs_epi32, METH_VARARGS, sse_fun[2].doc},
+    {"_mm_packus_epi16", np_mm_packus_epi16, METH_VARARGS, sse_fun[3].doc},
+    {"_mm_unpackhi_epi8", np_mm_unpackhi_epi8, METH_VARARGS, sse_fun[4].doc},
+    {"_mm_unpackhi_epi16", np_mm_unpackhi_epi16, METH_VARARGS, sse_fun[5].doc},
+    {"_mm_unpackhi_epi32", np_mm_unpackhi_epi32, METH_VARARGS, sse_fun[6].doc},
+    {"_mm_unpackhi_epi64", np_mm_unpackhi_epi64, METH_VARARGS, sse_fun[7].doc},
+    {"_mm_unpacklo_epi8", np_mm_unpacklo_epi8, METH_VARARGS, sse_fun[8].doc},
+    {"_mm_unpacklo_epi16", np_mm_unpacklo_epi16, METH_VARARGS, sse_fun[9].doc},
+    {"_mm_unpacklo_epi32", np_mm_unpacklo_epi32, METH_VARARGS, sse_fun[10].doc},
+    {"_mm_unpacklo_epi64", np_mm_unpacklo_epi64, METH_VARARGS, sse_fun[11].doc},
+    {"_mm_add_epi8", np_mm_add_epi8, METH_VARARGS, sse_fun[12].doc},
+    {"_mm_add_epi16", np_mm_add_epi16, METH_VARARGS, sse_fun[13].doc},
+    {"_mm_add_epi32", np_mm_add_epi32, METH_VARARGS, sse_fun[14].doc},
+    {"_mm_add_epi64", np_mm_add_epi64, METH_VARARGS, sse_fun[15].doc},
+    {"_mm_adds_epi8", np_mm_adds_epi8, METH_VARARGS, sse_fun[16].doc},
+    {"_mm_adds_epi16", np_mm_adds_epi16, METH_VARARGS, sse_fun[17].doc},
+    {"_mm_adds_epu8", np_mm_adds_epu8, METH_VARARGS, sse_fun[18].doc},
+    {"_mm_adds_epu16", np_mm_adds_epu16, METH_VARARGS, sse_fun[19].doc},
+    {"_mm_sub_epi8", np_mm_sub_epi8, METH_VARARGS, sse_fun[20].doc},
+    {"_mm_sub_epi16", np_mm_sub_epi16, METH_VARARGS, sse_fun[21].doc},
+    {"_mm_sub_epi32", np_mm_sub_epi32, METH_VARARGS, sse_fun[22].doc},
+    {"_mm_sub_epi64", np_mm_sub_epi64, METH_VARARGS, sse_fun[23].doc},
+    {"_mm_subs_epi8", np_mm_subs_epi8, METH_VARARGS, sse_fun[24].doc},
+    {"_mm_subs_epi16", np_mm_subs_epi16, METH_VARARGS, sse_fun[25].doc},
+    {"_mm_subs_epu8", np_mm_subs_epu8, METH_VARARGS, sse_fun[26].doc},
+    {"_mm_subs_epu16", np_mm_subs_epu16, METH_VARARGS, sse_fun[27].doc},
+    {"_mm_madd_epi16", np_mm_madd_epi16, METH_VARARGS, sse_fun[28].doc},
+    {"_mm_mulhi_epi16", np_mm_mulhi_epi16, METH_VARARGS, sse_fun[29].doc},
+    {"_mm_mullo_epi16", np_mm_mullo_epi16, METH_VARARGS, sse_fun[30].doc},
+    {"_mm_mul_epu32", np_mm_mul_epu32, METH_VARARGS, sse_fun[31].doc},
+    {"_mm_sll_epi16", np_mm_sll_epi16, METH_VARARGS, sse_fun[32].doc},
+    {"_mm_sll_epi32", np_mm_sll_epi32, METH_VARARGS, sse_fun[33].doc},
+    {"_mm_sll_epi64", np_mm_sll_epi64, METH_VARARGS, sse_fun[34].doc},
+    {"_mm_sra_epi16", np_mm_sra_epi16, METH_VARARGS, sse_fun[35].doc},
+    {"_mm_sra_epi32", np_mm_sra_epi32, METH_VARARGS, sse_fun[36].doc},
+    {"_mm_srl_epi16", np_mm_srl_epi16, METH_VARARGS, sse_fun[37].doc},
+    {"_mm_srl_epi32", np_mm_srl_epi32, METH_VARARGS, sse_fun[38].doc},
+    {"_mm_srl_epi64", np_mm_srl_epi64, METH_VARARGS, sse_fun[39].doc},
+    {"_mm_and_si128", np_mm_and_si128, METH_VARARGS, sse_fun[40].doc},
+    {"_mm_andnot_si128", np_mm_andnot_si128, METH_VARARGS, sse_fun[41].doc},
+    {"_mm_or_si128", np_mm_or_si128, METH_VARARGS, sse_fun[42].doc},
+    {"_mm_xor_si128", np_mm_xor_si128, METH_VARARGS, sse_fun[43].doc},
+    {"_mm_cmpeq_epi8", np_mm_cmpeq_epi8, METH_VARARGS, sse_fun[44].doc},
+    {"_mm_cmpeq_epi16", np_mm_cmpeq_epi16, METH_VARARGS, sse_fun[45].doc},
+    {"_mm_cmpeq_epi32", np_mm_cmpeq_epi32, METH_VARARGS, sse_fun[46].doc},
+    {"_mm_cmplt_epi8", np_mm_cmplt_epi8, METH_VARARGS, sse_fun[47].doc},
+    {"_mm_cmplt_epi16", np_mm_cmplt_epi16, METH_VARARGS, sse_fun[48].doc},
+    {"_mm_cmplt_epi32", np_mm_cmplt_epi32, METH_VARARGS, sse_fun[49].doc},
+    {"_mm_cmpgt_epi8", np_mm_cmpgt_epi8, METH_VARARGS, sse_fun[50].doc},
+    {"_mm_cmpgt_epi16", np_mm_cmpgt_epi16, METH_VARARGS, sse_fun[51].doc},
+    {"_mm_cmpgt_epi32", np_mm_cmpgt_epi32, METH_VARARGS, sse_fun[52].doc},
+    {"_mm_max_epi16", np_mm_max_epi16, METH_VARARGS, sse_fun[53].doc},
+    {"_mm_max_epu8", np_mm_max_epu8, METH_VARARGS, sse_fun[54].doc},
+    {"_mm_min_epi16", np_mm_min_epi16, METH_VARARGS, sse_fun[55].doc},
+    {"_mm_min_epu8", np_mm_min_epu8, METH_VARARGS, sse_fun[56].doc},
+    {"_mm_mulhi_epu16", np_mm_mulhi_epu16, METH_VARARGS, sse_fun[57].doc},
+    {"_mm_avg_epu8", np_mm_avg_epu8, METH_VARARGS, sse_fun[58].doc},
+    {"_mm_avg_epu16", np_mm_avg_epu16, METH_VARARGS, sse_fun[59].doc},
+    {"_mm_sad_epu8", np_mm_sad_epu8, METH_VARARGS, sse_fun[60].doc},
+    {"_mm_hadd_epi16", np_mm_hadd_epi16, METH_VARARGS, sse_fun[61].doc},
+    {"_mm_hadd_epi32", np_mm_hadd_epi32, METH_VARARGS, sse_fun[62].doc},
+    {"_mm_hadds_epi16", np_mm_hadds_epi16, METH_VARARGS, sse_fun[63].doc},
+    {"_mm_hsub_epi16", np_mm_hsub_epi16, METH_VARARGS, sse_fun[64].doc},
+    {"_mm_hsub_epi32", np_mm_hsub_epi32, METH_VARARGS, sse_fun[65].doc},
+    {"_mm_hsubs_epi16", np_mm_hsubs_epi16, METH_VARARGS, sse_fun[66].doc},
+    {"_mm_maddubs_epi16", np_mm_maddubs_epi16, METH_VARARGS, sse_fun[67].doc},
+    {"_mm_mulhrs_epi16", np_mm_mulhrs_epi16, METH_VARARGS, sse_fun[68].doc},
+    {"_mm_shuffle_epi8", np_mm_shuffle_epi8, METH_VARARGS, sse_fun[69].doc},
+    {"_mm_sign_epi8", np_mm_sign_epi8, METH_VARARGS, sse_fun[70].doc},
+    {"_mm_sign_epi16", np_mm_sign_epi16, METH_VARARGS, sse_fun[71].doc},
+    {"_mm_sign_epi32", np_mm_sign_epi32, METH_VARARGS, sse_fun[72].doc},
+    {"_mm_abs_epi8", np_mm_abs_epi8, METH_VARARGS, sse_fun[73].doc},
+    {"_mm_abs_epi16", np_mm_abs_epi16, METH_VARARGS, sse_fun[74].doc},
+    {"_mm_abs_epi32", np_mm_abs_epi32, METH_VARARGS, sse_fun[75].doc},
+    {"_mm_cmpeq_epi64", np_mm_cmpeq_epi64, METH_VARARGS, sse_fun[76].doc},
+    {"_mm_min_epi8", np_mm_min_epi8, METH_VARARGS, sse_fun[77].doc},
+    {"_mm_max_epi8", np_mm_max_epi8, METH_VARARGS, sse_fun[78].doc},
+    {"_mm_min_epu16", np_mm_min_epu16, METH_VARARGS, sse_fun[79].doc},
+    {"_mm_max_epu16", np_mm_max_epu16, METH_VARARGS, sse_fun[80].doc},
+    {"_mm_min_epi32", np_mm_min_epi32, METH_VARARGS, sse_fun[81].doc},
+    {"_mm_max_epi32", np_mm_max_epi32, METH_VARARGS, sse_fun[82].doc},
+    {"_mm_min_epu32", np_mm_min_epu32, METH_VARARGS, sse_fun[83].doc},
+    {"_mm_max_epu32", np_mm_max_epu32, METH_VARARGS, sse_fun[84].doc},
+    {"_mm_mullo_epi32", np_mm_mullo_epi32, METH_VARARGS, sse_fun[85].doc},
+    {"_mm_mul_epi32", np_mm_mul_epi32, METH_VARARGS, sse_fun[86].doc},
+    {"_mm_minpos_epu16", np_mm_minpos_epu16, METH_VARARGS, sse_fun[87].doc},
+    {"_mm_cvtepi8_epi32", np_mm_cvtepi8_epi32, METH_VARARGS, sse_fun[88].doc},
+    {"_mm_cvtepi16_epi32", np_mm_cvtepi16_epi32, METH_VARARGS, sse_fun[89].doc},
+    {"_mm_cvtepi8_epi64", np_mm_cvtepi8_epi64, METH_VARARGS, sse_fun[90].doc},
+    {"_mm_cvtepi32_epi64", np_mm_cvtepi32_epi64, METH_VARARGS, sse_fun[91].doc},
+    {"_mm_cvtepi16_epi64", np_mm_cvtepi16_epi64, METH_VARARGS, sse_fun[92].doc},
+    {"_mm_cvtepi8_epi16", np_mm_cvtepi8_epi16, METH_VARARGS, sse_fun[93].doc},
+    {"_mm_cvtepu8_epi32", np_mm_cvtepu8_epi32, METH_VARARGS, sse_fun[94].doc},
+    {"_mm_cvtepu16_epi32", np_mm_cvtepu16_epi32, METH_VARARGS, sse_fun[95].doc},
+    {"_mm_cvtepu8_epi64", np_mm_cvtepu8_epi64, METH_VARARGS, sse_fun[96].doc},
+    {"_mm_cvtepu32_epi64", np_mm_cvtepu32_epi64, METH_VARARGS, sse_fun[97].doc},
+    {"_mm_cvtepu16_epi64", np_mm_cvtepu16_epi64, METH_VARARGS, sse_fun[98].doc},
+    {"_mm_cvtepu8_epi16", np_mm_cvtepu8_epi16, METH_VARARGS, sse_fun[99].doc},
+    {"_mm_packus_epi32", np_mm_packus_epi32, METH_VARARGS, sse_fun[100].doc},
+    {"_mm_cmpgt_epi64", np_mm_cmpgt_epi64, METH_VARARGS, sse_fun[101].doc},
+    {NULL, NULL, 0, NULL} // sentinel
 };

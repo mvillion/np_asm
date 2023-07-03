@@ -47,6 +47,8 @@ PyMODINIT_FUNC PyInit_np_asm(void)
         return NULL;
     }
 
+    PyModule_AddFunctions(m, np_sse_methods);
+
     import_array();
     import_umath();
 
@@ -66,15 +68,6 @@ PyMODINIT_FUNC PyInit_np_asm(void)
             funf[i], NULL, typef, 1, n_in_f[i], 1, PyUFunc_None, instf_str[i],
             doc_str, 0);
         PyDict_SetItemString(d, instf_str[i], op);
-        Py_DECREF(op);
-    }
-    for (int i = 0; i < N_INSTI; i++)
-    {
-        const sse_fun_t *fun = sse_fun+i;
-        op = PyUFunc_FromFuncAndData(
-            funi[i], NULL, typei, 4, fun->n_in, 1, PyUFunc_None, fun->name,
-            fun->doc, 0);
-        PyDict_SetItemString(d, fun->name, op);
         Py_DECREF(op);
     }
     for (int i = 0; i < N_INSTD; i++)
