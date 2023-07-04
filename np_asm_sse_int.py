@@ -24,10 +24,26 @@ def unpacklo_ps(x, y):
         y.reshape(-1, 2, 2)[:, 0, :].reshape(-1))).reshape(x.shape)
 
 
-def sign2float(x):
+def sign2float32(x):
     x = x.astype(np.uint32)
     x *= 0xffff_ffff
     return x.view(np.float32)
+
+
+def unpackhi_pd(x, y):
+    return np.column_stack((
+        x.reshape(-1, 2)[:, 1], y.reshape(-1, 2)[:, 1])).reshape(x.shape)
+
+
+def unpacklo_pd(x, y):
+    return np.column_stack((
+        x.reshape(-1, 2)[:, 0], y.reshape(-1, 2)[:, 0])).reshape(x.shape)
+
+
+def sign2float64(x):
+    x = x.astype(np.uint64)
+    x *= 0xffff_ffff_ffff_ffff
+    return x.view(np.float64)
 
 
 # ______________________________________________________________________________
@@ -52,15 +68,15 @@ inst_list = [
     (_m.m128, "sqrt_ss", (_m.m128,), None),
     (_m.m128, "sub_ps", (_m.m128, _m.m128), np.subtract),
     (_m.m128, "sub_ss", (_m.m128, _m.m128), None),
-    (_m.m128, "cmpeq_ps", (_m.m128, _m.m128), lambda x, y: sign2float(np.equal(x, y))),
+    (_m.m128, "cmpeq_ps", (_m.m128, _m.m128), lambda x, y: sign2float32(np.equal(x, y))),
     (_m.m128, "cmpeq_ss", (_m.m128, _m.m128), None),
-    (_m.m128, "cmpge_ps", (_m.m128, _m.m128), lambda x, y: sign2float(np.greater_equal(x, y))),
+    (_m.m128, "cmpge_ps", (_m.m128, _m.m128), lambda x, y: sign2float32(np.greater_equal(x, y))),
     (_m.m128, "cmpge_ss", (_m.m128, _m.m128), None),
-    (_m.m128, "cmpgt_ps", (_m.m128, _m.m128), lambda x, y: sign2float(np.greater(x, y))),
+    (_m.m128, "cmpgt_ps", (_m.m128, _m.m128), lambda x, y: sign2float32(np.greater(x, y))),
     (_m.m128, "cmpgt_ss", (_m.m128, _m.m128), None),
-    (_m.m128, "cmple_ps", (_m.m128, _m.m128), lambda x, y: sign2float(np.less_equal(x, y))),
+    (_m.m128, "cmple_ps", (_m.m128, _m.m128), lambda x, y: sign2float32(np.less_equal(x, y))),
     (_m.m128, "cmple_ss", (_m.m128, _m.m128), None),
-    (_m.m128, "cmplt_ps", (_m.m128, _m.m128), lambda x, y: sign2float(np.less(x, y))),
+    (_m.m128, "cmplt_ps", (_m.m128, _m.m128), lambda x, y: sign2float32(np.less(x, y))),
     (_m.m128, "cmplt_ss", (_m.m128, _m.m128), None),
     (_m.m128, "cmpord_ps", (_m.m128, _m.m128), None),
     (_m.m128, "cmpord_ss", (_m.m128, _m.m128), None),
@@ -90,6 +106,57 @@ inst_list = [
     (_m.m128, "hsub_ps", (_m.m128, _m.m128), None),
     (_m.m128, "movehdup_ps", (_m.m128,), None),
     (_m.m128, "moveldup_ps", (_m.m128,), None),
+    # _________________________________________________________________________
+    (_m.m128d, "move_sd", (_m.m128d, _m.m128d), None),  # SSE2
+    (_m.m128d, "add_pd", (_m.m128d, _m.m128d), np.add),
+    (_m.m128d, "add_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "sub_pd", (_m.m128d, _m.m128d), np.subtract),
+    (_m.m128d, "sub_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "mul_pd", (_m.m128d, _m.m128d), np.multiply),
+    (_m.m128d, "mul_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "div_pd", (_m.m128d, _m.m128d), np.divide),
+    (_m.m128d, "div_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "sqrt_pd", (_m.m128d,), np.sqrt),
+    (_m.m128d, "sqrt_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "min_pd", (_m.m128d, _m.m128d), np.minimum),
+    (_m.m128d, "min_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "max_pd", (_m.m128d, _m.m128d), np.maximum),
+    (_m.m128d, "max_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "and_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "andnot_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "or_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "xor_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpeq_pd", (_m.m128d, _m.m128d), lambda x, y: sign2float64(np.equal(x, y))),
+    (_m.m128d, "cmplt_pd", (_m.m128d, _m.m128d), lambda x, y: sign2float64(np.less(x, y))),
+    (_m.m128d, "cmple_pd", (_m.m128d, _m.m128d), lambda x, y: sign2float64(np.less_equal(x, y))),
+    (_m.m128d, "cmpgt_pd", (_m.m128d, _m.m128d), lambda x, y: sign2float64(np.greater(x, y))),
+    (_m.m128d, "cmpge_pd", (_m.m128d, _m.m128d), lambda x, y: sign2float64(np.greater_equal(x, y))),
+    (_m.m128d, "cmpneq_pd", (_m.m128d, _m.m128d), lambda x, y: sign2float64(np.not_equal(x, y))),
+    (_m.m128d, "cmpnlt_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpnle_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpngt_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpnge_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpord_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpunord_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpeq_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmplt_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmple_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpgt_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpge_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpneq_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpnlt_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpnle_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpngt_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpnge_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpord_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "cmpunord_sd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "unpackhi_pd", (_m.m128d, _m.m128d), unpackhi_pd),
+    (_m.m128d, "unpacklo_pd", (_m.m128d, _m.m128d), unpacklo_pd),
+    (_m.m128d, "addsub_pd", (_m.m128d, _m.m128d), None),  # SSE3
+    (_m.m128d, "hadd_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "hsub_pd", (_m.m128d, _m.m128d), None),
+    (_m.m128d, "movedup_pd", (_m.m128d,), None),
+    # _________________________________________________________________________
     (_m.m128i, "move_epi64", (_m.m128i,), None),  # SSE2
     (_m.m128i, "packs_epi16", (_m.m128i, _m.m128i), None),
     (_m.m128i, "packs_epi32", (_m.m128i, _m.m128i), None),

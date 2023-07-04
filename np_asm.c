@@ -18,7 +18,6 @@ static PyMethodDef np_asm_method[] = {
 #include "np_asm_sse_int_inc.c"
 #include "np_asm_sse_i32_f32_auto.c"
 #include "np_asm_sse_int_auto.c"
-#include "np_asm_sse_f64_auto.c"
 #include "np_asm_avx_f32_auto.c"
 #include "np_asm_avx_f64_auto.c"
 
@@ -61,15 +60,6 @@ PyMODINIT_FUNC PyInit_np_asm(void)
         PyDict_SetItemString(d, inst_i32_f32_str[i], op);
         Py_DECREF(op);
     }
-    for (int i = 0; i < N_INSTD; i++)
-    {
-        op = PyUFunc_FromFuncAndData(
-            fund[i], NULL, typed, 1, n_in_d[i], 1, PyUFunc_None, instd_str[i],
-            doc_str, 0);
-        PyDict_SetItemString(d, instd_str[i], op);
-        Py_DECREF(op);
-    }
-
     for (int i = 0; i < N_INSTF256; i++)
     {
         op = PyUFunc_FromFuncAndData(

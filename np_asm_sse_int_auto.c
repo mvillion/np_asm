@@ -1,5 +1,5 @@
 // FILE AUTO-GENERATED FROM PYTHON CODE - DO NOT EDIT!
-#define N_INSTI 158
+#define N_INSTI 207
 
 // _np are not really used as they are meant to be inlined
 // They do exist to create symbols
@@ -282,6 +282,251 @@ static __m128 inline _np_mm_movehdup_ps(__m128 in1)
 static __m128 inline _np_mm_moveldup_ps(__m128 in1)
 {
     return _mm_moveldup_ps(in1);
+}
+
+static __m128d inline _np_mm_move_sd(__m128d in1, __m128d in2)
+{
+    return _mm_move_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_add_pd(__m128d in1, __m128d in2)
+{
+    return _mm_add_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_add_sd(__m128d in1, __m128d in2)
+{
+    return _mm_add_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_sub_pd(__m128d in1, __m128d in2)
+{
+    return _mm_sub_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_sub_sd(__m128d in1, __m128d in2)
+{
+    return _mm_sub_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_mul_pd(__m128d in1, __m128d in2)
+{
+    return _mm_mul_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_mul_sd(__m128d in1, __m128d in2)
+{
+    return _mm_mul_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_div_pd(__m128d in1, __m128d in2)
+{
+    return _mm_div_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_div_sd(__m128d in1, __m128d in2)
+{
+    return _mm_div_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_sqrt_pd(__m128d in1)
+{
+    return _mm_sqrt_pd(in1);
+}
+
+static __m128d inline _np_mm_sqrt_sd(__m128d in1, __m128d in2)
+{
+    return _mm_sqrt_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_min_pd(__m128d in1, __m128d in2)
+{
+    return _mm_min_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_min_sd(__m128d in1, __m128d in2)
+{
+    return _mm_min_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_max_pd(__m128d in1, __m128d in2)
+{
+    return _mm_max_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_max_sd(__m128d in1, __m128d in2)
+{
+    return _mm_max_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_and_pd(__m128d in1, __m128d in2)
+{
+    return _mm_and_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_andnot_pd(__m128d in1, __m128d in2)
+{
+    return _mm_andnot_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_or_pd(__m128d in1, __m128d in2)
+{
+    return _mm_or_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_xor_pd(__m128d in1, __m128d in2)
+{
+    return _mm_xor_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpeq_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpeq_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmplt_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmplt_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmple_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmple_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpgt_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpgt_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpge_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpge_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpneq_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpneq_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpnlt_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpnlt_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpnle_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpnle_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpngt_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpngt_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpnge_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpnge_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpord_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpord_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpunord_pd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpunord_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpeq_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpeq_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmplt_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmplt_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmple_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmple_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpgt_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpgt_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpge_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpge_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpneq_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpneq_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpnlt_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpnlt_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpnle_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpnle_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpngt_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpngt_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpnge_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpnge_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpord_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpord_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_cmpunord_sd(__m128d in1, __m128d in2)
+{
+    return _mm_cmpunord_sd(in1, in2);
+}
+
+static __m128d inline _np_mm_unpackhi_pd(__m128d in1, __m128d in2)
+{
+    return _mm_unpackhi_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_unpacklo_pd(__m128d in1, __m128d in2)
+{
+    return _mm_unpacklo_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_addsub_pd(__m128d in1, __m128d in2)
+{
+    return _mm_addsub_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_hadd_pd(__m128d in1, __m128d in2)
+{
+    return _mm_hadd_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_hsub_pd(__m128d in1, __m128d in2)
+{
+    return _mm_hsub_pd(in1, in2);
+}
+
+static __m128d inline _np_mm_movedup_pd(__m128d in1)
+{
+    return _mm_movedup_pd(in1);
 }
 
 static __m128i inline _np_mm_move_epi64(__m128i in1)
@@ -855,6 +1100,55 @@ static const sse_fun_t sse_fun[N_INSTI] =
     {.n_in=2, .name="_mm_hsub_ps", .sse2=_np_mm_hsub_ps, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hsub_ps"},
     {.n_in=1, .name="_mm_movehdup_ps", .sse1=_np_mm_movehdup_ps, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_movehdup_ps"},
     {.n_in=1, .name="_mm_moveldup_ps", .sse1=_np_mm_moveldup_ps, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_moveldup_ps"},
+    {.n_in=2, .name="_mm_move_sd", .sse2=_np_mm_move_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_move_sd"},
+    {.n_in=2, .name="_mm_add_pd", .sse2=_np_mm_add_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_add_pd"},
+    {.n_in=2, .name="_mm_add_sd", .sse2=_np_mm_add_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_add_sd"},
+    {.n_in=2, .name="_mm_sub_pd", .sse2=_np_mm_sub_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sub_pd"},
+    {.n_in=2, .name="_mm_sub_sd", .sse2=_np_mm_sub_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sub_sd"},
+    {.n_in=2, .name="_mm_mul_pd", .sse2=_np_mm_mul_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mul_pd"},
+    {.n_in=2, .name="_mm_mul_sd", .sse2=_np_mm_mul_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_mul_sd"},
+    {.n_in=2, .name="_mm_div_pd", .sse2=_np_mm_div_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_div_pd"},
+    {.n_in=2, .name="_mm_div_sd", .sse2=_np_mm_div_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_div_sd"},
+    {.n_in=1, .name="_mm_sqrt_pd", .sse1=_np_mm_sqrt_pd, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sqrt_pd"},
+    {.n_in=2, .name="_mm_sqrt_sd", .sse2=_np_mm_sqrt_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_sqrt_sd"},
+    {.n_in=2, .name="_mm_min_pd", .sse2=_np_mm_min_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_pd"},
+    {.n_in=2, .name="_mm_min_sd", .sse2=_np_mm_min_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_min_sd"},
+    {.n_in=2, .name="_mm_max_pd", .sse2=_np_mm_max_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_pd"},
+    {.n_in=2, .name="_mm_max_sd", .sse2=_np_mm_max_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_max_sd"},
+    {.n_in=2, .name="_mm_and_pd", .sse2=_np_mm_and_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_and_pd"},
+    {.n_in=2, .name="_mm_andnot_pd", .sse2=_np_mm_andnot_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_andnot_pd"},
+    {.n_in=2, .name="_mm_or_pd", .sse2=_np_mm_or_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_or_pd"},
+    {.n_in=2, .name="_mm_xor_pd", .sse2=_np_mm_xor_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_xor_pd"},
+    {.n_in=2, .name="_mm_cmpeq_pd", .sse2=_np_mm_cmpeq_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpeq_pd"},
+    {.n_in=2, .name="_mm_cmplt_pd", .sse2=_np_mm_cmplt_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmplt_pd"},
+    {.n_in=2, .name="_mm_cmple_pd", .sse2=_np_mm_cmple_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmple_pd"},
+    {.n_in=2, .name="_mm_cmpgt_pd", .sse2=_np_mm_cmpgt_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpgt_pd"},
+    {.n_in=2, .name="_mm_cmpge_pd", .sse2=_np_mm_cmpge_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpge_pd"},
+    {.n_in=2, .name="_mm_cmpneq_pd", .sse2=_np_mm_cmpneq_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpneq_pd"},
+    {.n_in=2, .name="_mm_cmpnlt_pd", .sse2=_np_mm_cmpnlt_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpnlt_pd"},
+    {.n_in=2, .name="_mm_cmpnle_pd", .sse2=_np_mm_cmpnle_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpnle_pd"},
+    {.n_in=2, .name="_mm_cmpngt_pd", .sse2=_np_mm_cmpngt_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpngt_pd"},
+    {.n_in=2, .name="_mm_cmpnge_pd", .sse2=_np_mm_cmpnge_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpnge_pd"},
+    {.n_in=2, .name="_mm_cmpord_pd", .sse2=_np_mm_cmpord_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpord_pd"},
+    {.n_in=2, .name="_mm_cmpunord_pd", .sse2=_np_mm_cmpunord_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpunord_pd"},
+    {.n_in=2, .name="_mm_cmpeq_sd", .sse2=_np_mm_cmpeq_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpeq_sd"},
+    {.n_in=2, .name="_mm_cmplt_sd", .sse2=_np_mm_cmplt_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmplt_sd"},
+    {.n_in=2, .name="_mm_cmple_sd", .sse2=_np_mm_cmple_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmple_sd"},
+    {.n_in=2, .name="_mm_cmpgt_sd", .sse2=_np_mm_cmpgt_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpgt_sd"},
+    {.n_in=2, .name="_mm_cmpge_sd", .sse2=_np_mm_cmpge_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpge_sd"},
+    {.n_in=2, .name="_mm_cmpneq_sd", .sse2=_np_mm_cmpneq_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpneq_sd"},
+    {.n_in=2, .name="_mm_cmpnlt_sd", .sse2=_np_mm_cmpnlt_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpnlt_sd"},
+    {.n_in=2, .name="_mm_cmpnle_sd", .sse2=_np_mm_cmpnle_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpnle_sd"},
+    {.n_in=2, .name="_mm_cmpngt_sd", .sse2=_np_mm_cmpngt_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpngt_sd"},
+    {.n_in=2, .name="_mm_cmpnge_sd", .sse2=_np_mm_cmpnge_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpnge_sd"},
+    {.n_in=2, .name="_mm_cmpord_sd", .sse2=_np_mm_cmpord_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpord_sd"},
+    {.n_in=2, .name="_mm_cmpunord_sd", .sse2=_np_mm_cmpunord_sd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_cmpunord_sd"},
+    {.n_in=2, .name="_mm_unpackhi_pd", .sse2=_np_mm_unpackhi_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpackhi_pd"},
+    {.n_in=2, .name="_mm_unpacklo_pd", .sse2=_np_mm_unpacklo_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_unpacklo_pd"},
+    {.n_in=2, .name="_mm_addsub_pd", .sse2=_np_mm_addsub_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_addsub_pd"},
+    {.n_in=2, .name="_mm_hadd_pd", .sse2=_np_mm_hadd_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hadd_pd"},
+    {.n_in=2, .name="_mm_hsub_pd", .sse2=_np_mm_hsub_pd, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_hsub_pd"},
+    {.n_in=1, .name="_mm_movedup_pd", .sse1=_np_mm_movedup_pd, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_movedup_pd"},
     {.n_in=1, .name="_mm_move_epi64", .sse1=_np_mm_move_epi64, .doc="Function with 1 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_move_epi64"},
     {.n_in=2, .name="_mm_packs_epi16", .sse2=_np_mm_packs_epi16, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_packs_epi16"},
     {.n_in=2, .name="_mm_packs_epi32", .sse2=_np_mm_packs_epi32, .doc="Function with 2 arg\nIntel documentation: https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_packs_epi32"},
@@ -1242,514 +1536,759 @@ static PyObject *np_mm_moveldup_ps(PyObject* self, PyObject* arg)
     return np_sse_m128i(self, arg, sse_fun[55].sse1);
 }
 
-static PyObject *np_mm_move_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_move_sd(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[56].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[56].sse2);
 }
 
-static PyObject *np_mm_packs_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_add_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[57].sse2);
 }
 
-static PyObject *np_mm_packs_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_add_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[58].sse2);
 }
 
-static PyObject *np_mm_packus_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sub_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[59].sse2);
 }
 
-static PyObject *np_mm_unpackhi_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sub_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[60].sse2);
 }
 
-static PyObject *np_mm_unpackhi_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_mul_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[61].sse2);
 }
 
-static PyObject *np_mm_unpackhi_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_mul_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[62].sse2);
 }
 
-static PyObject *np_mm_unpackhi_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_div_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[63].sse2);
 }
 
-static PyObject *np_mm_unpacklo_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_div_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[64].sse2);
 }
 
-static PyObject *np_mm_unpacklo_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sqrt_pd(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i_m128i(self, arg, sse_fun[65].sse2);
+    return np_sse_m128i(self, arg, sse_fun[65].sse1);
 }
 
-static PyObject *np_mm_unpacklo_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sqrt_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[66].sse2);
 }
 
-static PyObject *np_mm_unpacklo_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_min_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[67].sse2);
 }
 
-static PyObject *np_mm_add_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_min_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[68].sse2);
 }
 
-static PyObject *np_mm_add_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_max_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[69].sse2);
 }
 
-static PyObject *np_mm_add_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_max_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[70].sse2);
 }
 
-static PyObject *np_mm_add_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_and_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[71].sse2);
 }
 
-static PyObject *np_mm_adds_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_andnot_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[72].sse2);
 }
 
-static PyObject *np_mm_adds_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_or_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[73].sse2);
 }
 
-static PyObject *np_mm_adds_epu8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_xor_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[74].sse2);
 }
 
-static PyObject *np_mm_adds_epu16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpeq_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[75].sse2);
 }
 
-static PyObject *np_mm_sub_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmplt_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[76].sse2);
 }
 
-static PyObject *np_mm_sub_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmple_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[77].sse2);
 }
 
-static PyObject *np_mm_sub_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpgt_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[78].sse2);
 }
 
-static PyObject *np_mm_sub_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpge_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[79].sse2);
 }
 
-static PyObject *np_mm_subs_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpneq_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[80].sse2);
 }
 
-static PyObject *np_mm_subs_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpnlt_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[81].sse2);
 }
 
-static PyObject *np_mm_subs_epu8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpnle_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[82].sse2);
 }
 
-static PyObject *np_mm_subs_epu16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpngt_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[83].sse2);
 }
 
-static PyObject *np_mm_madd_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpnge_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[84].sse2);
 }
 
-static PyObject *np_mm_mulhi_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpord_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[85].sse2);
 }
 
-static PyObject *np_mm_mullo_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpunord_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[86].sse2);
 }
 
-static PyObject *np_mm_mul_epu32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpeq_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[87].sse2);
 }
 
-static PyObject *np_mm_sll_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmplt_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[88].sse2);
 }
 
-static PyObject *np_mm_sll_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmple_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[89].sse2);
 }
 
-static PyObject *np_mm_sll_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpgt_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[90].sse2);
 }
 
-static PyObject *np_mm_sra_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpge_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[91].sse2);
 }
 
-static PyObject *np_mm_sra_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpneq_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[92].sse2);
 }
 
-static PyObject *np_mm_srl_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpnlt_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[93].sse2);
 }
 
-static PyObject *np_mm_srl_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpnle_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[94].sse2);
 }
 
-static PyObject *np_mm_srl_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpngt_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[95].sse2);
 }
 
-static PyObject *np_mm_and_si128(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpnge_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[96].sse2);
 }
 
-static PyObject *np_mm_andnot_si128(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpord_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[97].sse2);
 }
 
-static PyObject *np_mm_or_si128(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpunord_sd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[98].sse2);
 }
 
-static PyObject *np_mm_xor_si128(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpackhi_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[99].sse2);
 }
 
-static PyObject *np_mm_cmpeq_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpacklo_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[100].sse2);
 }
 
-static PyObject *np_mm_cmpeq_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_addsub_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[101].sse2);
 }
 
-static PyObject *np_mm_cmpeq_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_hadd_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[102].sse2);
 }
 
-static PyObject *np_mm_cmplt_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_hsub_pd(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[103].sse2);
 }
 
-static PyObject *np_mm_cmplt_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_movedup_pd(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i_m128i(self, arg, sse_fun[104].sse2);
+    return np_sse_m128i(self, arg, sse_fun[104].sse1);
 }
 
-static PyObject *np_mm_cmplt_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_move_epi64(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i_m128i(self, arg, sse_fun[105].sse2);
+    return np_sse_m128i(self, arg, sse_fun[105].sse1);
 }
 
-static PyObject *np_mm_cmpgt_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_packs_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[106].sse2);
 }
 
-static PyObject *np_mm_cmpgt_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_packs_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[107].sse2);
 }
 
-static PyObject *np_mm_cmpgt_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_packus_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[108].sse2);
 }
 
-static PyObject *np_mm_max_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpackhi_epi8(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[109].sse2);
 }
 
-static PyObject *np_mm_max_epu8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpackhi_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[110].sse2);
 }
 
-static PyObject *np_mm_min_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpackhi_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[111].sse2);
 }
 
-static PyObject *np_mm_min_epu8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpackhi_epi64(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[112].sse2);
 }
 
-static PyObject *np_mm_mulhi_epu16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpacklo_epi8(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[113].sse2);
 }
 
-static PyObject *np_mm_avg_epu8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpacklo_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[114].sse2);
 }
 
-static PyObject *np_mm_avg_epu16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpacklo_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[115].sse2);
 }
 
-static PyObject *np_mm_sad_epu8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_unpacklo_epi64(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[116].sse2);
 }
 
-static PyObject *np_mm_hadd_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_add_epi8(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[117].sse2);
 }
 
-static PyObject *np_mm_hadd_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_add_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[118].sse2);
 }
 
-static PyObject *np_mm_hadds_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_add_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[119].sse2);
 }
 
-static PyObject *np_mm_hsub_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_add_epi64(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[120].sse2);
 }
 
-static PyObject *np_mm_hsub_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_adds_epi8(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[121].sse2);
 }
 
-static PyObject *np_mm_hsubs_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_adds_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[122].sse2);
 }
 
-static PyObject *np_mm_maddubs_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_adds_epu8(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[123].sse2);
 }
 
-static PyObject *np_mm_mulhrs_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_adds_epu16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[124].sse2);
 }
 
-static PyObject *np_mm_shuffle_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sub_epi8(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[125].sse2);
 }
 
-static PyObject *np_mm_sign_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sub_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[126].sse2);
 }
 
-static PyObject *np_mm_sign_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sub_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[127].sse2);
 }
 
-static PyObject *np_mm_sign_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sub_epi64(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[128].sse2);
 }
 
-static PyObject *np_mm_abs_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_subs_epi8(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[129].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[129].sse2);
 }
 
-static PyObject *np_mm_abs_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_subs_epi16(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[130].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[130].sse2);
 }
 
-static PyObject *np_mm_abs_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_subs_epu8(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[131].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[131].sse2);
 }
 
-static PyObject *np_mm_cmpeq_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_subs_epu16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[132].sse2);
 }
 
-static PyObject *np_mm_min_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_madd_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[133].sse2);
 }
 
-static PyObject *np_mm_max_epi8(PyObject* self, PyObject* arg)
+static PyObject *np_mm_mulhi_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[134].sse2);
 }
 
-static PyObject *np_mm_min_epu16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_mullo_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[135].sse2);
 }
 
-static PyObject *np_mm_max_epu16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_mul_epu32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[136].sse2);
 }
 
-static PyObject *np_mm_min_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sll_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[137].sse2);
 }
 
-static PyObject *np_mm_max_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sll_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[138].sse2);
 }
 
-static PyObject *np_mm_min_epu32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sll_epi64(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[139].sse2);
 }
 
-static PyObject *np_mm_max_epu32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sra_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[140].sse2);
 }
 
-static PyObject *np_mm_mullo_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_sra_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[141].sse2);
 }
 
-static PyObject *np_mm_mul_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_srl_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[142].sse2);
 }
 
-static PyObject *np_mm_minpos_epu16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_srl_epi32(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[143].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[143].sse2);
 }
 
-static PyObject *np_mm_cvtepi8_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_srl_epi64(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[144].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[144].sse2);
 }
 
-static PyObject *np_mm_cvtepi16_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_and_si128(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[145].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[145].sse2);
 }
 
-static PyObject *np_mm_cvtepi8_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_andnot_si128(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[146].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[146].sse2);
 }
 
-static PyObject *np_mm_cvtepi32_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_or_si128(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[147].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[147].sse2);
 }
 
-static PyObject *np_mm_cvtepi16_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_xor_si128(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[148].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[148].sse2);
 }
 
-static PyObject *np_mm_cvtepi8_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpeq_epi8(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[149].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[149].sse2);
 }
 
-static PyObject *np_mm_cvtepu8_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpeq_epi16(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[150].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[150].sse2);
 }
 
-static PyObject *np_mm_cvtepu16_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpeq_epi32(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[151].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[151].sse2);
 }
 
-static PyObject *np_mm_cvtepu8_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmplt_epi8(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[152].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[152].sse2);
 }
 
-static PyObject *np_mm_cvtepu32_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmplt_epi16(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[153].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[153].sse2);
 }
 
-static PyObject *np_mm_cvtepu16_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmplt_epi32(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[154].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[154].sse2);
 }
 
-static PyObject *np_mm_cvtepu8_epi16(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpgt_epi8(PyObject* self, PyObject* arg)
 {
-    return np_sse_m128i(self, arg, sse_fun[155].sse1);
+    return np_sse_m128i_m128i(self, arg, sse_fun[155].sse2);
 }
 
-static PyObject *np_mm_packus_epi32(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpgt_epi16(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[156].sse2);
 }
 
-static PyObject *np_mm_cmpgt_epi64(PyObject* self, PyObject* arg)
+static PyObject *np_mm_cmpgt_epi32(PyObject* self, PyObject* arg)
 {
     return np_sse_m128i_m128i(self, arg, sse_fun[157].sse2);
+}
+
+static PyObject *np_mm_max_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[158].sse2);
+}
+
+static PyObject *np_mm_max_epu8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[159].sse2);
+}
+
+static PyObject *np_mm_min_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[160].sse2);
+}
+
+static PyObject *np_mm_min_epu8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[161].sse2);
+}
+
+static PyObject *np_mm_mulhi_epu16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[162].sse2);
+}
+
+static PyObject *np_mm_avg_epu8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[163].sse2);
+}
+
+static PyObject *np_mm_avg_epu16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[164].sse2);
+}
+
+static PyObject *np_mm_sad_epu8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[165].sse2);
+}
+
+static PyObject *np_mm_hadd_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[166].sse2);
+}
+
+static PyObject *np_mm_hadd_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[167].sse2);
+}
+
+static PyObject *np_mm_hadds_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[168].sse2);
+}
+
+static PyObject *np_mm_hsub_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[169].sse2);
+}
+
+static PyObject *np_mm_hsub_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[170].sse2);
+}
+
+static PyObject *np_mm_hsubs_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[171].sse2);
+}
+
+static PyObject *np_mm_maddubs_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[172].sse2);
+}
+
+static PyObject *np_mm_mulhrs_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[173].sse2);
+}
+
+static PyObject *np_mm_shuffle_epi8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[174].sse2);
+}
+
+static PyObject *np_mm_sign_epi8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[175].sse2);
+}
+
+static PyObject *np_mm_sign_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[176].sse2);
+}
+
+static PyObject *np_mm_sign_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[177].sse2);
+}
+
+static PyObject *np_mm_abs_epi8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[178].sse1);
+}
+
+static PyObject *np_mm_abs_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[179].sse1);
+}
+
+static PyObject *np_mm_abs_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[180].sse1);
+}
+
+static PyObject *np_mm_cmpeq_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[181].sse2);
+}
+
+static PyObject *np_mm_min_epi8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[182].sse2);
+}
+
+static PyObject *np_mm_max_epi8(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[183].sse2);
+}
+
+static PyObject *np_mm_min_epu16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[184].sse2);
+}
+
+static PyObject *np_mm_max_epu16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[185].sse2);
+}
+
+static PyObject *np_mm_min_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[186].sse2);
+}
+
+static PyObject *np_mm_max_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[187].sse2);
+}
+
+static PyObject *np_mm_min_epu32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[188].sse2);
+}
+
+static PyObject *np_mm_max_epu32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[189].sse2);
+}
+
+static PyObject *np_mm_mullo_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[190].sse2);
+}
+
+static PyObject *np_mm_mul_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[191].sse2);
+}
+
+static PyObject *np_mm_minpos_epu16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[192].sse1);
+}
+
+static PyObject *np_mm_cvtepi8_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[193].sse1);
+}
+
+static PyObject *np_mm_cvtepi16_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[194].sse1);
+}
+
+static PyObject *np_mm_cvtepi8_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[195].sse1);
+}
+
+static PyObject *np_mm_cvtepi32_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[196].sse1);
+}
+
+static PyObject *np_mm_cvtepi16_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[197].sse1);
+}
+
+static PyObject *np_mm_cvtepi8_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[198].sse1);
+}
+
+static PyObject *np_mm_cvtepu8_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[199].sse1);
+}
+
+static PyObject *np_mm_cvtepu16_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[200].sse1);
+}
+
+static PyObject *np_mm_cvtepu8_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[201].sse1);
+}
+
+static PyObject *np_mm_cvtepu32_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[202].sse1);
+}
+
+static PyObject *np_mm_cvtepu16_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[203].sse1);
+}
+
+static PyObject *np_mm_cvtepu8_epi16(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i(self, arg, sse_fun[204].sse1);
+}
+
+static PyObject *np_mm_packus_epi32(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[205].sse2);
+}
+
+static PyObject *np_mm_cmpgt_epi64(PyObject* self, PyObject* arg)
+{
+    return np_sse_m128i_m128i(self, arg, sse_fun[206].sse2);
 }
 
 static PyMethodDef np_sse_methods[] =
@@ -1810,107 +2349,156 @@ static PyMethodDef np_sse_methods[] =
     {"_mm_hsub_ps", np_mm_hsub_ps, METH_VARARGS, sse_fun[53].doc},
     {"_mm_movehdup_ps", np_mm_movehdup_ps, METH_VARARGS, sse_fun[54].doc},
     {"_mm_moveldup_ps", np_mm_moveldup_ps, METH_VARARGS, sse_fun[55].doc},
-    {"_mm_move_epi64", np_mm_move_epi64, METH_VARARGS, sse_fun[56].doc},
-    {"_mm_packs_epi16", np_mm_packs_epi16, METH_VARARGS, sse_fun[57].doc},
-    {"_mm_packs_epi32", np_mm_packs_epi32, METH_VARARGS, sse_fun[58].doc},
-    {"_mm_packus_epi16", np_mm_packus_epi16, METH_VARARGS, sse_fun[59].doc},
-    {"_mm_unpackhi_epi8", np_mm_unpackhi_epi8, METH_VARARGS, sse_fun[60].doc},
-    {"_mm_unpackhi_epi16", np_mm_unpackhi_epi16, METH_VARARGS, sse_fun[61].doc},
-    {"_mm_unpackhi_epi32", np_mm_unpackhi_epi32, METH_VARARGS, sse_fun[62].doc},
-    {"_mm_unpackhi_epi64", np_mm_unpackhi_epi64, METH_VARARGS, sse_fun[63].doc},
-    {"_mm_unpacklo_epi8", np_mm_unpacklo_epi8, METH_VARARGS, sse_fun[64].doc},
-    {"_mm_unpacklo_epi16", np_mm_unpacklo_epi16, METH_VARARGS, sse_fun[65].doc},
-    {"_mm_unpacklo_epi32", np_mm_unpacklo_epi32, METH_VARARGS, sse_fun[66].doc},
-    {"_mm_unpacklo_epi64", np_mm_unpacklo_epi64, METH_VARARGS, sse_fun[67].doc},
-    {"_mm_add_epi8", np_mm_add_epi8, METH_VARARGS, sse_fun[68].doc},
-    {"_mm_add_epi16", np_mm_add_epi16, METH_VARARGS, sse_fun[69].doc},
-    {"_mm_add_epi32", np_mm_add_epi32, METH_VARARGS, sse_fun[70].doc},
-    {"_mm_add_epi64", np_mm_add_epi64, METH_VARARGS, sse_fun[71].doc},
-    {"_mm_adds_epi8", np_mm_adds_epi8, METH_VARARGS, sse_fun[72].doc},
-    {"_mm_adds_epi16", np_mm_adds_epi16, METH_VARARGS, sse_fun[73].doc},
-    {"_mm_adds_epu8", np_mm_adds_epu8, METH_VARARGS, sse_fun[74].doc},
-    {"_mm_adds_epu16", np_mm_adds_epu16, METH_VARARGS, sse_fun[75].doc},
-    {"_mm_sub_epi8", np_mm_sub_epi8, METH_VARARGS, sse_fun[76].doc},
-    {"_mm_sub_epi16", np_mm_sub_epi16, METH_VARARGS, sse_fun[77].doc},
-    {"_mm_sub_epi32", np_mm_sub_epi32, METH_VARARGS, sse_fun[78].doc},
-    {"_mm_sub_epi64", np_mm_sub_epi64, METH_VARARGS, sse_fun[79].doc},
-    {"_mm_subs_epi8", np_mm_subs_epi8, METH_VARARGS, sse_fun[80].doc},
-    {"_mm_subs_epi16", np_mm_subs_epi16, METH_VARARGS, sse_fun[81].doc},
-    {"_mm_subs_epu8", np_mm_subs_epu8, METH_VARARGS, sse_fun[82].doc},
-    {"_mm_subs_epu16", np_mm_subs_epu16, METH_VARARGS, sse_fun[83].doc},
-    {"_mm_madd_epi16", np_mm_madd_epi16, METH_VARARGS, sse_fun[84].doc},
-    {"_mm_mulhi_epi16", np_mm_mulhi_epi16, METH_VARARGS, sse_fun[85].doc},
-    {"_mm_mullo_epi16", np_mm_mullo_epi16, METH_VARARGS, sse_fun[86].doc},
-    {"_mm_mul_epu32", np_mm_mul_epu32, METH_VARARGS, sse_fun[87].doc},
-    {"_mm_sll_epi16", np_mm_sll_epi16, METH_VARARGS, sse_fun[88].doc},
-    {"_mm_sll_epi32", np_mm_sll_epi32, METH_VARARGS, sse_fun[89].doc},
-    {"_mm_sll_epi64", np_mm_sll_epi64, METH_VARARGS, sse_fun[90].doc},
-    {"_mm_sra_epi16", np_mm_sra_epi16, METH_VARARGS, sse_fun[91].doc},
-    {"_mm_sra_epi32", np_mm_sra_epi32, METH_VARARGS, sse_fun[92].doc},
-    {"_mm_srl_epi16", np_mm_srl_epi16, METH_VARARGS, sse_fun[93].doc},
-    {"_mm_srl_epi32", np_mm_srl_epi32, METH_VARARGS, sse_fun[94].doc},
-    {"_mm_srl_epi64", np_mm_srl_epi64, METH_VARARGS, sse_fun[95].doc},
-    {"_mm_and_si128", np_mm_and_si128, METH_VARARGS, sse_fun[96].doc},
-    {"_mm_andnot_si128", np_mm_andnot_si128, METH_VARARGS, sse_fun[97].doc},
-    {"_mm_or_si128", np_mm_or_si128, METH_VARARGS, sse_fun[98].doc},
-    {"_mm_xor_si128", np_mm_xor_si128, METH_VARARGS, sse_fun[99].doc},
-    {"_mm_cmpeq_epi8", np_mm_cmpeq_epi8, METH_VARARGS, sse_fun[100].doc},
-    {"_mm_cmpeq_epi16", np_mm_cmpeq_epi16, METH_VARARGS, sse_fun[101].doc},
-    {"_mm_cmpeq_epi32", np_mm_cmpeq_epi32, METH_VARARGS, sse_fun[102].doc},
-    {"_mm_cmplt_epi8", np_mm_cmplt_epi8, METH_VARARGS, sse_fun[103].doc},
-    {"_mm_cmplt_epi16", np_mm_cmplt_epi16, METH_VARARGS, sse_fun[104].doc},
-    {"_mm_cmplt_epi32", np_mm_cmplt_epi32, METH_VARARGS, sse_fun[105].doc},
-    {"_mm_cmpgt_epi8", np_mm_cmpgt_epi8, METH_VARARGS, sse_fun[106].doc},
-    {"_mm_cmpgt_epi16", np_mm_cmpgt_epi16, METH_VARARGS, sse_fun[107].doc},
-    {"_mm_cmpgt_epi32", np_mm_cmpgt_epi32, METH_VARARGS, sse_fun[108].doc},
-    {"_mm_max_epi16", np_mm_max_epi16, METH_VARARGS, sse_fun[109].doc},
-    {"_mm_max_epu8", np_mm_max_epu8, METH_VARARGS, sse_fun[110].doc},
-    {"_mm_min_epi16", np_mm_min_epi16, METH_VARARGS, sse_fun[111].doc},
-    {"_mm_min_epu8", np_mm_min_epu8, METH_VARARGS, sse_fun[112].doc},
-    {"_mm_mulhi_epu16", np_mm_mulhi_epu16, METH_VARARGS, sse_fun[113].doc},
-    {"_mm_avg_epu8", np_mm_avg_epu8, METH_VARARGS, sse_fun[114].doc},
-    {"_mm_avg_epu16", np_mm_avg_epu16, METH_VARARGS, sse_fun[115].doc},
-    {"_mm_sad_epu8", np_mm_sad_epu8, METH_VARARGS, sse_fun[116].doc},
-    {"_mm_hadd_epi16", np_mm_hadd_epi16, METH_VARARGS, sse_fun[117].doc},
-    {"_mm_hadd_epi32", np_mm_hadd_epi32, METH_VARARGS, sse_fun[118].doc},
-    {"_mm_hadds_epi16", np_mm_hadds_epi16, METH_VARARGS, sse_fun[119].doc},
-    {"_mm_hsub_epi16", np_mm_hsub_epi16, METH_VARARGS, sse_fun[120].doc},
-    {"_mm_hsub_epi32", np_mm_hsub_epi32, METH_VARARGS, sse_fun[121].doc},
-    {"_mm_hsubs_epi16", np_mm_hsubs_epi16, METH_VARARGS, sse_fun[122].doc},
-    {"_mm_maddubs_epi16", np_mm_maddubs_epi16, METH_VARARGS, sse_fun[123].doc},
-    {"_mm_mulhrs_epi16", np_mm_mulhrs_epi16, METH_VARARGS, sse_fun[124].doc},
-    {"_mm_shuffle_epi8", np_mm_shuffle_epi8, METH_VARARGS, sse_fun[125].doc},
-    {"_mm_sign_epi8", np_mm_sign_epi8, METH_VARARGS, sse_fun[126].doc},
-    {"_mm_sign_epi16", np_mm_sign_epi16, METH_VARARGS, sse_fun[127].doc},
-    {"_mm_sign_epi32", np_mm_sign_epi32, METH_VARARGS, sse_fun[128].doc},
-    {"_mm_abs_epi8", np_mm_abs_epi8, METH_VARARGS, sse_fun[129].doc},
-    {"_mm_abs_epi16", np_mm_abs_epi16, METH_VARARGS, sse_fun[130].doc},
-    {"_mm_abs_epi32", np_mm_abs_epi32, METH_VARARGS, sse_fun[131].doc},
-    {"_mm_cmpeq_epi64", np_mm_cmpeq_epi64, METH_VARARGS, sse_fun[132].doc},
-    {"_mm_min_epi8", np_mm_min_epi8, METH_VARARGS, sse_fun[133].doc},
-    {"_mm_max_epi8", np_mm_max_epi8, METH_VARARGS, sse_fun[134].doc},
-    {"_mm_min_epu16", np_mm_min_epu16, METH_VARARGS, sse_fun[135].doc},
-    {"_mm_max_epu16", np_mm_max_epu16, METH_VARARGS, sse_fun[136].doc},
-    {"_mm_min_epi32", np_mm_min_epi32, METH_VARARGS, sse_fun[137].doc},
-    {"_mm_max_epi32", np_mm_max_epi32, METH_VARARGS, sse_fun[138].doc},
-    {"_mm_min_epu32", np_mm_min_epu32, METH_VARARGS, sse_fun[139].doc},
-    {"_mm_max_epu32", np_mm_max_epu32, METH_VARARGS, sse_fun[140].doc},
-    {"_mm_mullo_epi32", np_mm_mullo_epi32, METH_VARARGS, sse_fun[141].doc},
-    {"_mm_mul_epi32", np_mm_mul_epi32, METH_VARARGS, sse_fun[142].doc},
-    {"_mm_minpos_epu16", np_mm_minpos_epu16, METH_VARARGS, sse_fun[143].doc},
-    {"_mm_cvtepi8_epi32", np_mm_cvtepi8_epi32, METH_VARARGS, sse_fun[144].doc},
-    {"_mm_cvtepi16_epi32", np_mm_cvtepi16_epi32, METH_VARARGS, sse_fun[145].doc},
-    {"_mm_cvtepi8_epi64", np_mm_cvtepi8_epi64, METH_VARARGS, sse_fun[146].doc},
-    {"_mm_cvtepi32_epi64", np_mm_cvtepi32_epi64, METH_VARARGS, sse_fun[147].doc},
-    {"_mm_cvtepi16_epi64", np_mm_cvtepi16_epi64, METH_VARARGS, sse_fun[148].doc},
-    {"_mm_cvtepi8_epi16", np_mm_cvtepi8_epi16, METH_VARARGS, sse_fun[149].doc},
-    {"_mm_cvtepu8_epi32", np_mm_cvtepu8_epi32, METH_VARARGS, sse_fun[150].doc},
-    {"_mm_cvtepu16_epi32", np_mm_cvtepu16_epi32, METH_VARARGS, sse_fun[151].doc},
-    {"_mm_cvtepu8_epi64", np_mm_cvtepu8_epi64, METH_VARARGS, sse_fun[152].doc},
-    {"_mm_cvtepu32_epi64", np_mm_cvtepu32_epi64, METH_VARARGS, sse_fun[153].doc},
-    {"_mm_cvtepu16_epi64", np_mm_cvtepu16_epi64, METH_VARARGS, sse_fun[154].doc},
-    {"_mm_cvtepu8_epi16", np_mm_cvtepu8_epi16, METH_VARARGS, sse_fun[155].doc},
-    {"_mm_packus_epi32", np_mm_packus_epi32, METH_VARARGS, sse_fun[156].doc},
-    {"_mm_cmpgt_epi64", np_mm_cmpgt_epi64, METH_VARARGS, sse_fun[157].doc},
+    {"_mm_move_sd", np_mm_move_sd, METH_VARARGS, sse_fun[56].doc},
+    {"_mm_add_pd", np_mm_add_pd, METH_VARARGS, sse_fun[57].doc},
+    {"_mm_add_sd", np_mm_add_sd, METH_VARARGS, sse_fun[58].doc},
+    {"_mm_sub_pd", np_mm_sub_pd, METH_VARARGS, sse_fun[59].doc},
+    {"_mm_sub_sd", np_mm_sub_sd, METH_VARARGS, sse_fun[60].doc},
+    {"_mm_mul_pd", np_mm_mul_pd, METH_VARARGS, sse_fun[61].doc},
+    {"_mm_mul_sd", np_mm_mul_sd, METH_VARARGS, sse_fun[62].doc},
+    {"_mm_div_pd", np_mm_div_pd, METH_VARARGS, sse_fun[63].doc},
+    {"_mm_div_sd", np_mm_div_sd, METH_VARARGS, sse_fun[64].doc},
+    {"_mm_sqrt_pd", np_mm_sqrt_pd, METH_VARARGS, sse_fun[65].doc},
+    {"_mm_sqrt_sd", np_mm_sqrt_sd, METH_VARARGS, sse_fun[66].doc},
+    {"_mm_min_pd", np_mm_min_pd, METH_VARARGS, sse_fun[67].doc},
+    {"_mm_min_sd", np_mm_min_sd, METH_VARARGS, sse_fun[68].doc},
+    {"_mm_max_pd", np_mm_max_pd, METH_VARARGS, sse_fun[69].doc},
+    {"_mm_max_sd", np_mm_max_sd, METH_VARARGS, sse_fun[70].doc},
+    {"_mm_and_pd", np_mm_and_pd, METH_VARARGS, sse_fun[71].doc},
+    {"_mm_andnot_pd", np_mm_andnot_pd, METH_VARARGS, sse_fun[72].doc},
+    {"_mm_or_pd", np_mm_or_pd, METH_VARARGS, sse_fun[73].doc},
+    {"_mm_xor_pd", np_mm_xor_pd, METH_VARARGS, sse_fun[74].doc},
+    {"_mm_cmpeq_pd", np_mm_cmpeq_pd, METH_VARARGS, sse_fun[75].doc},
+    {"_mm_cmplt_pd", np_mm_cmplt_pd, METH_VARARGS, sse_fun[76].doc},
+    {"_mm_cmple_pd", np_mm_cmple_pd, METH_VARARGS, sse_fun[77].doc},
+    {"_mm_cmpgt_pd", np_mm_cmpgt_pd, METH_VARARGS, sse_fun[78].doc},
+    {"_mm_cmpge_pd", np_mm_cmpge_pd, METH_VARARGS, sse_fun[79].doc},
+    {"_mm_cmpneq_pd", np_mm_cmpneq_pd, METH_VARARGS, sse_fun[80].doc},
+    {"_mm_cmpnlt_pd", np_mm_cmpnlt_pd, METH_VARARGS, sse_fun[81].doc},
+    {"_mm_cmpnle_pd", np_mm_cmpnle_pd, METH_VARARGS, sse_fun[82].doc},
+    {"_mm_cmpngt_pd", np_mm_cmpngt_pd, METH_VARARGS, sse_fun[83].doc},
+    {"_mm_cmpnge_pd", np_mm_cmpnge_pd, METH_VARARGS, sse_fun[84].doc},
+    {"_mm_cmpord_pd", np_mm_cmpord_pd, METH_VARARGS, sse_fun[85].doc},
+    {"_mm_cmpunord_pd", np_mm_cmpunord_pd, METH_VARARGS, sse_fun[86].doc},
+    {"_mm_cmpeq_sd", np_mm_cmpeq_sd, METH_VARARGS, sse_fun[87].doc},
+    {"_mm_cmplt_sd", np_mm_cmplt_sd, METH_VARARGS, sse_fun[88].doc},
+    {"_mm_cmple_sd", np_mm_cmple_sd, METH_VARARGS, sse_fun[89].doc},
+    {"_mm_cmpgt_sd", np_mm_cmpgt_sd, METH_VARARGS, sse_fun[90].doc},
+    {"_mm_cmpge_sd", np_mm_cmpge_sd, METH_VARARGS, sse_fun[91].doc},
+    {"_mm_cmpneq_sd", np_mm_cmpneq_sd, METH_VARARGS, sse_fun[92].doc},
+    {"_mm_cmpnlt_sd", np_mm_cmpnlt_sd, METH_VARARGS, sse_fun[93].doc},
+    {"_mm_cmpnle_sd", np_mm_cmpnle_sd, METH_VARARGS, sse_fun[94].doc},
+    {"_mm_cmpngt_sd", np_mm_cmpngt_sd, METH_VARARGS, sse_fun[95].doc},
+    {"_mm_cmpnge_sd", np_mm_cmpnge_sd, METH_VARARGS, sse_fun[96].doc},
+    {"_mm_cmpord_sd", np_mm_cmpord_sd, METH_VARARGS, sse_fun[97].doc},
+    {"_mm_cmpunord_sd", np_mm_cmpunord_sd, METH_VARARGS, sse_fun[98].doc},
+    {"_mm_unpackhi_pd", np_mm_unpackhi_pd, METH_VARARGS, sse_fun[99].doc},
+    {"_mm_unpacklo_pd", np_mm_unpacklo_pd, METH_VARARGS, sse_fun[100].doc},
+    {"_mm_addsub_pd", np_mm_addsub_pd, METH_VARARGS, sse_fun[101].doc},
+    {"_mm_hadd_pd", np_mm_hadd_pd, METH_VARARGS, sse_fun[102].doc},
+    {"_mm_hsub_pd", np_mm_hsub_pd, METH_VARARGS, sse_fun[103].doc},
+    {"_mm_movedup_pd", np_mm_movedup_pd, METH_VARARGS, sse_fun[104].doc},
+    {"_mm_move_epi64", np_mm_move_epi64, METH_VARARGS, sse_fun[105].doc},
+    {"_mm_packs_epi16", np_mm_packs_epi16, METH_VARARGS, sse_fun[106].doc},
+    {"_mm_packs_epi32", np_mm_packs_epi32, METH_VARARGS, sse_fun[107].doc},
+    {"_mm_packus_epi16", np_mm_packus_epi16, METH_VARARGS, sse_fun[108].doc},
+    {"_mm_unpackhi_epi8", np_mm_unpackhi_epi8, METH_VARARGS, sse_fun[109].doc},
+    {"_mm_unpackhi_epi16", np_mm_unpackhi_epi16, METH_VARARGS, sse_fun[110].doc},
+    {"_mm_unpackhi_epi32", np_mm_unpackhi_epi32, METH_VARARGS, sse_fun[111].doc},
+    {"_mm_unpackhi_epi64", np_mm_unpackhi_epi64, METH_VARARGS, sse_fun[112].doc},
+    {"_mm_unpacklo_epi8", np_mm_unpacklo_epi8, METH_VARARGS, sse_fun[113].doc},
+    {"_mm_unpacklo_epi16", np_mm_unpacklo_epi16, METH_VARARGS, sse_fun[114].doc},
+    {"_mm_unpacklo_epi32", np_mm_unpacklo_epi32, METH_VARARGS, sse_fun[115].doc},
+    {"_mm_unpacklo_epi64", np_mm_unpacklo_epi64, METH_VARARGS, sse_fun[116].doc},
+    {"_mm_add_epi8", np_mm_add_epi8, METH_VARARGS, sse_fun[117].doc},
+    {"_mm_add_epi16", np_mm_add_epi16, METH_VARARGS, sse_fun[118].doc},
+    {"_mm_add_epi32", np_mm_add_epi32, METH_VARARGS, sse_fun[119].doc},
+    {"_mm_add_epi64", np_mm_add_epi64, METH_VARARGS, sse_fun[120].doc},
+    {"_mm_adds_epi8", np_mm_adds_epi8, METH_VARARGS, sse_fun[121].doc},
+    {"_mm_adds_epi16", np_mm_adds_epi16, METH_VARARGS, sse_fun[122].doc},
+    {"_mm_adds_epu8", np_mm_adds_epu8, METH_VARARGS, sse_fun[123].doc},
+    {"_mm_adds_epu16", np_mm_adds_epu16, METH_VARARGS, sse_fun[124].doc},
+    {"_mm_sub_epi8", np_mm_sub_epi8, METH_VARARGS, sse_fun[125].doc},
+    {"_mm_sub_epi16", np_mm_sub_epi16, METH_VARARGS, sse_fun[126].doc},
+    {"_mm_sub_epi32", np_mm_sub_epi32, METH_VARARGS, sse_fun[127].doc},
+    {"_mm_sub_epi64", np_mm_sub_epi64, METH_VARARGS, sse_fun[128].doc},
+    {"_mm_subs_epi8", np_mm_subs_epi8, METH_VARARGS, sse_fun[129].doc},
+    {"_mm_subs_epi16", np_mm_subs_epi16, METH_VARARGS, sse_fun[130].doc},
+    {"_mm_subs_epu8", np_mm_subs_epu8, METH_VARARGS, sse_fun[131].doc},
+    {"_mm_subs_epu16", np_mm_subs_epu16, METH_VARARGS, sse_fun[132].doc},
+    {"_mm_madd_epi16", np_mm_madd_epi16, METH_VARARGS, sse_fun[133].doc},
+    {"_mm_mulhi_epi16", np_mm_mulhi_epi16, METH_VARARGS, sse_fun[134].doc},
+    {"_mm_mullo_epi16", np_mm_mullo_epi16, METH_VARARGS, sse_fun[135].doc},
+    {"_mm_mul_epu32", np_mm_mul_epu32, METH_VARARGS, sse_fun[136].doc},
+    {"_mm_sll_epi16", np_mm_sll_epi16, METH_VARARGS, sse_fun[137].doc},
+    {"_mm_sll_epi32", np_mm_sll_epi32, METH_VARARGS, sse_fun[138].doc},
+    {"_mm_sll_epi64", np_mm_sll_epi64, METH_VARARGS, sse_fun[139].doc},
+    {"_mm_sra_epi16", np_mm_sra_epi16, METH_VARARGS, sse_fun[140].doc},
+    {"_mm_sra_epi32", np_mm_sra_epi32, METH_VARARGS, sse_fun[141].doc},
+    {"_mm_srl_epi16", np_mm_srl_epi16, METH_VARARGS, sse_fun[142].doc},
+    {"_mm_srl_epi32", np_mm_srl_epi32, METH_VARARGS, sse_fun[143].doc},
+    {"_mm_srl_epi64", np_mm_srl_epi64, METH_VARARGS, sse_fun[144].doc},
+    {"_mm_and_si128", np_mm_and_si128, METH_VARARGS, sse_fun[145].doc},
+    {"_mm_andnot_si128", np_mm_andnot_si128, METH_VARARGS, sse_fun[146].doc},
+    {"_mm_or_si128", np_mm_or_si128, METH_VARARGS, sse_fun[147].doc},
+    {"_mm_xor_si128", np_mm_xor_si128, METH_VARARGS, sse_fun[148].doc},
+    {"_mm_cmpeq_epi8", np_mm_cmpeq_epi8, METH_VARARGS, sse_fun[149].doc},
+    {"_mm_cmpeq_epi16", np_mm_cmpeq_epi16, METH_VARARGS, sse_fun[150].doc},
+    {"_mm_cmpeq_epi32", np_mm_cmpeq_epi32, METH_VARARGS, sse_fun[151].doc},
+    {"_mm_cmplt_epi8", np_mm_cmplt_epi8, METH_VARARGS, sse_fun[152].doc},
+    {"_mm_cmplt_epi16", np_mm_cmplt_epi16, METH_VARARGS, sse_fun[153].doc},
+    {"_mm_cmplt_epi32", np_mm_cmplt_epi32, METH_VARARGS, sse_fun[154].doc},
+    {"_mm_cmpgt_epi8", np_mm_cmpgt_epi8, METH_VARARGS, sse_fun[155].doc},
+    {"_mm_cmpgt_epi16", np_mm_cmpgt_epi16, METH_VARARGS, sse_fun[156].doc},
+    {"_mm_cmpgt_epi32", np_mm_cmpgt_epi32, METH_VARARGS, sse_fun[157].doc},
+    {"_mm_max_epi16", np_mm_max_epi16, METH_VARARGS, sse_fun[158].doc},
+    {"_mm_max_epu8", np_mm_max_epu8, METH_VARARGS, sse_fun[159].doc},
+    {"_mm_min_epi16", np_mm_min_epi16, METH_VARARGS, sse_fun[160].doc},
+    {"_mm_min_epu8", np_mm_min_epu8, METH_VARARGS, sse_fun[161].doc},
+    {"_mm_mulhi_epu16", np_mm_mulhi_epu16, METH_VARARGS, sse_fun[162].doc},
+    {"_mm_avg_epu8", np_mm_avg_epu8, METH_VARARGS, sse_fun[163].doc},
+    {"_mm_avg_epu16", np_mm_avg_epu16, METH_VARARGS, sse_fun[164].doc},
+    {"_mm_sad_epu8", np_mm_sad_epu8, METH_VARARGS, sse_fun[165].doc},
+    {"_mm_hadd_epi16", np_mm_hadd_epi16, METH_VARARGS, sse_fun[166].doc},
+    {"_mm_hadd_epi32", np_mm_hadd_epi32, METH_VARARGS, sse_fun[167].doc},
+    {"_mm_hadds_epi16", np_mm_hadds_epi16, METH_VARARGS, sse_fun[168].doc},
+    {"_mm_hsub_epi16", np_mm_hsub_epi16, METH_VARARGS, sse_fun[169].doc},
+    {"_mm_hsub_epi32", np_mm_hsub_epi32, METH_VARARGS, sse_fun[170].doc},
+    {"_mm_hsubs_epi16", np_mm_hsubs_epi16, METH_VARARGS, sse_fun[171].doc},
+    {"_mm_maddubs_epi16", np_mm_maddubs_epi16, METH_VARARGS, sse_fun[172].doc},
+    {"_mm_mulhrs_epi16", np_mm_mulhrs_epi16, METH_VARARGS, sse_fun[173].doc},
+    {"_mm_shuffle_epi8", np_mm_shuffle_epi8, METH_VARARGS, sse_fun[174].doc},
+    {"_mm_sign_epi8", np_mm_sign_epi8, METH_VARARGS, sse_fun[175].doc},
+    {"_mm_sign_epi16", np_mm_sign_epi16, METH_VARARGS, sse_fun[176].doc},
+    {"_mm_sign_epi32", np_mm_sign_epi32, METH_VARARGS, sse_fun[177].doc},
+    {"_mm_abs_epi8", np_mm_abs_epi8, METH_VARARGS, sse_fun[178].doc},
+    {"_mm_abs_epi16", np_mm_abs_epi16, METH_VARARGS, sse_fun[179].doc},
+    {"_mm_abs_epi32", np_mm_abs_epi32, METH_VARARGS, sse_fun[180].doc},
+    {"_mm_cmpeq_epi64", np_mm_cmpeq_epi64, METH_VARARGS, sse_fun[181].doc},
+    {"_mm_min_epi8", np_mm_min_epi8, METH_VARARGS, sse_fun[182].doc},
+    {"_mm_max_epi8", np_mm_max_epi8, METH_VARARGS, sse_fun[183].doc},
+    {"_mm_min_epu16", np_mm_min_epu16, METH_VARARGS, sse_fun[184].doc},
+    {"_mm_max_epu16", np_mm_max_epu16, METH_VARARGS, sse_fun[185].doc},
+    {"_mm_min_epi32", np_mm_min_epi32, METH_VARARGS, sse_fun[186].doc},
+    {"_mm_max_epi32", np_mm_max_epi32, METH_VARARGS, sse_fun[187].doc},
+    {"_mm_min_epu32", np_mm_min_epu32, METH_VARARGS, sse_fun[188].doc},
+    {"_mm_max_epu32", np_mm_max_epu32, METH_VARARGS, sse_fun[189].doc},
+    {"_mm_mullo_epi32", np_mm_mullo_epi32, METH_VARARGS, sse_fun[190].doc},
+    {"_mm_mul_epi32", np_mm_mul_epi32, METH_VARARGS, sse_fun[191].doc},
+    {"_mm_minpos_epu16", np_mm_minpos_epu16, METH_VARARGS, sse_fun[192].doc},
+    {"_mm_cvtepi8_epi32", np_mm_cvtepi8_epi32, METH_VARARGS, sse_fun[193].doc},
+    {"_mm_cvtepi16_epi32", np_mm_cvtepi16_epi32, METH_VARARGS, sse_fun[194].doc},
+    {"_mm_cvtepi8_epi64", np_mm_cvtepi8_epi64, METH_VARARGS, sse_fun[195].doc},
+    {"_mm_cvtepi32_epi64", np_mm_cvtepi32_epi64, METH_VARARGS, sse_fun[196].doc},
+    {"_mm_cvtepi16_epi64", np_mm_cvtepi16_epi64, METH_VARARGS, sse_fun[197].doc},
+    {"_mm_cvtepi8_epi16", np_mm_cvtepi8_epi16, METH_VARARGS, sse_fun[198].doc},
+    {"_mm_cvtepu8_epi32", np_mm_cvtepu8_epi32, METH_VARARGS, sse_fun[199].doc},
+    {"_mm_cvtepu16_epi32", np_mm_cvtepu16_epi32, METH_VARARGS, sse_fun[200].doc},
+    {"_mm_cvtepu8_epi64", np_mm_cvtepu8_epi64, METH_VARARGS, sse_fun[201].doc},
+    {"_mm_cvtepu32_epi64", np_mm_cvtepu32_epi64, METH_VARARGS, sse_fun[202].doc},
+    {"_mm_cvtepu16_epi64", np_mm_cvtepu16_epi64, METH_VARARGS, sse_fun[203].doc},
+    {"_mm_cvtepu8_epi16", np_mm_cvtepu8_epi16, METH_VARARGS, sse_fun[204].doc},
+    {"_mm_packus_epi32", np_mm_packus_epi32, METH_VARARGS, sse_fun[205].doc},
+    {"_mm_cmpgt_epi64", np_mm_cmpgt_epi64, METH_VARARGS, sse_fun[206].doc},
     {NULL, NULL, 0, NULL} // sentinel
 };

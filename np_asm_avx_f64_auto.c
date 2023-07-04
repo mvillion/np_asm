@@ -453,4 +453,4 @@ PyUFuncGenericFunction fund256[N_INSTD256][1] =
     {&np256_unpacklo_pd},
 };
 
-// static char typed[3] = {NPY_double, NPY_double, NPY_double};
+static char typed[3] = {NPY_DOUBLE, NPY_DOUBLE, NPY_DOUBLE};

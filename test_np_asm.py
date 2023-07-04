@@ -13,36 +13,48 @@ if __name__ == "__main__":
         sys.exit()
 
     data_type_dict = {"f32": np.float32, "f64": np.float64}
-    inst_type_dict = {"sse": "_mm_", "avx": "_mm256_"}
+    inst_type_dict = {
+        "sse_int": "_mm_", "sse_64": "_mm_",
+        "avx_f32": "_mm256_", "avx_f64": "_mm256_"}
 
-    for data_type, dtype in data_type_dict.items():
-        data1 = rng.random((12, 8), dtype)
-        # data1[0] = 0
-        data2 = rng.random((12, 8), dtype)
+    for key, prefix in inst_type_dict.items():
 
-        for key, prefix in inst_type_dict.items():
-            module_name = "np_asm_%s_%s" % (key, data_type)
-            inst_list = getattr(import_module(module_name), "inst_list")
+        for data_type, dtype in data_type_dict.items():
+            if data_type not in key:
+                continue
+            if data_type in ["int"]:
+                data1 = rng.random((12, 8), dtype)
+                # data1[0] = 0
+                data2 = rng.random((12, 8), dtype)
+            else:
+                data1 = rng.random((12, 8), dtype)
+                # data1[0] = 0
+                data2 = rng.random((12, 8), dtype)
 
-            for inst_name, n_input, ref_fun in inst_list:
-                inst = prefix+inst_name
-                # if inst == "_mm_cmpge_ps":
-                #     print("coucou")
-                if ref_fun is None:
-                    continue
-                fun = getattr(np_asm, inst)
-                if n_input == 1:
-                    out = fun(data1)
-                    out_ref = ref_fun(data1)
-                else:
-                    out = fun(data1, data2)
-                    out_ref = ref_fun(data1, data2)
+        module_name = "np_asm_%s" % key
+        inst_list = getattr(import_module(module_name), "inst_list")
 
-                is_equal = np.array_equal(out, out_ref, equal_nan=True)
-                if is_equal:
-                    print("%s: ok" % inst)
-                else:
-                    print("%s: diff is %f" % (inst, (out-out_ref).std().mean()))
+        for arg_out, name, arg_in, ref_fun in inst_list:
+            print(name)
+            n_in = len(arg_in)
+            inst = prefix+name
+            # if inst == "_mm_cmpge_ps":
+            #     print("coucou")
+            if ref_fun is None:
+                continue
+            fun = getattr(np_asm, inst)
+            if n_in == 1:
+                out = fun(data1)
+                out_ref = ref_fun(data1)
+            else:
+                out = fun(data1, data2)
+                out_ref = ref_fun(data1, data2)
+
+            is_equal = np.array_equal(out, out_ref, equal_nan=True)
+            if is_equal:
+                print("%s: ok" % inst)
+            else:
+                print("%s: diff is %f" % (inst, (out-out_ref).std().mean()))
 
     # __________________________________________________________________________
     data = np.arange(12*16, dtype=np.int8).reshape(12, 16)
